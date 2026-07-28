@@ -79,8 +79,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "author", content: "Ahmad Alsakka" },
-      { property: "og:site_name", content: "Ahmad Alsakka" },
+      { name: "author", content: "أحمد" },
+      { property: "og:site_name", content: "أحمد | The Authority Engine" },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "ar_AR" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -94,26 +94,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Cairo:wght@700;800&family=Tajawal:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap",
       },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+    ],
 
-    ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Person",
-          name: "Ahmad Alsakka",
-          alternateName: "أحمد السقا",
-          jobTitle: "Authority Architect",
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "Mississauga",
-            addressRegion: "Ontario",
-            addressCountry: "CA",
-          },
-        }),
-      },
-    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
