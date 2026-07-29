@@ -14,16 +14,16 @@ export function FinalCta() {
           id="start-title"
           className="mt-6 font-display text-[1.9rem] leading-[1.4] text-cream sm:text-5xl sm:leading-[1.3]"
         >
-          خبرتك لا تحتاج صوتاً أعلى.
+          خبرتك لا تحتاج صوتاً أعلى،
           <br />
-          تحتاج نظاماً أوضح.
+          تحتاج نظاماً أوضح،
         </h2>
         <p className="mx-auto mt-7 max-w-2xl text-base leading-[2] text-cream/75">
           إذا عندك عمل قائم وخبرة حقيقية، وتريد بناء حضور يجذب الثقة والاستفسارات بدون أن تتحول إلى
-          صانع محتوى بدوام كامل، ابدأ المحادثة.
+          صانع محتوى بدوام كامل، ابدأ المحادثة،
         </p>
         <p className="mx-auto mt-4 max-w-2xl text-sm leading-[1.95] text-cream/60">
-          أعمل مع عدد محدود من المشاريع حتى يبقى التنفيذ مباشراً وقريباً من صاحب العمل.
+          أعمل مع عدد محدود من المشاريع حتى يبقى التنفيذ مباشراً وقريباً من صاحب العمل،
         </p>
 
         <p className="mt-8 inline-block rounded-[10px] border border-cream/25 px-5 py-2 text-sm text-cream/80">
@@ -43,8 +43,8 @@ export function FinalCta() {
           </a>
         </div>
         <p className="mx-auto mt-5 max-w-xl text-sm leading-[1.95] text-cream/60">
-          بعد فتح Instagram، أرسل كلمة {siteConfig.instagramKeyword} في رسالة خاصة. سأطرح عليك بعض
-          الأسئلة القصيرة لأعرف إذا كان النظام مناسباً لعملك.
+          بعد فتح Instagram، أرسل كلمة {siteConfig.instagramKeyword} في رسالة خاصة، سأطرح عليك بعض
+          الأسئلة القصيرة لأعرف إذا كان النظام مناسباً لعملك،
         </p>
         <a
           href={siteConfig.tiktokUrl}
@@ -75,7 +75,7 @@ export function SiteFooter() {
             </span>
           </div>
           <p className="mt-3 max-w-sm text-sm leading-[1.95] text-subtle">
-            براند شخصي ونظام محتوى للمهنيين وأصحاب الخدمات العرب.
+            براند شخصي ونظام محتوى للمهنيين وأصحاب الخدمات العرب،
           </p>
         </div>
 
@@ -117,8 +117,8 @@ export function SiteFooter() {
       </div>
 
       <div className="mx-auto mt-12 flex w-full max-w-5xl flex-col gap-2 border-t border-border pt-6 text-xs text-subtle sm:flex-row sm:items-center sm:justify-between">
-        <p>© {year} أحمد. جميع الحقوق محفوظة.</p>
-        <p>بُني للخبراء الذين يريدون أن يُعرفوا بعملهم، لا بضجيجهم.</p>
+        <p>© {year} أحمد، جميع الحقوق محفوظة</p>
+        <p>بُني للخبراء الذين يريدون أن يُعرفوا بعملهم، لا بضجيجهم،</p>
       </div>
     </footer>
   );

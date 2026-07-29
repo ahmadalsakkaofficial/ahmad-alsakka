@@ -3,15 +3,15 @@ import { Section, SectionHead, Reveal } from "./primitives";
 const cards = [
   {
     title: "كل فيديو يبدأ من الصفر",
-    text: "لا توجد أفكار مرتبة، ولا قوالب ثابتة، ولا طريقة واضحة لتحويل خبرتك إلى محتوى.",
+    text: "لا توجد أفكار مرتبة، ولا قوالب ثابتة، ولا طريقة واضحة لتحويل خبرتك إلى محتوى،",
   },
   {
     title: "وجودك مربوط بوقتك ومزاجك",
-    text: "عندما تنشغل يتوقف المحتوى. وعندما يتوقف المحتوى، يختفي حضورك مع الوقت.",
+    text: "عندما تنشغل يتوقف المحتوى، وعندما يتوقف المحتوى، يختفي حضورك مع الوقت،",
   },
   {
     title: "أشخاص أقل خبرة يبدون أوضح منك",
-    text: "ليس لأنهم أفضل في عملهم، بل لأن السوق يستطيع أن يفهمهم ويتذكرهم أسرع.",
+    text: "ليس لأنهم أفضل في عملهم، بل لأن السوق يستطيع أن يفهمهم ويتذكرهم أسرع،",
   },
 ];
 
@@ -22,10 +22,10 @@ export function ProblemSection() {
         id="problem-title"
         number="01"
         label="المشكلة"
-        title="المشكلة ليست أنك لا تعرف ماذا تقول."
+        title="المشكلة ليست أنك لا تعرف ماذا تقول"
       />
       <p className="max-w-3xl text-base leading-[2] text-subtle">
-        أنت تعرف مجالك. عندك خبرة، قصص، آراء ونتائج حقيقية. لكن عندما تفتح الكاميرا، كل فيديو يتحول
+        أنت تعرف مجالك، عندك خبرة، قصص، آراء ونتائج حقيقية، لكن عندما تفتح الكاميرا، كل فيديو يتحول
         إلى قرار جديد: ماذا أقول؟ كيف أبدأ؟ أين أصوّر؟ ومتى أنشر؟
       </p>
 
@@ -43,9 +43,9 @@ export function ProblemSection() {
 
       <div className="mt-14 border-t border-bronze/30 pt-10">
         <p className="font-display text-2xl leading-[1.6] text-navy sm:text-3xl">
-          أنت لا تحتاج المزيد من الأفكار.
+          أنت لا تحتاج المزيد من الأفكار،
           <br />
-          <span className="text-bronze">تحتاج نظاماً.</span>
+          <span className="text-bronze">تحتاج نظاماً</span>
         </p>
       </div>
     </Section>
@@ -79,7 +79,7 @@ export function WhoSection() {
         id="who-title"
         number="02"
         label="لمن هذا؟"
-        title="مصمم للخبير الذي لا يريد أن يصبح صانع محتوى."
+        title="مصمم للخبير الذي لا يريد أن يصبح صانع محتوى"
       />
 
       <div className="grid gap-6 md:grid-cols-2">
@@ -108,9 +108,9 @@ export function WhoSection() {
       </div>
 
       <p className="mt-12 font-display text-2xl leading-[1.6] text-navy sm:text-3xl">
-        أنا لا أبني مؤثراً.
+        أنا لا أبني مؤثراً،
         <br />
-        <span className="text-bronze">أبني خبيراً معروفاً.</span>
+        <span className="text-bronze">أبني خبيراً معروفاً</span>
       </p>
     </Section>
   );
