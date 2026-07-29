@@ -77,7 +77,7 @@ export function SiteNav() {
             href="#start"
             className="focus-ring hidden rounded-[10px] bg-navy px-4 py-2 text-sm font-bold text-cream transition-opacity hover:opacity-90 sm:inline-flex"
           >
-            ابدأ من هنا
+            ابدأ من هون
           </a>
           <button
             type="button"
@@ -112,7 +112,7 @@ export function SiteNav() {
                 onClick={() => setOpen(false)}
                 className="focus-ring block rounded-[10px] bg-navy px-4 py-3 text-center text-sm font-bold text-cream"
               >
-                ابدأ من هنا
+                ابدأ من هون
               </a>
             </li>
           </ul>

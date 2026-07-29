@@ -91,7 +91,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Cairo:wght@700;800&family=Tajawal:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
+      },
+      {
+        rel: "preload",
+        as: "font",
+        type: "font/ttf",
+        crossOrigin: "anonymous",
+        href: "/__l5e/assets-v1/6a51f32f-584c-419a-8c1a-6ede58bc6056/Lalezar-Regular.ttf",
       },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
     ],
