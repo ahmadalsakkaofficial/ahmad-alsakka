@@ -16,8 +16,8 @@ export const siteConfig = {
 
 export const navLinks = [
   { href: "#home", label: "الرئيسية" },
-  { href: "#who", label: "لمن هذا؟" },
+  { href: "#who", label: "لمين هاد؟" },
   { href: "#system", label: "النظام" },
-  { href: "#about", label: "عن أحمد" },
+  { href: "#about", label: "عنّي" },
   { href: "#faq", label: "الأسئلة" },
 ] as const;
