@@ -35,8 +35,9 @@
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 8px);
   --font-sans: var(--font-arabic);
-  --font-arabic: "Tajawal", "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Cairo", "Tajawal", ui-sans-serif, system-ui, sans-serif;
+  --font-arabic:
+    "Lalezar", "Noto Naskh Arabic", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-arabic);
   --font-latin: "Inter", ui-sans-serif, system-ui, sans-serif;
 
   --color-background: var(--background);
