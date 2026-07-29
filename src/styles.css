@@ -119,6 +119,8 @@
     color: var(--color-foreground);
     font-family: var(--font-arabic);
     font-feature-settings: "kern";
+    /* Single-weight display face: never fake bold/italic. */
+    font-synthesis: none;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
   }
@@ -127,10 +129,12 @@
   h2,
   h3 {
     font-family: var(--font-display);
-    font-weight: 700;
-    letter-spacing: -0.01em;
+    font-weight: 400;
+    letter-spacing: 0;
     color: var(--color-navy);
     text-wrap: balance;
+    /* Room for Arabic ascenders/diacritics so nothing clips. */
+    padding-block: 0.06em;
   }
 
   p {
