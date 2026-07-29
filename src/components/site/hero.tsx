@@ -27,23 +27,23 @@ export function Hero() {
               براند شخصي ونظام محتوى لأصحاب الخبرة
             </p>
             <h1 className="mt-5 font-display text-[1.75rem] leading-[1.45] text-navy min-[420px]:text-[2rem] sm:text-5xl sm:leading-[1.32]">
-              <span className="block">عندك خبرة حقيقية.</span>
+              <span className="block">عندك خبرة حقيقية،</span>
               <span className="block">
                 <span className="text-bronze">بس</span> حضورك أونلاين{" "}
-                <span className="whitespace-nowrap">ما عم يبيّنها.</span>
+                <span className="whitespace-nowrap">ما عم يبيّنها</span>
               </span>
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-[2] text-subtle sm:text-lg">
               أنا بساعد أصحاب المهن والخدمات العرب — دكاترة، محامين، مستشارين، عقاريين وأصحاب شركات
-              — يحوّلوا خبرتهم لبراند شخصي ونظام محتوى يخلّي الناس تفهمهم، تثق فيهم، وتتواصل معهم.
+              — يحوّلوا خبرتهم لبراند شخصي ونظام محتوى يخلّي الناس تفهمهم، تثق فيهم، وتتواصل معهم،
             </p>
             <div className="mt-6 max-w-2xl space-y-1 text-base leading-[2] text-subtle">
-              <p>مو جلسات تحفيز.</p>
-              <p>ومو إدارة حساب للأبد.</p>
+              <p>مو جلسات تحفيز</p>
+              <p>ومو إدارة حساب للأبد</p>
             </div>
             <p className="mt-3 max-w-2xl text-base leading-[2] text-subtle">
               ببني النظام معك، بطبّقه، وبسلّمك ياه لما يصير واضح وتعرف تكمّل عليه بدون ما تضل معتمد
-              عليّ.
+              عليّ
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -63,8 +63,8 @@ export function Hero() {
               </a>
             </div>
             <div className="mt-4 space-y-1 text-xs leading-relaxed text-subtle sm:text-sm">
-              <p>هاد مناسب للي عنده شغل وخبرة حقيقية...</p>
-              <p>مو للي هدفه بس يصير مؤثر.</p>
+              <p>هاد مناسب للي عنده شغل وخبرة حقيقية،</p>
+              <p>مو للي هدفه بس يصير مؤثر</p>
             </div>
           </Reveal>
 
