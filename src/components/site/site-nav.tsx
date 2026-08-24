@@ -113,6 +113,15 @@ export function SiteNav() {
                 </a>
               </li>
             ))}
+            <li>
+              <Link
+                to="/audit"
+                onClick={() => setOpen(false)}
+                className="focus-ring block rounded-md py-3 text-sm text-bronze"
+              >
+                قيّم براندك
+              </Link>
+            </li>
             <li className="pt-2 pb-3">
               <a
                 href="#start"
