@@ -73,6 +73,12 @@ export function SiteNav() {
         </ul>
 
         <div className="flex items-center gap-2">
+          <Link
+            to="/audit"
+            className="focus-ring hidden rounded-[10px] border border-navy/20 px-4 py-2 text-sm text-navy transition-colors hover:border-bronze hover:text-bronze sm:inline-flex"
+          >
+            قيّم براندك
+          </Link>
           <a
             href="#start"
             className="focus-ring hidden rounded-[10px] bg-navy px-4 py-2 text-sm font-bold text-cream transition-opacity hover:opacity-90 sm:inline-flex"
