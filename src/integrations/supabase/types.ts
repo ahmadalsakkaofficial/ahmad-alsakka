@@ -14,7 +14,54 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      audit_leads: {
+        Row: {
+          analysis: Json | null
+          answers: Json
+          category_scores: Json
+          clicked_strategy: boolean
+          clicked_work_with_me: boolean
+          created_at: string
+          email: string
+          id: string
+          industry: string | null
+          name: string
+          overall_score: number
+          profession: string | null
+          social_handle: string | null
+        }
+        Insert: {
+          analysis?: Json | null
+          answers?: Json
+          category_scores?: Json
+          clicked_strategy?: boolean
+          clicked_work_with_me?: boolean
+          created_at?: string
+          email: string
+          id?: string
+          industry?: string | null
+          name: string
+          overall_score?: number
+          profession?: string | null
+          social_handle?: string | null
+        }
+        Update: {
+          analysis?: Json | null
+          answers?: Json
+          category_scores?: Json
+          clicked_strategy?: boolean
+          clicked_work_with_me?: boolean
+          created_at?: string
+          email?: string
+          id?: string
+          industry?: string | null
+          name?: string
+          overall_score?: number
+          profession?: string | null
+          social_handle?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
