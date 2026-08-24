@@ -8,6 +8,9 @@ export const siteConfig = {
   youtubeAudience: "60K+",
   engagementLength: "60 يوماً",
   startingInvestment: "3,000+ USD",
+  /** Paid 60-minute strategy session. Change the price and booking link here. */
+  strategySessionPrice: "120 USD",
+  strategySessionUrl: "https://instagram.com/ahmad.alsakka.official",
   location: "كندا",
   primaryAudience: "أصحاب المهن والخدمات العرب",
   /** Future-ready. Component renders nothing while empty. */
