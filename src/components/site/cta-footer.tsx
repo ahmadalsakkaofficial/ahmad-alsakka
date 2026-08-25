@@ -118,30 +118,30 @@ export function SiteFooter() {
           </ul>
         </nav>
 
-        <div className="flex items-start gap-3">
-          <a
-            href={siteConfig.instagramUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="حساب أحمد على Instagram"
-            className="focus-ring rounded-[10px] border border-border p-2.5 text-navy transition-colors hover:border-bronze hover:text-bronze"
-          >
-            <InstagramIcon className="size-5" />
-          </a>
-          <a
-            href={siteConfig.tiktokUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="حساب أحمد على TikTok"
-            className="focus-ring rounded-[10px] border border-border p-2.5 text-navy transition-colors hover:border-bronze hover:text-bronze"
-          >
-            <TikTokIcon className="size-5" />
-          </a>
+        <div className="flex flex-wrap items-start gap-3">
+          {[
+            { href: siteConfig.instagramUrl, label: "Instagram", Icon: InstagramIcon },
+            { href: siteConfig.youtubeUrl, label: "YouTube", Icon: YouTubeIcon },
+            { href: siteConfig.linkedinUrl, label: "LinkedIn", Icon: LinkedInIcon },
+            { href: siteConfig.tiktokUrl, label: "TikTok", Icon: TikTokIcon },
+          ].map(({ href, label, Icon }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`حساب أحمد السقا على ${label}`}
+              className="focus-ring rounded-[10px] border border-border p-2.5 text-navy transition-colors hover:border-bronze hover:text-bronze"
+            >
+              <Icon className="size-5" />
+            </a>
+          ))}
         </div>
+
       </div>
 
       <div className="mx-auto mt-12 flex w-full max-w-5xl flex-col gap-2 border-t border-border pt-6 text-sm text-subtle sm:flex-row sm:items-center sm:justify-between">
-        <p>© {year} أحمد، جميع الحقوق محفوظة</p>
+        <p>© {year} أحمد السقا، جميع الحقوق محفوظة</p>
         <p>بُني للخبراء الذين يريدون أن يُعرفوا بعملهم، لا بضجيجهم،</p>
       </div>
     </footer>
