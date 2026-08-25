@@ -11,7 +11,7 @@ function Bar({ label, value }: { label: string; value: number }) {
   return (
     <li className="border-b border-border py-4 last:border-b-0">
       <div className="flex items-baseline justify-between">
-        <span className="text-base text-ink sm:text-base">{label}</span>
+        <span className="text-base text-ink">{label}</span>
         <span className="font-latin text-base text-navy">
           {value}
           <span className="text-subtle">/20</span>
