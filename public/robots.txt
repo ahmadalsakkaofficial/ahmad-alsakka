@@ -12,3 +12,6 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://ahmad-alsakka.lovable.app/sitemap.xml
+
