@@ -12,12 +12,12 @@ export function AuditIntro({ onStart }: { onStart: () => void }) {
     <div className="mx-auto w-full max-w-3xl px-5 py-14 sm:px-8 sm:py-24">
       <Link
         to="/"
-        className="focus-ring rounded-sm text-xs text-subtle transition-colors hover:text-navy"
+        className="focus-ring rounded-sm text-sm text-subtle transition-colors hover:text-navy"
       >
         رجوع للموقع
       </Link>
 
-      <p className="mt-8 text-xs tracking-wide text-bronze sm:text-sm">
+      <p className="mt-8 text-sm tracking-wide text-bronze sm:text-base">
         تقييم البراند الشخصي، مجاني
       </p>
       <h1 className="mt-5 font-display text-[1.9rem] leading-[1.42] text-navy sm:text-5xl sm:leading-[1.3]">
@@ -44,17 +44,17 @@ export function AuditIntro({ onStart }: { onStart: () => void }) {
         <button
           type="button"
           onClick={onStart}
-          className="focus-ring rounded-[12px] bg-navy px-8 py-4 text-sm font-bold text-cream transition-opacity hover:opacity-90 sm:text-base"
+          className="focus-ring rounded-[12px] bg-navy px-8 py-4 text-base font-bold text-cream transition-opacity hover:opacity-90 sm:text-base"
         >
           ابدأ التقييم المجاني
         </button>
-        <span className="text-sm text-subtle">
+        <span className="text-base text-subtle">
           بياخد من <span className="font-latin">3</span> لـ <span className="font-latin">5</span>{" "}
           دقايق
         </span>
       </div>
 
-      <p className="mt-10 max-w-2xl text-sm leading-[1.95] text-subtle">
+      <p className="mt-10 max-w-2xl text-base leading-[1.95] text-subtle">
         هالتقييم مبني على نفس الطريقة اللي بشتغل فيها مع عملاء {siteConfig.brandName}، النتيجة
         محسوبة بمعادلة ثابتة، يعني نفس الأجوبة بتعطي دايماً نفس النتيجة،
       </p>

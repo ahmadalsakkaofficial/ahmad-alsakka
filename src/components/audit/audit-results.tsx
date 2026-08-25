@@ -11,8 +11,8 @@ function Bar({ label, value }: { label: string; value: number }) {
   return (
     <li className="border-b border-border py-4 last:border-b-0">
       <div className="flex items-baseline justify-between">
-        <span className="text-sm text-ink sm:text-base">{label}</span>
-        <span className="font-latin text-sm text-navy">
+        <span className="text-base text-ink sm:text-base">{label}</span>
+        <span className="font-latin text-base text-navy">
           {value}
           <span className="text-subtle">/20</span>
         </span>
@@ -30,7 +30,7 @@ function Bar({ label, value }: { label: string; value: number }) {
 function Block({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div className="border-t border-border pt-8">
-      <h3 className="text-xs tracking-wide text-bronze">{title}</h3>
+      <h3 className="text-sm tracking-wide text-bronze">{title}</h3>
       <div className="mt-3 text-base leading-[2] text-ink">{children}</div>
     </div>
   );
@@ -68,7 +68,7 @@ export function AuditResults({
     <div>
       <section className="bg-navy px-5 py-16 text-cream sm:px-8 sm:py-24">
         <div className="mx-auto w-full max-w-3xl">
-          <p className="text-xs tracking-[0.2em] text-bronze">
+          <p className="text-sm tracking-[0.2em] text-bronze">
             نتيجة البراند الشخصي، {contact.name}
           </p>
           <div className="mt-6 flex items-end gap-3">
@@ -107,7 +107,7 @@ export function AuditResults({
                 <ol className="space-y-3">
                   {a.opportunities.map((o, i) => (
                     <li key={i} className="flex gap-3">
-                      <span className="font-latin text-sm text-bronze">0{i + 1}</span>
+                      <span className="font-latin text-base text-bronze">0{i + 1}</span>
                       <span>{o}</span>
                     </li>
                   ))}
@@ -119,7 +119,7 @@ export function AuditResults({
                 <ol className="space-y-3">
                   {a.actions.map((o, i) => (
                     <li key={i} className="flex gap-3">
-                      <span className="font-latin text-sm text-bronze">0{i + 1}</span>
+                      <span className="font-latin text-base text-bronze">0{i + 1}</span>
                       <span>{o}</span>
                     </li>
                   ))}
@@ -146,13 +146,13 @@ export function AuditResults({
 
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             <div className="flex flex-col rounded-[14px] border border-border bg-background p-7">
-              <span className="text-xs tracking-wide text-bronze">الخيار الأول</span>
+              <span className="text-sm tracking-wide text-bronze">الخيار الأول</span>
               <h3 className="mt-3 font-display text-xl text-navy">جلسة استراتيجية</h3>
-              <p className="mt-3 flex-1 text-sm leading-[1.95] text-subtle">
+              <p className="mt-3 flex-1 text-base leading-[1.95] text-subtle">
                 <span className="font-latin">60</span> دقيقة وجهاً لوجه على تقييمك، منمشي على
                 النتيجة، منحدد التموضع، ومنطلع بخطة محتوى إلك إنت، هاي جلسة مدفوعة، مو مكالمة بيع،
               </p>
-              <p className="mt-5 text-sm text-navy">
+              <p className="mt-5 text-base text-navy">
                 السعر،{" "}
                 <span className="font-latin font-semibold">{siteConfig.strategySessionPrice}</span>
               </p>
@@ -161,20 +161,20 @@ export function AuditResults({
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => onCta("strategy")}
-                className="focus-ring mt-6 inline-flex items-center justify-center rounded-[12px] border border-navy/25 px-6 py-3.5 text-sm font-bold text-navy transition-colors hover:border-bronze hover:text-bronze"
+                className="focus-ring mt-6 inline-flex items-center justify-center rounded-[12px] border border-navy/25 px-6 py-3.5 text-base font-bold text-navy transition-colors hover:border-bronze hover:text-bronze"
               >
                 احجز الجلسة
               </a>
             </div>
 
             <div className="flex flex-col rounded-[14px] border border-bronze/40 bg-background p-7">
-              <span className="text-xs tracking-wide text-bronze">الخيار التاني</span>
+              <span className="text-sm tracking-wide text-bronze">الخيار التاني</span>
               <h3 className="mt-3 font-display text-xl text-navy">اشتغل معي</h3>
-              <p className="mt-3 flex-1 text-sm leading-[1.95] text-subtle">
+              <p className="mt-3 flex-1 text-base leading-[1.95] text-subtle">
                 للي بدو حدا يبني النظام معه وينفّذه، منشتغل سوا على الاستراتيجية، النظام، الإنتاج،
                 والتسليم، بعدد محدود من المشاريع،
               </p>
-              <p className="mt-5 text-sm text-navy">
+              <p className="mt-5 text-base text-navy">
                 المشاريع بتبدأ من{" "}
                 <span className="font-latin font-semibold">{siteConfig.startingInvestment}</span>
               </p>
@@ -183,7 +183,7 @@ export function AuditResults({
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => onCta("work")}
-                className="focus-ring mt-6 inline-flex items-center justify-center gap-2 rounded-[12px] bg-bronze px-6 py-3.5 text-sm font-bold text-cream transition-opacity hover:opacity-90"
+                className="focus-ring mt-6 inline-flex items-center justify-center gap-2 rounded-[12px] bg-bronze px-6 py-3.5 text-base font-bold text-cream transition-opacity hover:opacity-90"
               >
                 <InstagramIcon className="size-4" />
                 قدّم للشغل معي
@@ -191,7 +191,7 @@ export function AuditResults({
             </div>
           </div>
 
-          <p className="mt-8 text-sm leading-[1.95] text-subtle">
+          <p className="mt-8 text-base leading-[1.95] text-subtle">
             بعد ما تفتح Instagram، أرسل كلمة {siteConfig.instagramKeyword} برسالة خاصة مع نتيجتك،
             ورح أرد عليك بأسئلة قصيرة،
           </p>
