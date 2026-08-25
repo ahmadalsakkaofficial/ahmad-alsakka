@@ -45,12 +45,17 @@ export const Route = createFileRoute("/")({
           "@graph": [
             {
               "@type": "Person",
-              name: "أحمد",
-              alternateName: "Ahmad",
+              name: "أحمد السقا",
+              alternateName: "Ahmad Alsakka",
               jobTitle: "Personal Brand & Content System Architect",
               description: DESCRIPTION,
               knowsLanguage: ["ar", "en"],
-              sameAs: [siteConfig.instagramUrl, siteConfig.tiktokUrl],
+              sameAs: [
+                siteConfig.instagramUrl,
+                siteConfig.tiktokUrl,
+                siteConfig.youtubeUrl,
+                siteConfig.linkedinUrl,
+              ],
               address: { "@type": "PostalAddress", addressCountry: "CA" },
             },
             {
@@ -59,9 +64,15 @@ export const Route = createFileRoute("/")({
               description:
                 "نظام بناء البراند الشخصي والمحتوى للمهنيين العرب خلال 60 يوماً: استراتيجية، نظام، إنتاج، وتسليم،",
               areaServed: ["الخليج العربي", "كندا", "المهنيون العرب حول العالم"],
-              sameAs: [siteConfig.instagramUrl, siteConfig.tiktokUrl],
-              provider: { "@type": "Person", name: "أحمد" },
+              sameAs: [
+                siteConfig.instagramUrl,
+                siteConfig.tiktokUrl,
+                siteConfig.youtubeUrl,
+                siteConfig.linkedinUrl,
+              ],
+              provider: { "@type": "Person", name: "أحمد السقا" },
             },
+
             {
               "@type": "FAQPage",
               mainEntity: faqs.map((f) => ({
