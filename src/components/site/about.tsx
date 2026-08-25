@@ -1,6 +1,8 @@
 import { siteConfig } from "@/config/site";
+import portrait from "@/assets/ahmad-portrait.png.asset.json";
 import { Section, SectionHead } from "./primitives";
-import { InstagramIcon, TikTokIcon } from "./icons";
+import { InstagramIcon, TikTokIcon, YouTubeIcon, LinkedInIcon } from "./icons";
+
 
 export function AboutSection() {
   return (
@@ -36,6 +38,14 @@ export function AboutSection() {
         </div>
 
         <aside className="space-y-6">
+          <img
+            src={portrait.url}
+            alt="أحمد السقا، مهندس البراند الشخصي"
+            loading="lazy"
+            width={640}
+            height={640}
+            className="w-full rounded-[14px] border border-bronze/30 bg-background object-cover"
+          />
           <div className="rounded-[12px] border border-bronze/35 bg-background p-6">
             <p className="font-display text-lg leading-[1.8] text-navy">
               لست مدرباً يقف خارج العمل ويشرح لك نظريات،
@@ -44,6 +54,7 @@ export function AboutSection() {
               أنا Operator يبني معك النظام من الداخل،
             </p>
           </div>
+
 
           <a
             href={siteConfig.instagramUrl}
