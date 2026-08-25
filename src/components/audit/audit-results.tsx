@@ -5,7 +5,7 @@ import { categoryLabels, categoryKeys, type CategoryKey } from "@/lib/audit/scor
 import type { AuditResult } from "@/lib/audit/audit.server";
 import { trackCtaClick } from "@/lib/audit/audit.functions";
 import { siteConfig } from "@/config/site";
-import { InstagramIcon } from "@/components/site/icons";
+
 
 function Bar({ label, value }: { label: string; value: number }) {
   return (
@@ -179,22 +179,20 @@ export function AuditResults({
                 <span className="font-latin font-semibold">{siteConfig.startingInvestment}</span>
               </p>
               <a
-                href={siteConfig.instagramUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/#start"
                 onClick={() => onCta("work")}
                 className="focus-ring mt-6 inline-flex items-center justify-center gap-2 rounded-[12px] bg-bronze px-6 py-3.5 text-base font-bold text-cream transition-opacity hover:opacity-90"
               >
-                <InstagramIcon className="size-4" />
                 قدّم للشغل معي
               </a>
             </div>
           </div>
 
           <p className="mt-8 text-base leading-[1.95] text-subtle">
-            بعد ما تفتح Instagram، أرسل كلمة {siteConfig.instagramKeyword} برسالة خاصة مع نتيجتك،
-            ورح أرد عليك بأسئلة قصيرة،
+            بعد ما تعبّي النموذج، رح أتواصل معك على الإيميل أو الموبايل، وإذا بتحب تحكي أسرع، احجز
+            مكالمة مباشرة،
           </p>
+
         </div>
       </section>
     </div>

@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { navLinks, siteConfig } from "@/config/site";
+import portrait from "@/assets/ahmad-portrait.png.asset.json";
 import { cn } from "@/lib/utils";
+
 
 export function SiteNav() {
   const [open, setOpen] = useState(false);
@@ -47,12 +49,24 @@ export function SiteNav() {
         aria-label="التنقل الرئيسي"
         className="mx-auto flex h-16 w-full max-w-5xl items-center justify-between px-5 sm:px-8"
       >
-        <a href="#home" className="flex items-baseline gap-2 focus-ring rounded-md">
-          <span className="font-display text-lg font-bold text-navy">{siteConfig.nameArabic}</span>
-          <span className="font-latin text-xs font-semibold tracking-[0.18em] text-bronze uppercase">
-            {siteConfig.brandName}
+        <a href="#home" className="flex items-center gap-2.5 focus-ring rounded-md">
+          <img
+            src={portrait.url}
+            alt="أحمد السقا"
+            width={36}
+            height={36}
+            className="size-9 rounded-full border border-bronze/40 object-cover"
+          />
+          <span className="flex flex-col leading-tight">
+            <span className="font-display text-lg font-bold text-navy">
+              {siteConfig.nameArabic}
+            </span>
+            <span className="font-latin text-[10px] font-semibold tracking-[0.18em] text-bronze uppercase">
+              {siteConfig.brandName}
+            </span>
           </span>
         </a>
+
 
         <ul className="hidden items-center gap-7 md:flex">
           {navLinks.map((l) => (
@@ -76,16 +90,17 @@ export function SiteNav() {
         <div className="flex items-center gap-2">
           <Link
             to="/audit"
-            className="focus-ring hidden rounded-[10px] border border-navy/20 px-4 py-2 text-base text-navy transition-colors hover:border-bronze hover:text-bronze sm:inline-flex"
+            className="focus-ring hidden rounded-[10px] bg-bronze px-4 py-2 text-base font-bold text-cream transition-opacity hover:opacity-90 sm:inline-flex"
           >
             قيّم براندك
           </Link>
           <a
             href="#start"
-            className="focus-ring hidden rounded-[10px] bg-navy px-4 py-2 text-base font-bold text-cream transition-opacity hover:opacity-90 sm:inline-flex"
+            className="focus-ring hidden rounded-[10px] border border-navy/25 px-4 py-2 text-base font-bold text-navy transition-colors hover:border-bronze hover:text-bronze sm:inline-flex"
           >
             ابدأ من هون
           </a>
+
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
@@ -113,15 +128,16 @@ export function SiteNav() {
                 </a>
               </li>
             ))}
-            <li>
+            <li className="pt-2">
               <Link
                 to="/audit"
                 onClick={() => setOpen(false)}
-                className="focus-ring block rounded-md py-3 text-base text-bronze"
+                className="focus-ring block rounded-[10px] bg-bronze px-4 py-3 text-center text-base font-bold text-cream"
               >
                 قيّم براندك
               </Link>
             </li>
+
             <li className="pt-2 pb-3">
               <a
                 href="#start"

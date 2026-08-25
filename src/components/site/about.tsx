@@ -1,6 +1,8 @@
 import { siteConfig } from "@/config/site";
+import portrait from "@/assets/ahmad-portrait.png.asset.json";
 import { Section, SectionHead } from "./primitives";
-import { InstagramIcon, TikTokIcon } from "./icons";
+import { InstagramIcon, TikTokIcon, YouTubeIcon, LinkedInIcon } from "./icons";
+
 
 export function AboutSection() {
   return (
@@ -36,6 +38,14 @@ export function AboutSection() {
         </div>
 
         <aside className="space-y-6">
+          <img
+            src={portrait.url}
+            alt="أحمد السقا، مهندس البراند الشخصي"
+            loading="lazy"
+            width={640}
+            height={640}
+            className="w-full rounded-[14px] border border-bronze/30 bg-background object-cover"
+          />
           <div className="rounded-[12px] border border-bronze/35 bg-background p-6">
             <p className="font-display text-lg leading-[1.8] text-navy">
               لست مدرباً يقف خارج العمل ويشرح لك نظريات،
@@ -45,24 +55,35 @@ export function AboutSection() {
             </p>
           </div>
 
+
           <a
-            href={siteConfig.instagramUrl}
+            href={siteConfig.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="focus-ring flex items-center justify-center gap-2 rounded-[12px] bg-navy px-6 py-4 text-base font-bold text-cream transition-opacity hover:opacity-90"
           >
-            <InstagramIcon className="size-4" />
-            تابع أحمد على Instagram
+            احجز مكالمة مع أحمد
           </a>
-          <a
-            href={siteConfig.tiktokUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="focus-ring flex items-center justify-center gap-2 text-base font-medium text-bronze underline-offset-4 hover:underline"
-          >
-            <TikTokIcon className="size-4" />
-            شاهد المحتوى على TikTok
-          </a>
+          <div className="grid grid-cols-2 gap-3">
+            {[
+              { href: siteConfig.instagramUrl, label: "Instagram", Icon: InstagramIcon },
+              { href: siteConfig.youtubeUrl, label: "YouTube", Icon: YouTubeIcon },
+              { href: siteConfig.linkedinUrl, label: "LinkedIn", Icon: LinkedInIcon },
+              { href: siteConfig.tiktokUrl, label: "TikTok", Icon: TikTokIcon },
+            ].map(({ href, label, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="focus-ring flex items-center justify-center gap-2 rounded-[12px] border border-border px-4 py-3 text-base text-navy transition-colors hover:border-bronze hover:text-bronze"
+              >
+                <Icon className="size-4" />
+                <span className="font-latin">{label}</span>
+              </a>
+            ))}
+          </div>
+
         </aside>
       </div>
     </Section>
