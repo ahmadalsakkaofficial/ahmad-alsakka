@@ -1,5 +1,6 @@
 import { siteConfig, navLinks } from "@/config/site";
-import { InstagramIcon, TikTokIcon } from "./icons";
+import { InstagramIcon, TikTokIcon, YouTubeIcon, LinkedInIcon } from "./icons";
+import { ApplyForm } from "./apply-form";
 
 export function FinalCta() {
   return (
@@ -33,32 +34,55 @@ export function FinalCta() {
 
         <div className="mt-10">
           <a
-            href={siteConfig.instagramUrl}
+            href={siteConfig.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="focus-ring inline-flex items-center justify-center gap-2 rounded-[12px] bg-bronze px-8 py-4 text-base font-bold text-cream transition-opacity hover:opacity-90 sm:text-base"
+            className="focus-ring inline-flex items-center justify-center gap-2 rounded-[12px] bg-bronze px-8 py-4 text-base font-bold text-cream transition-opacity hover:opacity-90"
           >
-            <InstagramIcon className="size-5" />
-            أرسل كلمة {siteConfig.instagramKeyword} على Instagram
+            احجز مكالمة أو استشارة
           </a>
         </div>
         <p className="mx-auto mt-5 max-w-xl text-base leading-[1.95] text-cream/60">
-          بعد فتح Instagram، أرسل كلمة {siteConfig.instagramKeyword} في رسالة خاصة، سأطرح عليك بعض
-          الأسئلة القصيرة لأعرف إذا كان النظام مناسباً لعملك،
+          أو اترك معلوماتك تحت، ورح أتواصل معك أنا،
         </p>
-        <a
-          href={siteConfig.tiktokUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="focus-ring mt-6 inline-flex items-center gap-2 text-base text-cream/80 underline-offset-4 hover:underline"
-        >
-          <TikTokIcon className="size-4" />
-          أو تابع المحتوى على TikTok
-        </a>
+
+        <div className="mt-10 text-cream">
+          <h3 className="font-display text-xl text-cream sm:text-2xl">
+            جاهز تبني النظام، اتركلي معلوماتك
+          </h3>
+          <p className="mx-auto mt-3 max-w-xl text-base leading-[1.95] text-cream/60">
+            هالنموذج للي عنده جدية يستثمر من {siteConfig.startingInvestment} وفوق ببناء براند شخصي
+            ونظام محتوى،
+          </p>
+          <div className="mt-7">
+            <ApplyForm />
+          </div>
+        </div>
+
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
+          {[
+            { href: siteConfig.instagramUrl, label: "Instagram", Icon: InstagramIcon },
+            { href: siteConfig.youtubeUrl, label: "YouTube", Icon: YouTubeIcon },
+            { href: siteConfig.linkedinUrl, label: "LinkedIn", Icon: LinkedInIcon },
+            { href: siteConfig.tiktokUrl, label: "TikTok", Icon: TikTokIcon },
+          ].map(({ href, label, Icon }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="focus-ring inline-flex items-center gap-2 text-base text-cream/80 underline-offset-4 hover:underline"
+            >
+              <Icon className="size-4" />
+              <span className="font-latin">{label}</span>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
+
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
