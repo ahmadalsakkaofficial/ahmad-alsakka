@@ -90,16 +90,17 @@ export function SiteNav() {
         <div className="flex items-center gap-2">
           <Link
             to="/audit"
-            className="focus-ring hidden rounded-[10px] border border-navy/20 px-4 py-2 text-base text-navy transition-colors hover:border-bronze hover:text-bronze sm:inline-flex"
+            className="focus-ring hidden rounded-[10px] bg-bronze px-4 py-2 text-base font-bold text-cream transition-opacity hover:opacity-90 sm:inline-flex"
           >
             قيّم براندك
           </Link>
           <a
             href="#start"
-            className="focus-ring hidden rounded-[10px] bg-navy px-4 py-2 text-base font-bold text-cream transition-opacity hover:opacity-90 sm:inline-flex"
+            className="focus-ring hidden rounded-[10px] border border-navy/25 px-4 py-2 text-base font-bold text-navy transition-colors hover:border-bronze hover:text-bronze sm:inline-flex"
           >
             ابدأ من هون
           </a>
+
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
@@ -127,15 +128,16 @@ export function SiteNav() {
                 </a>
               </li>
             ))}
-            <li>
+            <li className="pt-2">
               <Link
                 to="/audit"
                 onClick={() => setOpen(false)}
-                className="focus-ring block rounded-md py-3 text-base text-bronze"
+                className="focus-ring block rounded-[10px] bg-bronze px-4 py-3 text-center text-base font-bold text-cream"
               >
                 قيّم براندك
               </Link>
             </li>
+
             <li className="pt-2 pb-3">
               <a
                 href="#start"
