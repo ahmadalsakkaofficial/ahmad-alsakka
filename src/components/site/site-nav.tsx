@@ -49,7 +49,7 @@ export function SiteNav() {
       >
         <a href="#home" className="flex items-baseline gap-2 focus-ring rounded-md">
           <span className="font-display text-lg font-bold text-navy">{siteConfig.nameArabic}</span>
-          <span className="font-latin text-[10px] font-semibold tracking-[0.18em] text-bronze uppercase">
+          <span className="font-latin text-xs font-semibold tracking-[0.18em] text-bronze uppercase">
             {siteConfig.brandName}
           </span>
         </a>
@@ -61,7 +61,7 @@ export function SiteNav() {
                 href={l.href}
                 aria-current={active === l.href ? "true" : undefined}
                 className={cn(
-                  "focus-ring rounded-sm pb-1 text-sm transition-colors",
+                  "focus-ring rounded-sm pb-1 text-base transition-colors",
                   active === l.href
                     ? "border-b border-bronze text-navy"
                     : "text-subtle hover:text-navy",
@@ -76,13 +76,13 @@ export function SiteNav() {
         <div className="flex items-center gap-2">
           <Link
             to="/audit"
-            className="focus-ring hidden rounded-[10px] border border-navy/20 px-4 py-2 text-sm text-navy transition-colors hover:border-bronze hover:text-bronze sm:inline-flex"
+            className="focus-ring hidden rounded-[10px] border border-navy/20 px-4 py-2 text-base text-navy transition-colors hover:border-bronze hover:text-bronze sm:inline-flex"
           >
             قيّم براندك
           </Link>
           <a
             href="#start"
-            className="focus-ring hidden rounded-[10px] bg-navy px-4 py-2 text-sm font-bold text-cream transition-opacity hover:opacity-90 sm:inline-flex"
+            className="focus-ring hidden rounded-[10px] bg-navy px-4 py-2 text-base font-bold text-cream transition-opacity hover:opacity-90 sm:inline-flex"
           >
             ابدأ من هون
           </a>
@@ -107,7 +107,7 @@ export function SiteNav() {
                 <a
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="focus-ring block rounded-md py-3 text-sm text-navy"
+                  className="focus-ring block rounded-md py-3 text-base text-navy"
                 >
                   {l.label}
                 </a>
@@ -117,7 +117,7 @@ export function SiteNav() {
               <Link
                 to="/audit"
                 onClick={() => setOpen(false)}
-                className="focus-ring block rounded-md py-3 text-sm text-bronze"
+                className="focus-ring block rounded-md py-3 text-base text-bronze"
               >
                 قيّم براندك
               </Link>
@@ -126,7 +126,7 @@ export function SiteNav() {
               <a
                 href="#start"
                 onClick={() => setOpen(false)}
-                className="focus-ring block rounded-[10px] bg-navy px-4 py-3 text-center text-sm font-bold text-cream"
+                className="focus-ring block rounded-[10px] bg-navy px-4 py-3 text-center text-base font-bold text-cream"
               >
                 ابدأ من هون
               </a>

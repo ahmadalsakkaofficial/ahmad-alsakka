@@ -8,8 +8,8 @@ export function Testimonials() {
       <div className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2">
         {siteConfig.testimonials.map((t) => (
           <figure key={t.name} className="rounded-[12px] border border-border bg-background p-6">
-            <blockquote className="text-sm leading-relaxed text-subtle">{t.quote}</blockquote>
-            <figcaption className="mt-4 text-sm font-bold text-navy">
+            <blockquote className="text-base leading-relaxed text-subtle">{t.quote}</blockquote>
+            <figcaption className="mt-4 text-base font-bold text-navy">
               {t.name}، <span className="font-normal text-subtle">{t.role}</span>
             </figcaption>
           </figure>

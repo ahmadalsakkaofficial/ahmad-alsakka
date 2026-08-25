@@ -90,13 +90,13 @@ export function EngineSection() {
           <Reveal key={p.n} delay={i * 80}>
             <li className="grid gap-5 bg-navy p-7 sm:grid-cols-[200px_1fr]">
               <div>
-                <span className="font-latin text-xs tracking-[0.22em] text-bronze">{p.n}</span>
+                <span className="font-latin text-sm tracking-[0.22em] text-bronze">{p.n}</span>
                 <h3 className="mt-2 font-display text-xl text-cream">{p.title}</h3>
-                <span className="mt-1 block text-xs text-cream/60">{p.weeks}</span>
+                <span className="mt-1 block text-sm text-cream/60">{p.weeks}</span>
               </div>
               <ul className="grid gap-2 sm:grid-cols-2">
                 {p.items.map((it) => (
-                  <li key={it} className="flex gap-3 text-sm leading-[1.9] text-cream/75">
+                  <li key={it} className="flex gap-3 text-base leading-[1.9] text-cream/75">
                     <span className="mt-2.5 size-1 shrink-0 rounded-full bg-bronze" />
                     <span>{it}</span>
                   </li>
@@ -111,7 +111,7 @@ export function EngineSection() {
         <h3 className="font-display text-xl text-cream">ماذا سيكون لديك بعد 60 يوماً؟</h3>
         <ul className="mt-5 grid gap-2 sm:grid-cols-2">
           {results.map((r) => (
-            <li key={r} className="flex gap-3 text-sm leading-[1.9] text-cream/75">
+            <li key={r} className="flex gap-3 text-base leading-[1.9] text-cream/75">
               <span className="mt-2.5 size-1 shrink-0 rounded-full bg-bronze" />
               <span>{r}</span>
             </li>
@@ -161,9 +161,9 @@ export function TrustSection() {
         {stages.map((s, i) => (
           <Reveal key={s.title} delay={i * 90}>
             <article className="relative h-full rounded-[12px] border border-border bg-surface p-6">
-              <span className="font-latin text-xs tracking-[0.2em] text-bronze">0{i + 1}</span>
+              <span className="font-latin text-sm tracking-[0.2em] text-bronze">0{i + 1}</span>
               <h3 className="mt-3 font-display text-lg text-navy">{s.title}</h3>
-              <p className="mt-3 text-sm leading-[1.95] text-subtle">{s.text}</p>
+              <p className="mt-3 text-base leading-[1.95] text-subtle">{s.text}</p>
             </article>
           </Reveal>
         ))}
@@ -208,14 +208,14 @@ export function DifferenceSection() {
           <Reveal key={b.title} delay={i * 90}>
             <article className="h-full rounded-[12px] border border-border bg-background p-6">
               <h3 className="font-display text-lg text-navy">{b.title}</h3>
-              <p className="mt-3 text-sm leading-[1.95] text-subtle">{b.text}</p>
+              <p className="mt-3 text-base leading-[1.95] text-subtle">{b.text}</p>
             </article>
           </Reveal>
         ))}
       </div>
 
       <div className="mt-12 rounded-[12px] border border-bronze/40 bg-background p-7 text-center">
-        <p className="font-latin text-sm tracking-[0.18em] text-bronze uppercase sm:text-base">
+        <p className="font-latin text-base tracking-[0.18em] text-bronze uppercase sm:text-base">
           Strategy → System → Production → Handoff
         </p>
         <p className="mt-5 font-display text-xl leading-[1.8] text-navy sm:text-2xl">
@@ -257,9 +257,9 @@ export function PrinciplesSection() {
       <div className="grid gap-px overflow-hidden rounded-[14px] border border-border bg-border sm:grid-cols-2">
         {principles.map((p, i) => (
           <article key={p.title} className="bg-surface p-7">
-            <span className="font-latin text-xs tracking-[0.2em] text-bronze">0{i + 1}</span>
+            <span className="font-latin text-sm tracking-[0.2em] text-bronze">0{i + 1}</span>
             <h3 className="mt-3 font-display text-lg text-navy">{p.title}</h3>
-            <p className="mt-3 text-sm leading-[1.95] text-subtle">{p.text}</p>
+            <p className="mt-3 text-base leading-[1.95] text-subtle">{p.text}</p>
           </article>
         ))}
       </div>

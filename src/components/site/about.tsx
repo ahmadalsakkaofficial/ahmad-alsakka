@@ -40,7 +40,7 @@ export function AboutSection() {
             <p className="font-display text-lg leading-[1.8] text-navy">
               لست مدرباً يقف خارج العمل ويشرح لك نظريات،
             </p>
-            <p className="mt-3 text-sm leading-[1.9] text-subtle">
+            <p className="mt-3 text-base leading-[1.9] text-subtle">
               أنا Operator يبني معك النظام من الداخل،
             </p>
           </div>
@@ -49,7 +49,7 @@ export function AboutSection() {
             href={siteConfig.instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="focus-ring flex items-center justify-center gap-2 rounded-[12px] bg-navy px-6 py-4 text-sm font-bold text-cream transition-opacity hover:opacity-90"
+            className="focus-ring flex items-center justify-center gap-2 rounded-[12px] bg-navy px-6 py-4 text-base font-bold text-cream transition-opacity hover:opacity-90"
           >
             <InstagramIcon className="size-4" />
             تابع أحمد على Instagram
@@ -58,7 +58,7 @@ export function AboutSection() {
             href={siteConfig.tiktokUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="focus-ring flex items-center justify-center gap-2 text-sm font-medium text-bronze underline-offset-4 hover:underline"
+            className="focus-ring flex items-center justify-center gap-2 text-base font-medium text-bronze underline-offset-4 hover:underline"
           >
             <TikTokIcon className="size-4" />
             شاهد المحتوى على TikTok

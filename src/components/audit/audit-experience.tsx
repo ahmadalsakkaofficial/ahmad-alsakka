@@ -71,7 +71,7 @@ export function AuditExperience() {
       <div className="mx-auto flex min-h-[70vh] w-full max-w-xl flex-col items-center justify-center px-5 text-center">
         <div className="size-10 animate-spin rounded-full border-2 border-bronze/30 border-t-bronze" />
         <h2 className="mt-8 font-display text-2xl text-navy">عم نقرأ أجوبتك،</h2>
-        <p className="mt-3 text-sm leading-[2] text-subtle">
+        <p className="mt-3 text-base leading-[2] text-subtle">
           عم نحسب النتيجة ونجهّز التحليل الشخصي، خود بالك، هالشي بياخد كم ثانية،
         </p>
       </div>
@@ -81,11 +81,11 @@ export function AuditExperience() {
     return (
       <div className="mx-auto flex min-h-[70vh] w-full max-w-xl flex-col items-center justify-center px-5 text-center">
         <h2 className="font-display text-2xl text-navy">صار خلل بالإرسال،</h2>
-        <p className="mt-3 text-sm leading-[2] text-subtle">جرّب مرة تانية، أجوبتك لسا محفوظة،</p>
+        <p className="mt-3 text-base leading-[2] text-subtle">جرّب مرة تانية، أجوبتك لسا محفوظة،</p>
         <button
           type="button"
           onClick={() => void finish()}
-          className="focus-ring mt-8 rounded-[12px] bg-navy px-7 py-4 text-sm font-bold text-cream"
+          className="focus-ring mt-8 rounded-[12px] bg-navy px-7 py-4 text-base font-bold text-cream"
         >
           جرّب مرة تانية
         </button>
@@ -99,7 +99,7 @@ export function AuditExperience() {
 
   return (
     <div className="mx-auto w-full max-w-2xl px-5 py-10 sm:px-8 sm:py-16">
-      <div className="flex items-center justify-between text-xs text-subtle">
+      <div className="flex items-center justify-between text-sm text-subtle">
         <span>
           خطوة <span className="font-latin">{current + 1}</span> من{" "}
           <span className="font-latin">{totalSteps}</span>
@@ -115,11 +115,11 @@ export function AuditExperience() {
 
       {phase === "questions" && q && (
         <div key={q.id} className="reveal mt-10">
-          <p className="text-xs tracking-wide text-bronze">{q.category}</p>
+          <p className="text-sm tracking-wide text-bronze">{q.category}</p>
           <h1 className="mt-3 font-display text-[1.6rem] leading-[1.45] text-navy sm:text-3xl">
             {q.label}
           </h1>
-          {q.help && <p className="mt-3 text-sm leading-[1.95] text-subtle">{q.help}</p>}
+          {q.help && <p className="mt-3 text-base leading-[1.95] text-subtle">{q.help}</p>}
 
           <div className="mt-7 space-y-3">
             {q.kind === "text" && (
@@ -144,7 +144,7 @@ export function AuditExperience() {
                       window.setTimeout(next, 160);
                     }}
                     className={cn(
-                      "focus-ring block w-full rounded-[12px] border p-4 text-start text-sm transition-colors sm:text-base",
+                      "focus-ring block w-full rounded-[12px] border p-4 text-start text-base transition-colors sm:text-base",
                       selected
                         ? "border-bronze bg-bronze/10 text-navy"
                         : "border-border bg-surface text-ink hover:border-bronze/60",
@@ -170,7 +170,7 @@ export function AuditExperience() {
                       )
                     }
                     className={cn(
-                      "focus-ring flex w-full items-center justify-between rounded-[12px] border p-4 text-start text-sm transition-colors sm:text-base",
+                      "focus-ring flex w-full items-center justify-between rounded-[12px] border p-4 text-start text-base transition-colors sm:text-base",
                       selected
                         ? "border-bronze bg-bronze/10 text-navy"
                         : "border-border bg-surface text-ink hover:border-bronze/60",
@@ -209,7 +209,7 @@ export function AuditExperience() {
                     );
                   })}
                 </div>
-                <div className="mt-2 flex justify-between text-xs text-subtle">
+                <div className="mt-2 flex justify-between text-sm text-subtle">
                   <span>{q.minLabel}</span>
                   <span>{q.maxLabel}</span>
                 </div>
@@ -222,14 +222,14 @@ export function AuditExperience() {
               type="button"
               onClick={next}
               disabled={!answered()}
-              className="focus-ring rounded-[12px] bg-navy px-7 py-4 text-sm font-bold text-cream transition-opacity hover:opacity-90 disabled:opacity-35"
+              className="focus-ring rounded-[12px] bg-navy px-7 py-4 text-base font-bold text-cream transition-opacity hover:opacity-90 disabled:opacity-35"
             >
               كمّل
             </button>
             <button
               type="button"
               onClick={back}
-              className="focus-ring rounded-[12px] px-4 py-4 text-sm text-subtle hover:text-navy"
+              className="focus-ring rounded-[12px] px-4 py-4 text-base text-subtle hover:text-navy"
             >
               رجوع
             </button>
@@ -239,11 +239,11 @@ export function AuditExperience() {
 
       {phase === "contact" && (
         <div className="reveal mt-10">
-          <p className="text-xs tracking-wide text-bronze">آخر خطوة</p>
+          <p className="text-sm tracking-wide text-bronze">آخر خطوة</p>
           <h1 className="mt-3 font-display text-[1.6rem] leading-[1.45] text-navy sm:text-3xl">
             لوين نبعتلك التقرير؟
           </h1>
-          <p className="mt-3 text-sm leading-[1.95] text-subtle">
+          <p className="mt-3 text-base leading-[1.95] text-subtle">
             النتيجة رح تطلعلك مباشرة على الشاشة، بس منحتاج نعرف مين إنت،
           </p>
 
@@ -256,7 +256,7 @@ export function AuditExperience() {
               ] as const
             ).map((f) => (
               <label key={f.key} className="block">
-                <span className="text-sm text-subtle">{f.label}</span>
+                <span className="text-base text-subtle">{f.label}</span>
                 <input
                   type={f.type}
                   value={contact[f.key]}
@@ -276,19 +276,19 @@ export function AuditExperience() {
               type="button"
               onClick={() => void finish()}
               disabled={!contact.name.trim() || !/^\S+@\S+\.\S+$/.test(contact.email)}
-              className="focus-ring rounded-[12px] bg-navy px-7 py-4 text-sm font-bold text-cream transition-opacity hover:opacity-90 disabled:opacity-35"
+              className="focus-ring rounded-[12px] bg-navy px-7 py-4 text-base font-bold text-cream transition-opacity hover:opacity-90 disabled:opacity-35"
             >
               شوف نتيجتك
             </button>
             <button
               type="button"
               onClick={back}
-              className="focus-ring rounded-[12px] px-4 py-4 text-sm text-subtle hover:text-navy"
+              className="focus-ring rounded-[12px] px-4 py-4 text-base text-subtle hover:text-navy"
             >
               رجوع
             </button>
           </div>
-          <p className="mt-5 text-xs leading-[1.9] text-subtle">
+          <p className="mt-5 text-sm leading-[1.9] text-subtle">
             معلوماتك بتضل عندي، ما بتنباع ولا بتنشارك مع حدا،
           </p>
         </div>

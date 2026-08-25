@@ -33,9 +33,9 @@ export function ProblemSection() {
         {cards.map((c, i) => (
           <Reveal key={c.title} delay={i * 90}>
             <article className="h-full rounded-[12px] border border-border bg-background p-6">
-              <span className="font-latin text-xs tracking-[0.2em] text-bronze">0{i + 1}</span>
+              <span className="font-latin text-sm tracking-[0.2em] text-bronze">0{i + 1}</span>
               <h3 className="mt-3 font-display text-lg text-navy">{c.title}</h3>
-              <p className="mt-3 text-sm leading-[1.95] text-subtle">{c.text}</p>
+              <p className="mt-3 text-base leading-[1.95] text-subtle">{c.text}</p>
             </article>
           </Reveal>
         ))}
@@ -87,7 +87,7 @@ export function WhoSection() {
           <h3 className="font-display text-lg text-navy">هذا مناسب لك إذا:</h3>
           <ul className="mt-5 space-y-3">
             {forYou.map((t) => (
-              <li key={t} className="flex gap-3 text-sm leading-[1.95] text-subtle">
+              <li key={t} className="flex gap-3 text-base leading-[1.95] text-subtle">
                 <span className="mt-2.5 size-1.5 shrink-0 rounded-full bg-bronze" />
                 <span>{t}</span>
               </li>
@@ -98,7 +98,7 @@ export function WhoSection() {
           <h3 className="font-display text-lg text-navy">هذا ليس مناسباً لك إذا:</h3>
           <ul className="mt-5 space-y-3">
             {notForYou.map((t) => (
-              <li key={t} className="flex gap-3 text-sm leading-[1.95] text-subtle">
+              <li key={t} className="flex gap-3 text-base leading-[1.95] text-subtle">
                 <span className="mt-3 h-px w-3 shrink-0 bg-subtle/60" />
                 <span>{t}</span>
               </li>
