@@ -2,8 +2,8 @@ import { Section, SectionHead } from "./primitives";
 import { EyeIcon } from "./icons";
 import ajiProfile from "@/assets/IMG_1982.jpg.asset.json";
 import ajiReel1 from "@/assets/IMG_1985.jpg.asset.json";
-import ajiReel2 from "@/assets/IMG_1983.jpg.asset.json";
-import ajiReel3 from "@/assets/IMG_1984.jpg.asset.json";
+import ajiReel4 from "@/assets/IMG_1992.jpg.asset.json";
+import ajiReel5 from "@/assets/IMG_1993.jpg.asset.json";
 import wsProfile from "@/assets/IMG_1987.jpg.asset.json";
 import wsReel1 from "@/assets/IMG_1989.jpg.asset.json";
 import wsReel2 from "@/assets/IMG_1988.jpg.asset.json";
@@ -20,23 +20,23 @@ type Client = {
 
 const clients: Client[] = [
   {
-    name: "AJI Canada",
-    platform: "Instagram",
+name: "AJI Canada",
+    platform: "انستقرام",
     profile: ajiProfile.url,
-    profileAlt: "حساب AJI Canada على إنستغرام",
+    profileAlt: "حساب AJI Canada على انستقرام",
     stats: [
       { value: "10.1K", label: "متابع" },
       { value: "241", label: "منشور" },
     ],
     reels: [
       { src: ajiReel1.url, views: "207K", note: "فيديو تعريفي داخل المكتب" },
-      { src: ajiReel2.url, views: "27.6K", note: "تحذير حول رسالة العمل" },
-      { src: ajiReel3.url, views: "14.7K", note: "تحديث على شروط الهجرة" },
+      { src: ajiReel4.url, views: "137.9K", note: "تصريح عمل في كندا" },
+      { src: ajiReel5.url, views: "86.5K", note: "يوم مفتوح في كازابلانكا" },
     ],
   },
   {
     name: "WestStep Canada Immigration",
-    platform: "TikTok",
+    platform: "تيك توك",
     profile: wsProfile.url,
     profileAlt: "حساب WestStep Canada Immigration على تيك توك",
     stats: [
@@ -75,9 +75,9 @@ export function WorkSection() {
                 className="h-12 w-12 shrink-0 rounded-full border border-border object-cover"
               />
               <div className="space-y-0.5">
-                <p className="font-display text-lg leading-snug text-navy">
-                  <span className="font-latin">{c.name}</span>، على{" "}
-                  <span className="font-latin">{c.platform}</span>،
+<p className="font-display text-lg leading-snug text-navy">
+                  <span className="font-latin">{c.name}</span> على{" "}
+                  {c.platform}
                 </p>
                 <p className="flex flex-wrap gap-x-5 text-sm text-subtle">
                   {c.stats.map((s) => (
