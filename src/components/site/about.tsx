@@ -9,7 +9,7 @@ export function AboutSection() {
     <Section id="about" tone="surface" labelledBy="about-title">
       <SectionHead
         id="about-title"
-        number="06"
+        number="07"
         label="عن أحمد"
         title="خبرة في التسويق، وعين على التشغيل"
       />

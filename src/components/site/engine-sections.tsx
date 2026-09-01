@@ -250,7 +250,7 @@ export function PrinciplesSection() {
     <Section id="principles" labelledBy="principles-title">
       <SectionHead
         id="principles-title"
-        number="07"
+        number="08"
         label="المبادئ"
         title="الأفكار التي لا تتغير مع الخوارزمية"
       />

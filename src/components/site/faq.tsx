@@ -36,7 +36,7 @@ export const faqs = [
 export function FaqSection() {
   return (
     <Section id="faq" tone="surface" labelledBy="faq-title">
-      <SectionHead id="faq-title" number="08" label="الأسئلة" title="قبل أن تبدأ" />
+      <SectionHead id="faq-title" number="09" label="الأسئلة" title="قبل أن تبدأ" />
       <Accordion type="single" collapsible className="w-full">
         {faqs.map((f, i) => (
           <AccordionItem key={f.q} value={`item-${i}`} className="border-border">
