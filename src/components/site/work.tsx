@@ -1,4 +1,5 @@
 import { Section, SectionHead } from "./primitives";
+import { EyeIcon } from "./icons";
 import ajiProfile from "@/assets/IMG_1982.jpg.asset.json";
 import ajiReel1 from "@/assets/IMG_1985.jpg.asset.json";
 import ajiReel2 from "@/assets/IMG_1983.jpg.asset.json";
@@ -11,7 +12,6 @@ import wsReel3 from "@/assets/IMG_1991.jpg.asset.json";
 type Client = {
   name: string;
   platform: string;
-  summary: string;
   profile: string;
   profileAlt: string;
   stats: { value: string; label: string }[];
@@ -22,8 +22,6 @@ const clients: Client[] = [
   {
     name: "AJI Canada",
     platform: "Instagram",
-    summary:
-      "خدمات هجرة في كندا، بنينا نظام محتوى واضح: زوايا ثابتة، إنتاج أسبوعي، ورسالة وحدة تبني الثقة قبل المكالمة،",
     profile: ajiProfile.url,
     profileAlt: "حساب AJI Canada على إنستغرام",
     stats: [
@@ -39,8 +37,6 @@ const clients: Client[] = [
   {
     name: "WestStep Canada Immigration",
     platform: "TikTok",
-    summary:
-      "استشارات هجرة، اشتغلنا على زوايا تجاوب على أسئلة العميل الحقيقية، والنتيجة وصول أوسع واستفسارات أجدّ،",
     profile: wsProfile.url,
     profileAlt: "حساب WestStep Canada Immigration على تيك توك",
     stats: [
@@ -65,52 +61,49 @@ export function WorkSection() {
         title="نماذج من أنظمة اشتغلنا عليها"
       />
 
-      <div className="space-y-14">
+      <div className="space-y-4">
         {clients.map((c) => (
-          <div key={c.name} className="space-y-6">
-            <div className="rounded-[12px] border border-bronze/35 bg-background p-6">
-              <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
-                <img
-                  src={c.profile}
-                  alt={c.profileAlt}
-                  loading="lazy"
-                  className="w-full rounded-[10px] border border-border object-cover sm:max-w-xs"
-                />
-                <div className="space-y-3">
-                  <p className="font-display text-lg leading-[1.8] text-navy">
-                    <span className="font-latin">{c.name}</span>، على{" "}
-                    <span className="font-latin">{c.platform}</span>،
-                  </p>
-                  <p className="text-base leading-[1.9] text-subtle">{c.summary}</p>
-                  <div className="flex gap-6 pt-1">
-                    {c.stats.map((s) => (
-                      <div key={s.label}>
-                        <p className="font-display text-xl text-bronze font-latin">{s.value}</p>
-                        <p className="text-sm text-subtle">{s.label}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+          <div
+            key={c.name}
+            className="flex flex-col gap-5 rounded-[12px] border border-bronze/35 bg-background p-5 xl:flex-row xl:items-center xl:justify-between"
+          >
+            <div className="flex items-center gap-3">
+              <img
+                src={c.profile}
+                alt={c.profileAlt}
+                loading="lazy"
+                className="h-12 w-12 shrink-0 rounded-full border border-border object-cover"
+              />
+              <div className="space-y-0.5">
+                <p className="font-display text-lg leading-snug text-navy">
+                  <span className="font-latin">{c.name}</span>، على{" "}
+                  <span className="font-latin">{c.platform}</span>،
+                </p>
+                <p className="flex flex-wrap gap-x-5 text-sm text-subtle">
+                  {c.stats.map((s) => (
+                    <span key={s.label}>
+                      <span className="font-display font-latin text-base text-bronze">
+                        {s.value}
+                      </span>{" "}
+                      {s.label}
+                    </span>
+                  ))}
+                </p>
               </div>
             </div>
 
-            <div className="grid gap-6 sm:grid-cols-3">
+            <div className="flex gap-3 overflow-x-auto pb-1">
               {c.reels.map((r) => (
-                <figure
-                  key={r.src}
-                  className="overflow-hidden rounded-[12px] border border-border bg-background"
-                >
+                <figure key={r.src} className="w-24 shrink-0 sm:w-28">
                   <img
                     src={r.src}
                     alt={r.note}
                     loading="lazy"
-                    className="aspect-[9/16] w-full object-cover"
+                    className="aspect-[9/16] w-full rounded-[10px] border border-border object-cover"
                   />
-                  <figcaption className="space-y-1 p-5">
-                    <p className="font-display text-xl text-bronze">
-                      <span className="font-latin">{r.views}</span> مشاهدة
-                    </p>
-                    <p className="text-base leading-[1.8] text-subtle">{r.note}</p>
+<figcaption className="flex items-center justify-center gap-1.5 whitespace-nowrap pt-1.5 text-base text-bronze">
+                    <EyeIcon className="h-4 w-4 shrink-0" />
+                    <span className="font-display font-latin">{r.views}</span>
                   </figcaption>
                 </figure>
               ))}
