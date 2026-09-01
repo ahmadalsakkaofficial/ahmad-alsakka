@@ -12,6 +12,7 @@ import wsReel3 from "@/assets/IMG_1991.jpg.asset.json";
 type Client = {
   name: string;
   platform: string;
+  link: string;
   profile: string;
   profileAlt: string;
   stats: { value: string; label: string }[];
@@ -22,12 +23,10 @@ const clients: Client[] = [
   {
 name: "AJI Canada",
     platform: "انستقرام",
+    link: "https://www.instagram.com/aji_canada/",
     profile: ajiProfile.url,
     profileAlt: "حساب AJI Canada على انستقرام",
-    stats: [
-      { value: "10.1K", label: "متابع" },
-      { value: "241", label: "منشور" },
-    ],
+    stats: [{ value: "10.1K", label: "متابع" }],
     reels: [
       { src: ajiReel1.url, views: "207K", note: "فيديو تعريفي داخل المكتب" },
       { src: ajiReel4.url, views: "137.9K", note: "تصريح عمل في كندا" },
@@ -35,14 +34,12 @@ name: "AJI Canada",
     ],
   },
   {
-    name: "WestStep Canada Immigration",
+name: "WestStep Canada Immigration",
     platform: "تيك توك",
+    link: "https://www.tiktok.com/@weststep.canada?lang=en",
     profile: wsProfile.url,
     profileAlt: "حساب WestStep Canada Immigration على تيك توك",
-    stats: [
-      { value: "66.3K", label: "متابع" },
-      { value: "133K", label: "إعجاب" },
-    ],
+    stats: [{ value: "66.3K", label: "متابع" }],
     reels: [
       { src: wsReel1.url, views: "158.2K", note: "أسرع طريقة للهجرة لكندا" },
       { src: wsReel2.url, views: "150K", note: "كيف تحصل على 600 نقطة" },
@@ -67,7 +64,12 @@ export function WorkSection() {
             key={c.name}
             className="flex flex-col gap-5 rounded-[12px] border border-bronze/35 bg-background p-5 xl:flex-row xl:items-center xl:justify-between"
           >
-            <div className="flex items-center gap-3">
+<a
+              href={c.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 rounded-[10px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bronze"
+            >
               <img
                 src={c.profile}
                 alt={c.profileAlt}
@@ -75,7 +77,7 @@ export function WorkSection() {
                 className="h-12 w-12 shrink-0 rounded-full border border-border object-cover"
               />
               <div className="space-y-0.5">
-<p className="font-display text-lg leading-snug text-navy">
+                <p className="font-display text-lg leading-snug text-navy">
                   <span className="font-latin">{c.name}</span> على{" "}
                   {c.platform}
                 </p>
@@ -90,7 +92,7 @@ export function WorkSection() {
                   ))}
                 </p>
               </div>
-            </div>
+            </a>
 
             <div className="flex gap-3 overflow-x-auto pb-1">
               {c.reels.map((r) => (
