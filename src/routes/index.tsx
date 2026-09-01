@@ -13,6 +13,7 @@ import { FaqSection, faqs } from "@/components/site/faq";
 import { FinalCta, SiteFooter } from "@/components/site/cta-footer";
 import { Testimonials } from "@/components/site/testimonials";
 import { WorkSection } from "@/components/site/work";
+import { WorkSection } from "@/components/site/work";
 import { siteConfig } from "@/config/site";
 
 const TITLE = "أحمد | بناء البراند الشخصي ونظام المحتوى للمهنيين العرب";
@@ -101,6 +102,7 @@ function Index() {
         <EngineSection />
         <TrustSection />
         <DifferenceSection />
+        <WorkSection />
         <WorkSection />
         <AboutSection />
         <PrinciplesSection />
