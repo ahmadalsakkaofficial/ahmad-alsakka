@@ -1,4 +1,5 @@
 import { Section, SectionHead } from "./primitives";
+import { EyeIcon } from "./icons";
 import ajiProfile from "@/assets/IMG_1982.jpg.asset.json";
 import ajiReel1 from "@/assets/IMG_1985.jpg.asset.json";
 import ajiReel2 from "@/assets/IMG_1983.jpg.asset.json";
