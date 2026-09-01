@@ -101,8 +101,9 @@ export function WorkSection() {
                     loading="lazy"
                     className="aspect-[9/16] w-full rounded-[10px] border border-border object-cover"
                   />
-                  <figcaption className="pt-1.5 text-center font-display text-base text-bronze">
-                    <span className="font-latin">{r.views}</span> مشاهدة
+<figcaption className="flex items-center justify-center gap-1.5 whitespace-nowrap pt-1.5 text-base text-bronze">
+                    <EyeIcon className="h-4 w-4 shrink-0" />
+                    <span className="font-display font-latin">{r.views}</span>
                   </figcaption>
                 </figure>
               ))}
