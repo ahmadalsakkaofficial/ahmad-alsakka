@@ -219,7 +219,7 @@ export function DifferenceSection() {
           Strategy → System → Production → Handoff
         </p>
         <p className="mt-5 font-display text-xl leading-[1.8] text-navy sm:text-2xl">
-          أبني النظام، أثبته، وأسلّمه،
+          ببنيلك النظام، بثبته، وبسلّمه
         </p>
       </div>
     </Section>
