@@ -58,7 +58,7 @@ export function WorkSection() {
         title="نماذج من أنظمة اشتغلنا عليها"
       />
 
-      <div className="mx-auto w-full max-w-3xl space-y-4">
+      <div className="mx-auto w-full max-w-2xl space-y-4">
         {clients.map((c) => (
           <div
             key={c.name}
