@@ -94,17 +94,17 @@ export function WorkSection() {
               </div>
             </a>
 
-            <div className="flex gap-3 overflow-x-auto pb-1">
+            <div className="flex gap-2.5 overflow-x-auto pb-1 lg:shrink-0">
               {c.reels.map((r) => (
-                <figure key={r.src} className="w-24 shrink-0 sm:w-28">
+                <figure key={r.src} className="w-24 shrink-0 sm:w-24 lg:w-20">
                   <img
                     src={r.src}
                     alt={r.note}
                     loading="lazy"
                     className="aspect-[9/16] w-full rounded-[10px] border border-border object-cover"
                   />
-<figcaption className="flex items-center justify-center gap-1.5 whitespace-nowrap pt-1.5 text-base text-bronze">
-                    <EyeIcon className="h-4 w-4 shrink-0" />
+                  <figcaption className="flex items-center justify-center gap-1 whitespace-nowrap pt-1.5 text-sm text-bronze">
+                    <EyeIcon className="h-3.5 w-3.5 shrink-0" />
                     <span className="font-display font-latin">{r.views}</span>
                   </figcaption>
                 </figure>
