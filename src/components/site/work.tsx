@@ -58,11 +58,11 @@ export function WorkSection() {
         title="نماذج من أنظمة اشتغلنا عليها"
       />
 
-      <div className="space-y-4">
+      <div className="mx-auto w-full max-w-3xl space-y-4">
         {clients.map((c) => (
           <div
             key={c.name}
-            className="flex flex-col gap-5 rounded-[12px] border border-bronze/35 bg-background p-5 xl:flex-row xl:items-center xl:justify-between"
+            className="flex flex-col gap-5 rounded-[12px] border border-bronze/35 bg-background p-4 sm:p-5 lg:flex-row lg:items-center lg:justify-between"
           >
 <a
               href={c.link}
