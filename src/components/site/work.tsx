@@ -68,7 +68,7 @@ export function WorkSection() {
               href={c.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex min-w-0 shrink-0 items-center gap-3 rounded-[10px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bronze"
+              className="flex min-w-0 items-center gap-3 rounded-[10px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bronze"
             >
               <img
                 src={c.profile}
