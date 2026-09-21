@@ -70,7 +70,7 @@ export function EngineSection() {
     <Section id="system" tone="navy" labelledBy="system-title">
       <SectionHead
         id="system-title"
-        number="03"
+        number="04"
         label="النظام"
         invert
         title={
@@ -148,7 +148,7 @@ export function TrustSection() {
     <Section id="trust" labelledBy="trust-title">
       <SectionHead
         id="trust-title"
-        number="04"
+        number="05"
         label="كيف يعمل المحتوى؟"
         title="المحتوى لا يبيع من أول مشاهدة،"
       />
@@ -198,7 +198,7 @@ export function DifferenceSection() {
     <Section id="difference" tone="surface" labelledBy="difference-title">
       <SectionHead
         id="difference-title"
-        number="05"
+        number="06"
         label="الفرق"
         title="لا تحتاج شخصاً آخر يصبح عنق الزجاجة في عملك"
       />

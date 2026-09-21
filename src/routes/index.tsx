@@ -96,12 +96,12 @@ function Index() {
       <SiteNav />
       <main>
         <Hero />
+        <WorkSection />
         <ProblemSection />
         <WhoSection />
         <EngineSection />
         <TrustSection />
         <DifferenceSection />
-        <WorkSection />
         <AboutSection />
         <PrinciplesSection />
         <Testimonials />

@@ -20,7 +20,7 @@ export function ProblemSection() {
     <Section id="problem" tone="surface" labelledBy="problem-title">
       <SectionHead
         id="problem-title"
-        number="01"
+        number="02"
         label="المشكلة"
         title="المشكلة ليست أنك لا تعرف ماذا تقول"
       />
@@ -77,7 +77,7 @@ export function WhoSection() {
     <Section id="who" labelledBy="who-title">
       <SectionHead
         id="who-title"
-        number="02"
+        number="03"
         label="لمن هذا؟"
         title="مصمم للخبير الذي لا يريد أن يصبح صانع محتوى"
       />

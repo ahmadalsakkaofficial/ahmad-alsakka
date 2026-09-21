@@ -53,7 +53,7 @@ export function WorkSection() {
     <Section id="work" tone="surface" labelledBy="work-title">
       <SectionHead
         id="work-title"
-        number="06"
+        number="01"
         label="شغل حقيقي"
         title="نماذج من أنظمة اشتغلنا عليها"
       />
