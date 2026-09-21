@@ -64,20 +64,20 @@ export function WorkSection() {
             key={c.name}
             className="flex flex-col gap-5 rounded-[12px] border border-bronze/35 bg-background p-4 sm:p-5 lg:flex-row lg:items-center lg:justify-between"
           >
-<a
+            <a
               href={c.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 rounded-[10px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bronze"
+              className="flex min-w-0 shrink-0 items-center gap-3 rounded-[10px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bronze"
             >
               <img
                 src={c.profile}
                 alt={c.profileAlt}
                 loading="lazy"
-                className="h-12 w-12 shrink-0 rounded-full border border-border object-cover"
+                className="h-11 w-11 shrink-0 rounded-full border border-border object-cover"
               />
-              <div className="space-y-0.5">
-                <p className="font-display text-lg leading-snug text-navy">
+              <div className="min-w-0 space-y-0.5">
+                <p className="font-display text-base leading-snug text-navy">
                   <span className="font-latin">{c.name}</span> على{" "}
                   {c.platform}
                 </p>
