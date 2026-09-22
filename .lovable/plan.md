@@ -8,11 +8,13 @@
 
 ## Page experience
 - Add an isolated Arabic RTL page at `/authority-engine` with a minimal header and no normal website navigation
-- Open with the future-focused promise, then show elegant real-life scenarios under “تخيّل العميل يعرفك قبل أول مكالمة”
+- Open with the future-focused promise, then show highly visual, specific scenes under “تخيّل العميل يعرفك قبل أول مكالمة”: repeated recognition, familiar calls, visible expertise beyond the room, and credible new opportunities
 - Place the VSL early, immediately after the future-state section, with a lightweight configurable 16:9 placeholder that defers any future player load
+- Place a strong form CTA immediately after the VSL so convinced visitors can apply without reading the entire page
 - Frame the core tension as the gap between established offline expertise and what a stranger can understand online
 - Introduce Strategy → System → Production → Optimize only after the visitor wants the destination; connect every phase to its human outcome
-- Present the first 60 days as building a repeatable asset around the prospect’s name, followed by optional continuation without dependency
+- Present the first 60 days by leading with what changes in the prospect’s professional presence and business conversations, then list the supporting assets, systems, and deliverables
+- Place another strong form CTA immediately after the 60-day transformation, followed by optional continuation without dependency
 - Reuse verified AJI and WestStep proof as “من فكرة → لمحتوى → لوصول حقيقي”, Ahmad’s real portrait, and the existing visual identity
 - Keep `/` and all existing homepage components unchanged
 
@@ -24,6 +26,7 @@
 
 ## Pricing and qualification
 - State `3,000 USD` per month, a two-month initial engagement, and `6,000 USD` total for the initial 60 days without “starting from” language
+- Show the full commitment clearly before the application section, then repeat it inside the qualification flow before the financial-fit answer
 - Keep Instagram, TikTok, and short-form Authority Engine work as the core scope
 - Explain that long-form YouTube, Podcast, expanded production, and additional platforms are scoped and priced separately
 - Keep the fixed-price financial-fit question inside the form without shaming or aggressively blocking any answer
