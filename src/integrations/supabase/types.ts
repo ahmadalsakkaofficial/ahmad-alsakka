@@ -62,6 +62,93 @@ export type Database = {
         }
         Relationships: []
       }
+      authority_engine_applications: {
+        Row: {
+          content_stage: string
+          created_at: string
+          decision_maker: string
+          email: string
+          event_id: string
+          fbclid: string | null
+          id: string
+          instagram: string | null
+          investment_fit: string
+          landing_page_url: string
+          linkedin: string | null
+          market: string
+          name: string
+          note: string | null
+          phone: string
+          primary_goal: string
+          profession: string
+          referrer: string | null
+          start_timeline: string
+          updated_at: string
+          utm_campaign: string | null
+          utm_content: string | null
+          utm_medium: string | null
+          utm_source: string | null
+          utm_term: string | null
+          website: string | null
+        }
+        Insert: {
+          content_stage: string
+          created_at?: string
+          decision_maker: string
+          email: string
+          event_id: string
+          fbclid?: string | null
+          id?: string
+          instagram?: string | null
+          investment_fit: string
+          landing_page_url: string
+          linkedin?: string | null
+          market: string
+          name: string
+          note?: string | null
+          phone: string
+          primary_goal: string
+          profession: string
+          referrer?: string | null
+          start_timeline: string
+          updated_at?: string
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+          website?: string | null
+        }
+        Update: {
+          content_stage?: string
+          created_at?: string
+          decision_maker?: string
+          email?: string
+          event_id?: string
+          fbclid?: string | null
+          id?: string
+          instagram?: string | null
+          investment_fit?: string
+          landing_page_url?: string
+          linkedin?: string | null
+          market?: string
+          name?: string
+          note?: string | null
+          phone?: string
+          primary_goal?: string
+          profession?: string
+          referrer?: string | null
+          start_timeline?: string
+          updated_at?: string
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+          website?: string | null
+        }
+        Relationships: []
+      }
       project_inquiries: {
         Row: {
           created_at: string
