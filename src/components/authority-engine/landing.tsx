@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowLeft, Check } from "lucide-react";
+import { ArrowLeft, Check, X } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { ApplicationForm } from "./application-form";
@@ -149,7 +149,7 @@ function Transformation() {
 }
 
 function FitList({ title, items, muted = false }: { title: string; items: string[]; muted?: boolean }) {
-  return <div className={`border p-7 sm:p-9 ${muted ? "border-border bg-surface" : "border-bronze/40 bg-background"}`}><h3 className="text-3xl text-navy">{title}</h3><ul className="mt-6 space-y-4">{items.map((item) => <li key={item} className="flex gap-3 text-lg leading-7 text-subtle"><Check className={`mt-1 size-5 shrink-0 ${muted ? "text-subtle" : "text-bronze"}`} />{item}</li>)}</ul></div>;
+  return <div className={`border p-7 sm:p-9 ${muted ? "border-border bg-surface" : "border-bronze/40 bg-background"}`}><h3 className="text-3xl text-navy">{title}</h3><ul className="mt-6 space-y-4">{items.map((item) => <li key={item} className="flex gap-3 text-lg leading-7 text-subtle">{muted ? <X className="mt-1 size-5 shrink-0 text-subtle" /> : <Check className="mt-1 size-5 shrink-0 text-bronze" />}{item}</li>)}</ul></div>;
 }
 
 function Pricing() {
