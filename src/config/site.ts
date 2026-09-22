@@ -16,6 +16,12 @@ export const siteConfig = {
   /** Single booking link for meetings and consultations. */
   bookingUrl: "https://tr.ee/i_PWt_zpk2",
   strategySessionUrl: "https://tr.ee/i_PWt_zpk2",
+  authorityEngine: {
+    /** Add a YouTube, Vimeo, or Wistia embed URL when the final VSL is ready. */
+    videoUrl: "",
+    /** Add the Meta Pixel ID before launching paid ads. */
+    metaPixelId: "",
+  },
   location: "كندا",
   primaryAudience: "أصحاب المهن والخدمات العرب",
   /** Future-ready. Component renders nothing while empty. */
