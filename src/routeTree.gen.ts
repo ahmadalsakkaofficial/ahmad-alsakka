@@ -9,13 +9,32 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as AuthorityEngineRouteImport } from './routes/authority-engine'
 import { Route as AuditRouteImport } from './routes/audit'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthorityEngineThankYouRouteImport } from './routes/authority-engine_.thank-you'
 
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthorityEngineRoute = AuthorityEngineRouteImport.update({
+  id: '/authority-engine',
+  path: '/authority-engine',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuditRoute = AuditRouteImport.update({
@@ -28,44 +47,108 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthorityEngineThankYouRoute = AuthorityEngineThankYouRouteImport.update({
+  id: '/authority-engine_/thank-you',
+  path: '/authority-engine/thank-you',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/audit': typeof AuditRoute
+  '/authority-engine': typeof AuthorityEngineRoute
+  '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
+  '/authority-engine/thank-you': typeof AuthorityEngineThankYouRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/audit': typeof AuditRoute
+  '/authority-engine': typeof AuthorityEngineRoute
+  '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
+  '/authority-engine/thank-you': typeof AuthorityEngineThankYouRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/audit': typeof AuditRoute
+  '/authority-engine': typeof AuthorityEngineRoute
+  '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
+  '/authority-engine_/thank-you': typeof AuthorityEngineThankYouRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/audit' | '/sitemap.xml'
+  fullPaths:
+    | '/'
+    | '/audit'
+    | '/authority-engine'
+    | '/privacy'
+    | '/sitemap.xml'
+    | '/terms'
+    | '/authority-engine/thank-you'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/audit' | '/sitemap.xml'
-  id: '__root__' | '/' | '/audit' | '/sitemap.xml'
+  to:
+    | '/'
+    | '/audit'
+    | '/authority-engine'
+    | '/privacy'
+    | '/sitemap.xml'
+    | '/terms'
+    | '/authority-engine/thank-you'
+  id:
+    | '__root__'
+    | '/'
+    | '/audit'
+    | '/authority-engine'
+    | '/privacy'
+    | '/sitemap.xml'
+    | '/terms'
+    | '/authority-engine_/thank-you'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuditRoute: typeof AuditRoute
+  AuthorityEngineRoute: typeof AuthorityEngineRoute
+  PrivacyRoute: typeof PrivacyRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TermsRoute: typeof TermsRoute
+  AuthorityEngineThankYouRoute: typeof AuthorityEngineThankYouRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/authority-engine': {
+      id: '/authority-engine'
+      path: '/authority-engine'
+      fullPath: '/authority-engine'
+      preLoaderRoute: typeof AuthorityEngineRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/audit': {
@@ -82,13 +165,24 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/authority-engine_/thank-you': {
+      id: '/authority-engine_/thank-you'
+      path: '/authority-engine/thank-you'
+      fullPath: '/authority-engine/thank-you'
+      preLoaderRoute: typeof AuthorityEngineThankYouRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuditRoute: AuditRoute,
+  AuthorityEngineRoute: AuthorityEngineRoute,
+  PrivacyRoute: PrivacyRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TermsRoute: TermsRoute,
+  AuthorityEngineThankYouRoute: AuthorityEngineThankYouRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
