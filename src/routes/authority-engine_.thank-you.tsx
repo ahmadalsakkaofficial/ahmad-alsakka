@@ -5,7 +5,7 @@ import { siteConfig } from "@/config/site";
 const TITLE = "وصل طلبك | The Authority Engine";
 const DESCRIPTION = "تم استلام طلبك للانضمام إلى The Authority Engine";
 
-export const Route = createFileRoute("/authority-engine/thank-you")({
+export const Route = createFileRoute("/authority-engine_/thank-you")({
   head: () => ({ meta: [{ title: TITLE }, { name: "description", content: DESCRIPTION }, { property: "og:title", content: TITLE }, { property: "og:description", content: DESCRIPTION }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }], links: [{ rel: "canonical", href: "https://ahmad-alsakka.lovable.app/authority-engine/thank-you" }] }),
   component: ThankYou,
 });
