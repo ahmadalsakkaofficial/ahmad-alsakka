@@ -30,5 +30,5 @@ const applicationSchema = z.object({
 });
 
 export const submitAuthorityApplication = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) => applicationSchema.parse(data))
+  .validator((data: unknown) => applicationSchema.parse(data))
   .handler(async ({ data }) => saveAuthorityApplication(data));

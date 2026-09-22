@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowLeft, ArrowUpLeft, Check, Mic2, Play, UsersRound } from "lucide-react";
+import { ArrowLeft, Check } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { ApplicationForm } from "./application-form";
