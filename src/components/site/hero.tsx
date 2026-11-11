@@ -2,20 +2,12 @@ import { siteConfig } from "@/config/site";
 import { Reveal } from "./primitives";
 
 const stats = [
-  { value: siteConfig.experienceYears, latin: true, label: "سنين بالتسويق الرقمي" },
-  {
-    value: siteConfig.youtubeAudience,
-    latin: true,
-    label: (
-      <>
-        مشترك على <span className="font-latin">YouTube</span> بتجربة سابقة
-      </>
-    ),
-  },
-  { value: "60 يوم", latin: false, label: "لنبني النظام ونسلّمك ياه" },
+  { value: "2016", latin: true, label: "من وقتها بشتغل بصناعة المحتوى والفيديو" },
+  { value: "207K", latin: true, label: "مشاهدة لأعلى فيديو عملناه لـAJI Canada" },
+  { value: "100K+", latin: true, label: "مشاهدة بأول شهر لحسابات عملائنا بكندا" },
 ];
 
-const engineWords = ["Strategy", "System", "Production", "Handoff"];
+const engineWords = ["Strategy", "System", "Production", "Optimize"];
 
 export function Hero() {
   return (
@@ -27,31 +19,27 @@ export function Hero() {
               براند شخصي ونظام محتوى لأصحاب الخبرة
             </p>
             <h1 className="mt-5 font-display text-[1.75rem] leading-[1.45] text-navy min-[420px]:text-[2rem] sm:text-5xl sm:leading-[1.32]">
-              <span className="block">عندك خبرة حقيقية،</span>
+              <span className="block">إذا إنت شاطر بشغلك</span>
               <span className="block">
-                <span className="text-bronze">بس</span> حضورك أونلاين{" "}
-                <span className="whitespace-nowrap">ما عم يبيّنها</span>
+                <span className="text-bronze">بس</span> حدا ما بيعرفك أونلاين…
               </span>
+              <span className="block">المشكلة مو بخبرتك</span>
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-[2] text-subtle sm:text-lg">
-              أنا بساعد أصحاب المهن والخدمات العرب، دكاترة، محامين، مستشارين، عقاريين وأصحاب شركات
-              يحوّلوا خبرتهم لبراند شخصي ونظام محتوى يخلّي الناس تفهمهم، تثق فيهم، وتتواصل معهم،
+              بشتغل مع دكاترة ومحامين ومستشارين ومستثمرين وأصحاب شركات، منحوّل خبرتهم لمحتوى بيخلّي
+              الشخص الصح يفهم مين هنن، ويثق فيهم، ويتواصل معهم
             </p>
-            <div className="mt-6 max-w-2xl space-y-1 text-base leading-[2] text-subtle">
-              <p>مو جلسات تحفيز</p>
-              <p>ومو إدارة حساب للأبد</p>
-            </div>
-            <p className="mt-3 max-w-2xl text-base leading-[2] text-subtle">
-              ببني النظام معك، بطبّقه، وبسلّمك ياه لما يصير واضح وتعرف تكمّل عليه بدون ما تضل معتمد
-              عليّ
+            <p className="mt-4 max-w-2xl text-base leading-[2] text-subtle">
+              مش كوتشينغ، ومش إدارة حساب للأبد، منبني النظام سوا، منصوّر وننشر، ومنقيس شو عم يشتغل،
+              ووقتك إنت بيروح على التصوير بس
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <a
-                href="#start"
+                href="/authority-engine"
                 className="focus-ring rounded-[12px] bg-navy px-7 py-4 text-base font-bold text-cream transition-opacity hover:opacity-90"
               >
-                خلّينا نبني النظام
+                شوف إذا مناسب إلك
               </a>
               <a
                 href={siteConfig.instagramUrl}
@@ -63,8 +51,8 @@ export function Hero() {
               </a>
             </div>
             <div className="mt-4 space-y-1 text-sm leading-relaxed text-subtle sm:text-base">
-              <p>هاد مناسب للي عنده شغل وخبرة حقيقية،</p>
-              <p>مو للي هدفه بس يصير مؤثر</p>
+              <p>للي عنده شغل قائم وخبرة حقيقية</p>
+              <p>مو للي بدو يصير مؤثر</p>
             </div>
           </Reveal>
 
@@ -88,9 +76,9 @@ export function Hero() {
               </div>
               <div className="mt-8 border-t border-bronze/25 pt-6">
                 <span className="font-latin block text-6xl leading-none font-bold text-navy">
-                  60
+                  3
                 </span>
-                <span className="mt-2 block text-base text-subtle">يوم لنبني النظام ونسلّمك ياه</span>
+                <span className="mt-2 block text-base text-subtle">شهور: شهر بناء، وشهرين نشر وتحسين</span>
               </div>
             </div>
           </Reveal>

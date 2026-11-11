@@ -1,7 +1,7 @@
 import { siteConfig } from "@/config/site";
 import portrait from "@/assets/ahmad-portrait.png.asset.json";
 import { Section, SectionHead } from "./primitives";
-import { InstagramIcon, TikTokIcon, YouTubeIcon, LinkedInIcon } from "./icons";
+import { InstagramIcon, TikTokIcon, LinkedInIcon } from "./icons";
 
 
 export function AboutSection() {
@@ -11,30 +11,30 @@ export function AboutSection() {
         id="about-title"
         number="07"
         label="عن أحمد"
-        title="خبرة في التسويق، وعين على التشغيل"
+        title="بصنع محتوى من 2016، وبفكّر بالبزنس"
       />
 
       <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr]">
         <div className="space-y-5 text-base leading-[2] text-subtle">
+          <p>أنا أحمد، من 2016 وأنا بشتغل بصناعة المحتوى والفيديو</p>
           <p>
-            أنا أحمد، أعمل في التسويق الرقمي، صناعة الفيديو وبناء أنظمة المحتوى منذ أكثر من 8 سنوات،
+            أسّست مع شريكي MotionArabia بدبي، وكنت ماسك المحتوى وتخطيط التصوير، واشتغلت مع جريدة
+            البيان، ومع مشاريع كتير بين الخليج وكندا
           </p>
           <p>
-            خلال هذه الفترة، عملت على المحتوى لمنصات مثل Instagram وYouTube، وبنيت سابقاً قناة
-            YouTube وصلت إلى أكثر من 60 ألف مشترك، لكن الأهم من الأرقام أنني عشت الفرق بين محتوى يجلب
-            المشاهدات ومحتوى يبني ثقة وفرصاً حقيقية،
+            بكندا اشتغلت مع شركتين هجرة، AJI Canada وWestStep، حساباتهم جابت أكتر من 100 ألف مشاهدة
+            بأول شهر، وفي فيديو لحاله جاب 207 ألف
           </p>
           <p>
-            عملت أيضاً داخل أعمال ومشاريع خدمية حقيقية، شاهدت كيف يضيع الوقت والمال عندما يعتمد العمل
-            على الاجتهاد اليومي بدل النظام، وشاهدت كيف يمكن لخبير ممتاز أن يبقى غير معروف، بينما يأخذ
-            السوق شخصاً أقل خبرة لكنه أوضح في رسالته،
+            بس الشي اللي تعلّمته أكتر من الأرقام: في فرق كبير بين محتوى بيجيب مشاهدات، ومحتوى بيخلّي
+            الشخص الصح يثق فيك ويتصل فيك، وشفت كتير خبراء ممتازين ضلّوا مش معروفين، والسوق راح لحدا
+            أقل خبرة منهم بس أوضح
           </p>
-          <p>لهذا لا أتعامل مع البراند الشخصي كصور جميلة أو فيديوهات أكثر،</p>
           <p>
-            أتعامل معه كأصل تجاري: يوضح خبرتك، يبني الثقة قبل المكالمة، ويجعل العميل المناسب يعرف
-            لماذا يجب أن يتحدث معك أنت،
+            لهيك ما بتعامل مع البراند الشخصي كصور حلوة أو فيديوهات أكتر، بتعامل معه كأصل للبزنس:
+            بيوضّح خبرتك، وبيبني الثقة قبل المكالمة
           </p>
-          <p>أعمل من كندا، وأبني هذا النظام للمهنيين العرب في الخليج والمهجر،</p>
+          <p>بشتغل من كندا، مع أصحاب الخبرة العرب بالخليج والمهجر</p>
         </div>
 
         <aside className="space-y-6">
@@ -48,26 +48,23 @@ export function AboutSection() {
           />
           <div className="rounded-[12px] border border-bronze/35 bg-background p-6">
             <p className="font-display text-lg leading-[1.8] text-navy">
-              لست مدرباً يقف خارج العمل ويشرح لك نظريات،
+              مش مدرب بيوقف برّا وبيشرحلك نظريات
             </p>
             <p className="mt-3 text-base leading-[1.9] text-subtle">
-              أنا Operator يبني معك النظام من الداخل،
+              أنا Operator بيبني معك النظام من جوّا
             </p>
           </div>
 
 
           <a
-            href={siteConfig.bookingUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/authority-engine"
             className="focus-ring flex items-center justify-center gap-2 rounded-[12px] bg-navy px-6 py-4 text-base font-bold text-cream transition-opacity hover:opacity-90"
           >
-            احجز مكالمة مع أحمد
+            شوف إذا مناسب إلك
           </a>
           <div className="grid grid-cols-2 gap-3">
             {[
               { href: siteConfig.instagramUrl, label: "Instagram", Icon: InstagramIcon },
-              { href: siteConfig.youtubeUrl, label: "YouTube", Icon: YouTubeIcon },
               { href: siteConfig.linkedinUrl, label: "LinkedIn", Icon: LinkedInIcon },
               { href: siteConfig.tiktokUrl, label: "TikTok", Icon: TikTokIcon },
             ].map(({ href, label, Icon }) => (

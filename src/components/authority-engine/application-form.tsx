@@ -36,7 +36,7 @@ const steps = [
   { key: "contentStage", question: "وين واقف حالياً بالمحتوى؟", options: ["ما بلشت بعد", "بنشر أحياناً بس بدون نظام", "بنشر باستمرار بس النتائج مو واضحة", "عندي شخص أو فريق يساعدني", "عندي حضور جيد وبدي أطور النظام"] },
   { key: "primaryGoal", question: "شو أهم شي بدك المحتوى يساعدك فيه؟", options: ["أبني اسمي وثقتي بالسوق", "أجذب عملاء وفرص أفضل", "أوضح شو بيميزني", "أبني نظام محتوى ثابت", "أكثر من واحد من هدول"] },
   { key: "startTimeline", question: "إمتى حابب تبدأ؟", options: ["بأقرب وقت", "خلال 30 يوم", "خلال 1–3 أشهر", "حالياً عم أستكشف الخيارات"] },
-  { key: "investmentFit", question: "إذا شفنا إن في توافق، هل استثمار 3,000 USD شهرياً لمدة شهرين مناسب إلك؟", options: ["نعم، إذا حسيت إن الخدمة مناسبة", "ممكن، بس بدي أفهم التفاصيل أكتر", "حالياً لا"] },
+  { key: "investmentFit", question: "إذا شفنا إن في توافق، هل استثمار 3,000 USD بالشهر لمدة 3 شهور مناسب إلك؟", options: ["نعم، إذا حسيت إن الخدمة مناسبة", "ممكن، بس بدي أفهم التفاصيل أكتر", "حالياً لا"] },
   { key: "decisionMaker", question: "مين بياخد قرار البدء بالمشروع؟", options: ["أنا", "أنا وشريك / فريق", "بدي أرجع لشخص ثاني قبل القرار"] },
 ] as const;
 
@@ -153,7 +153,7 @@ export function ApplicationForm() {
           <p className="text-base text-bronze">طلب التوافق</p>
           <h2 id="apply-title" className="mt-3 text-3xl leading-[1.35] text-cream sm:text-5xl">إذا حسيت إن هاد النظام ناقصك، خلينا نشوف إذا في توافق</h2>
           <p className="mx-auto mt-5 max-w-xl text-lg leading-8 text-cream/75">قبل أي مكالمة، جاوب على كم سؤال قصير عن شغلك ووضعك الحالي، الهدف نتأكد إن الخدمة مناسبة للطرفين</p>
-          <p className="mt-6 font-latin text-xl text-bronze">3,000 USD / month × 2 months</p>
+          <p className="mt-6 font-latin text-xl text-bronze">3,000 USD / month × 3 months</p>
         </div>
 
         <div className="border border-cream/20 bg-cream/[0.04] p-5 sm:p-9">
@@ -180,7 +180,7 @@ export function ApplicationForm() {
           ) : (
             <form onSubmit={submit} className="space-y-5" noValidate>
               <h3 className="text-2xl text-cream sm:text-3xl">آخر خطوة، كيف منتواصل معك؟</h3>
-              <div className="rounded-sm border border-bronze/50 bg-bronze/10 p-4 text-base leading-7 text-cream">الاستثمار الأساسي واضح قبل إرسال الطلب، 3,000 USD شهرياً لمدة شهرين، بإجمالي 6,000 USD لأول 60 يوم</div>
+              <div className="rounded-sm border border-bronze/50 bg-bronze/10 p-4 text-base leading-7 text-cream">الاستثمار واضح قبل ما تبعت الطلب: 3,000 USD بالشهر لمدة 3 شهور، يعني 9,000 USD للبرنامج كامل</div>
               <Field label="الاسم الكامل" required value={answers.name} onChange={(value) => setAnswers({ ...answers, name: value })} autoComplete="name" />
               <div>
                 <label className="mb-2 block text-base" htmlFor="ae-phone">WhatsApp / mobile <span className="text-bronze">مطلوب</span></label>

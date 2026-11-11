@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AuthorityEngineLanding } from "@/components/authority-engine/landing";
 
 const TITLE = "The Authority Engine | خلّي حضورك بمستوى خبرتك";
-const DESCRIPTION = "نظام براند شخصي ومحتوى لأصحاب الخبرة يحوّل خبرتك وطريقة تفكيرك لحضور واضح خلال أول 60 يوم";
+const DESCRIPTION = "نظام براند شخصي ومحتوى لأصحاب الخبرة يحوّل خبرتك وطريقة تفكيرك لحضور واضح خلال 3 شهور";
 
 export const Route = createFileRoute("/authority-engine")({
   head: () => ({

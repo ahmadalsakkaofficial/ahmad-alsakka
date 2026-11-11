@@ -17,7 +17,7 @@ import { siteConfig } from "@/config/site";
 
 const TITLE = "أحمد | بناء البراند الشخصي ونظام المحتوى للمهنيين العرب";
 const DESCRIPTION =
-  "أساعد أصحاب المهن والخدمات العرب على تحويل خبرتهم إلى براند شخصي ونظام محتوى واضح يبني الثقة ويجذب الاستفسارات خلال 60 يوماً";
+  "بساعد أصحاب الخبرة العرب، دكاترة ومحامين ومستشارين ومستثمرين، يحوّلوا خبرتهم لمحتوى بيبني الثقة وبيجيب الاستفسارات، برنامج 3 شهور";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -54,7 +54,6 @@ export const Route = createFileRoute("/")({
               sameAs: [
                 siteConfig.instagramUrl,
                 siteConfig.tiktokUrl,
-                siteConfig.youtubeUrl,
                 siteConfig.linkedinUrl,
               ],
               address: { "@type": "PostalAddress", addressCountry: "CA" },
@@ -63,12 +62,11 @@ export const Route = createFileRoute("/")({
               "@type": "ProfessionalService",
               name: siteConfig.brandName,
               description:
-                "نظام بناء البراند الشخصي والمحتوى للمهنيين العرب خلال 60 يوماً: استراتيجية، نظام، إنتاج، وتسليم،",
+                "برنامج 3 شهور لبناء البراند الشخصي والمحتوى لأصحاب الخبرة العرب: استراتيجية، نظام، إنتاج ونشر، تحسين وتسليم",
               areaServed: ["الخليج العربي", "كندا", "المهنيون العرب حول العالم"],
               sameAs: [
                 siteConfig.instagramUrl,
                 siteConfig.tiktokUrl,
-                siteConfig.youtubeUrl,
                 siteConfig.linkedinUrl,
               ],
               provider: { "@type": "Person", name: "أحمد السقا" },

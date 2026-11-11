@@ -4,14 +4,11 @@ export const siteConfig = {
   brandName: "The Authority Engine",
   instagramUrl: "https://instagram.com/ahmad.alsakka.official",
   tiktokUrl: "https://tiktok.com/@ahmadalsakka",
-  youtubeUrl: "https://www.youtube.com/@AhmadAlsakkaOfficial",
   linkedinUrl: "https://www.linkedin.com/in/alsakkaahm/",
   instagramKeyword: "ENGINE",
-  experienceYears: "8+",
-  youtubeAudience: "60K+",
-  engagementLength: "60 يوماً",
-  startingInvestment: "3,000+ USD",
-  /** Paid 60-minute strategy session. Change the price and booking link here. */
+  engagementLength: "3 شهور",
+  startingInvestment: "3,000 USD بالشهر × 3 شهور",
+  /** Paid 60-minute strategy session (USD; credited to month 1 if they join). */
   strategySessionPrice: "120 USD",
   /** Single booking link for meetings and consultations. */
   bookingUrl: "https://tr.ee/i_PWt_zpk2",

@@ -2,16 +2,16 @@ import { Section, SectionHead, Reveal } from "./primitives";
 
 const cards = [
   {
-    title: "كل فيديو يبدأ من الصفر",
-    text: "لا توجد أفكار مرتبة، ولا قوالب ثابتة، ولا طريقة واضحة لتحويل خبرتك إلى محتوى،",
+    title: "كل فيديو بيبلّش من الصفر",
+    text: "ما في أفكار مرتبة، ولا قوالب، ولا طريقة واضحة تحوّل فيها خبرتك لمحتوى",
   },
   {
-    title: "وجودك مربوط بوقتك ومزاجك",
-    text: "عندما تنشغل يتوقف المحتوى، وعندما يتوقف المحتوى، يختفي حضورك مع الوقت،",
+    title: "المحتوى مربوط بوقتك ومزاجك",
+    text: "أول ما تنشغل بيوقف المحتوى، ولما يوقف، بيختفي اسمك مع الوقت",
   },
   {
-    title: "أشخاص أقل خبرة يبدون أوضح منك",
-    text: "ليس لأنهم أفضل في عملهم، بل لأن السوق يستطيع أن يفهمهم ويتذكرهم أسرع،",
+    title: "ناس أقل خبرة منك… أوضح منك",
+    text: "مش لأنهم أشطر، بس لأنه السوق بيفهمهم وبيتذكرهم أسرع",
   },
 ];
 
@@ -22,11 +22,11 @@ export function ProblemSection() {
         id="problem-title"
         number="02"
         label="المشكلة"
-        title="المشكلة ليست أنك لا تعرف ماذا تقول"
+        title="المشكلة مو إنك ما بتعرف شو تحكي"
       />
       <p className="max-w-3xl text-base leading-[2] text-subtle">
-        أنت تعرف مجالك، عندك خبرة، قصص، آراء ونتائج حقيقية، لكن عندما تفتح الكاميرا، كل فيديو يتحول
-        إلى قرار جديد: ماذا أقول؟ كيف أبدأ؟ أين أصوّر؟ ومتى أنشر؟
+        إنت بتعرف مجالك، وعندك قصص وآراء ونتائج حقيقية، بس أول ما تفتح الكاميرا، كل فيديو بيصير
+        قرار جديد: شو بحكي؟ كيف ببلّش؟ وين بصوّر؟ ومتى بنشر؟
       </p>
 
       <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -43,9 +43,9 @@ export function ProblemSection() {
 
       <div className="mt-14 border-t border-bronze/30 pt-10">
         <p className="font-display text-2xl leading-[1.6] text-navy sm:text-3xl">
-          أنت لا تحتاج المزيد من الأفكار،
+          ما ناقصك أفكار…
           <br />
-          <span className="text-bronze">تحتاج نظاماً</span>
+          <span className="text-bronze">ناقصك نظام</span>
         </p>
       </div>
     </Section>
@@ -53,23 +53,23 @@ export function ProblemSection() {
 }
 
 const forYou = [
-  "لديك عمل قائم وخبرة حقيقية في مجالك",
-  "تعتمد بشكل كبير على التوصيات والعلاقات",
-  "تعرف أن حضورك أونلاين أضعف من مستوى خبرتك",
-  "تريد جذب عملاء أفضل، لا مجرد جمع متابعين",
-  "مستعد للظهور أمام الكاميرا بشكل منتظم ومعقول",
-  "تريد نظاماً تستطيع الاستمرار عليه بعد انتهاء العمل معي",
-  "تفضل بناء الثقة على ملاحقة الترندات",
+  "عندك شغل قائم وخبرة حقيقية بمجالك",
+  "أغلب عملائك جايين من التوصيات والعلاقات",
+  "حاسس إنه حضورك أونلاين أضعف من مستوى خبرتك",
+  "بدك عملاء أحسن، مش بس متابعين",
+  "مستعد تطلع عالكاميرا بشكل منتظم ومعقول",
+  "بدك نظام تكمّل عليه حتى بعد ما نخلّص",
+  "بتفضّل الثقة على ملاحقة الترندات",
 ];
 
 const notForYou = [
-  "لا تملك عملاً أو خبرة واضحة حتى الآن",
-  "تبحث فقط عن شخص يصوّر ويمنتج لك بعض الفيديوهات",
-  "تريد آلاف المتابعين بأسرع وقت",
-  "تبحث عن أرخص باقة ممكنة",
-  "تريد نتيجة بدون المشاركة في التنفيذ",
-  "تريد أن يدير شخص آخر حسابك بالكامل إلى الأبد",
-  "تبحث عن وصفة سحرية أو ضمان لعدد محدد من العملاء",
+  "لسا ما عندك شغل أو خبرة واضحة",
+  "بدك بس حدا يصوّرلك ويمنتجلك كم فيديو",
+  "بدك آلاف المتابعين بأسرع وقت",
+  "عم تدوّر على أرخص باقة",
+  "بدك نتيجة بدون ما تشارك بالتنفيذ",
+  "بدك حدا يدير حسابك عنك للأبد",
+  "بدك ضمان لعدد عملاء أو مشاهدات",
 ];
 
 export function WhoSection() {
@@ -78,13 +78,13 @@ export function WhoSection() {
       <SectionHead
         id="who-title"
         number="03"
-        label="لمن هذا؟"
-        title="مصمم للخبير الذي لا يريد أن يصبح صانع محتوى"
+        label="لمين هاد؟"
+        title="للخبير اللي ما بدو يصير صانع محتوى"
       />
 
       <div className="grid gap-6 md:grid-cols-2">
         <div className="rounded-[12px] border border-border bg-surface p-7">
-          <h3 className="font-display text-lg text-navy">هذا مناسب لك إذا:</h3>
+          <h3 className="font-display text-lg text-navy">مناسب إلك إذا:</h3>
           <ul className="mt-5 space-y-3">
             {forYou.map((t) => (
               <li key={t} className="flex gap-3 text-base leading-[1.95] text-subtle">
@@ -95,7 +95,7 @@ export function WhoSection() {
           </ul>
         </div>
         <div className="rounded-[12px] border border-border bg-surface p-7">
-          <h3 className="font-display text-lg text-navy">هذا ليس مناسباً لك إذا:</h3>
+          <h3 className="font-display text-lg text-navy">مو مناسب إلك إذا:</h3>
           <ul className="mt-5 space-y-3">
             {notForYou.map((t) => (
               <li key={t} className="flex gap-3 text-base leading-[1.95] text-subtle">
@@ -108,9 +108,9 @@ export function WhoSection() {
       </div>
 
       <p className="mt-12 font-display text-2xl leading-[1.6] text-navy sm:text-3xl">
-        أنا لا أبني مؤثراً،
+        أنا ما ببني مؤثرين…
         <br />
-        <span className="text-bronze">أبني خبيراً معروفاً</span>
+        <span className="text-bronze">ببني خبراء الناس بتعرفهم</span>
       </p>
     </Section>
   );

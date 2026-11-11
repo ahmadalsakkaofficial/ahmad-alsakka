@@ -19,7 +19,7 @@ export function Vsl() {
       <div className="mx-auto max-w-5xl text-center">
         <p className="text-base text-bronze">شوف الفكرة كاملة</p>
         <h2 id="vsl-title" className="mt-3 text-3xl leading-[1.35] text-cream sm:text-5xl">قبل ما أحكيلك شو بنعمل، خليني أفرجيك شو عم نحاول نبني</h2>
-        <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-cream/75">بهالفيديو بشرحلك ليش أصحاب الخبرة أحياناً بيضلوا أقل حضوراً من أشخاص أقل خبرة منهم، وكيف بنبني النظام خلال 60 يوم</p>
+        <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-cream/75">بهالفيديو بشرحلك ليش أصحاب الخبرة أحياناً بيضلوا أقل حضوراً من أشخاص أقل خبرة منهم، وكيف منبني النظام خلال 3 شهور</p>
         <div className="mx-auto mt-10 aspect-video max-w-4xl overflow-hidden border border-cream/20 bg-cream/[0.04] shadow-raised">
           {active && url ? (
             <iframe src={url} title="فيديو The Authority Engine" className="h-full w-full" loading="lazy" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowFullScreen />
