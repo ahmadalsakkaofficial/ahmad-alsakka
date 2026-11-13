@@ -5,6 +5,7 @@ import { InstagramIcon, TikTokIcon, LinkedInIcon } from "./icons";
 const chapters = [
   {
     tag: "الإمارات",
+    images: [{ src: "/images/ahmad-jebel-jais.webp", alt: "أحمد السقا بجبل جيس" }],
     title: "تركت الصيدلة من معرض سيارات",
     lines: [
       "كنت عم أدرس صيدلة بالإمارات ومخّي كله بالكاميرا، أهرب من المحاضرات لأطلع صوّر عالجبل والبحر",
@@ -14,6 +15,7 @@ const chapters = [
   },
   {
     tag: "دبي",
+    images: [{ src: "/images/ahmad-dubai.webp", alt: "أحمد السقا بدبي" }],
     title: "سنين ورا الكاميرا",
     lines: [
       "حوّلت لعلاقات عامة وإعلان واشتغلت بالقسم الإلكتروني بجريدة البيان",
@@ -23,6 +25,10 @@ const chapters = [
   },
   {
     tag: "كندا",
+    images: [
+      { src: "/images/canada-snow.webp", alt: "أحمد السقا بكندا" },
+      { src: "/images/amazon-books.webp", alt: "كتب أمازون بالكراج" },
+    ],
     title: "بداية من الصفر",
     lines: [
       "انتقلت لكندا وبلّشت من جديد، صوّرت وثائقي للجزيرة بأمريكا واشتغلت مع براندات كتير",
@@ -32,6 +38,10 @@ const chapters = [
   },
   {
     tag: "اليوم",
+    images: [
+      { src: "/images/bts-gimbal.webp", alt: "من كواليس التصوير" },
+      { src: "/images/bts-setup.webp", alt: "من كواليس التصوير" },
+    ],
     title: "ليش أصحاب الخبرة بالذات",
     lines: [
       "اشتغلت مع شركتين هجرة بكندا ومن أول شهر وصلت حساباتهم لمئات آلاف المشاهدات",
@@ -70,38 +80,32 @@ export function AboutSection() {
                   </p>
                 ))}
               </div>
+              {c.images.length > 0 && (
+                <div className={`mt-5 grid gap-3 ${c.images.length > 1 ? "grid-cols-2" : "grid-cols-1 max-w-xs"}`}>
+                  {c.images.map((im) => (
+                    <img
+                      key={im.src}
+                      src={im.src}
+                      alt={im.alt}
+                      loading="lazy"
+                      className="aspect-[4/5] w-full rounded-[16px] object-cover"
+                    />
+                  ))}
+                </div>
+              )}
             </li>
           ))}
         </ol>
 
         <aside className="space-y-4 lg:sticky lg:top-24 lg:self-start">
-          <figure className="relative">
-            <img
-              src="/images/ahmad-dubai.webp"
-              alt="أحمد السقا بدبي"
-              loading="lazy"
-              width={1000}
-              height={1333}
-              className="aspect-[4/5] w-full rounded-[20px] object-cover"
-            />
-            <figcaption className="absolute start-3 bottom-3 rounded-full bg-navy/85 px-4 py-1.5 text-sm text-cream">
-              دبي
-            </figcaption>
-          </figure>
-          <div className="grid grid-cols-2 gap-4">
-            <img
-              src="/images/ahmad-jebel-jais.webp"
-              alt="أحمد السقا بجبل جيس"
-              loading="lazy"
-              className="aspect-[3/4] w-full rounded-[16px] object-cover"
-            />
-            <img
-              src="/images/ahmad-cafe.webp"
-              alt="أحمد السقا"
-              loading="lazy"
-              className="aspect-[3/4] w-full rounded-[16px] object-cover"
-            />
-          </div>
+          <img
+            src="/images/ahmad-cafe.webp"
+            alt="أحمد السقا"
+            loading="lazy"
+            width={900}
+            height={1200}
+            className="aspect-[4/5] w-full rounded-[20px] object-cover"
+          />
           <div className="rounded-[16px] border border-bronze/40 bg-surface p-6">
             <p className="text-lg leading-[1.7] font-bold text-navy">مش مدرب بيحكيلك نظريات من برّا</p>
             <p className="mt-2 text-base text-subtle">بشتغل معك من جوّا وبنبني النظام سوا</p>
