@@ -87,13 +87,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      {
-        rel: "preload",
-        as: "font",
-        type: "font/ttf",
-        crossOrigin: "anonymous",
-        href: "/__l5e/assets-v1/6a51f32f-584c-419a-8c1a-6ede58bc6056/Lalezar-Regular.ttf",
-      },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
     ],
 

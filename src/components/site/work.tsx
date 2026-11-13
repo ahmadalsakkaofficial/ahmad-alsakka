@@ -55,62 +55,60 @@ export function WorkSection() {
         id="work-title"
         number="01"
         label="شغل حقيقي"
-        title="نماذج من أنظمة اشتغلنا عليها"
+        title="أرقام من حسابات اشتغلنا عليها بكندا"
       />
+      <p className="-mt-6 mb-10 max-w-2xl text-base leading-[1.95] text-subtle">
+        شركتين هجرة اشتغلنا على محتواهم، وبأول شهر عدّت حساباتهم 100 ألف مشاهدة
+      </p>
 
-      <div className="mx-auto w-full max-w-2xl space-y-4">
+      <div className="grid gap-6 lg:grid-cols-2">
         {clients.map((c) => (
-          <div
-            key={c.name}
-            className="flex flex-col gap-5 rounded-[12px] border border-bronze/35 bg-background p-4 sm:p-5 lg:flex-row lg:items-center lg:justify-between"
-          >
+          <article key={c.name} className="rounded-[20px] border border-border bg-background p-5 sm:p-6">
             <a
               href={c.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex min-w-0 items-center gap-3 rounded-[10px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bronze"
+              className="focus-ring flex items-center gap-3 rounded-[12px]"
             >
               <img
                 src={c.profile}
                 alt={c.profileAlt}
                 loading="lazy"
-                className="h-11 w-11 shrink-0 rounded-full border border-border object-cover"
+                className="size-12 shrink-0 rounded-full border border-border bg-muted object-cover"
               />
-              <div className="min-w-0 space-y-0.5">
-                <p className="font-display text-base leading-snug text-navy">
-                  <span className="font-latin">{c.name}</span> على{" "}
-                  {c.platform}
-                </p>
-                <p className="flex flex-wrap gap-x-5 text-sm text-subtle">
+              <div className="min-w-0">
+                <p className="font-latin text-base font-semibold text-navy">{c.name}</p>
+                <p className="text-sm text-subtle">
+                  {c.platform} ·{" "}
                   {c.stats.map((s) => (
                     <span key={s.label}>
-                      <span className="font-display font-latin text-base text-bronze">
-                        {s.value}
-                      </span>{" "}
-                      {s.label}
+                      <span className="font-latin font-semibold text-bronze">{s.value}</span> {s.label}
                     </span>
                   ))}
                 </p>
               </div>
             </a>
 
-            <div className="flex gap-2.5 overflow-x-auto pb-1 lg:shrink-0">
+            <div className="mt-5 grid grid-cols-3 gap-3">
               {c.reels.map((r) => (
-                <figure key={r.src} className="w-24 shrink-0 sm:w-24 lg:w-20">
+                <figure key={r.src}>
                   <img
                     src={r.src}
                     alt={r.note}
                     loading="lazy"
-                    className="aspect-[9/16] w-full rounded-[10px] border border-border object-cover"
+                    className="aspect-[9/16] w-full rounded-[12px] border border-border bg-muted object-cover"
                   />
-                  <figcaption className="flex items-center justify-center gap-1 whitespace-nowrap pt-1.5 text-sm text-bronze">
-                    <EyeIcon className="h-3.5 w-3.5 shrink-0" />
-                    <span className="font-display font-latin">{r.views}</span>
+                  <figcaption className="pt-2 text-center">
+                    <span className="flex items-center justify-center gap-1 text-bronze">
+                      <EyeIcon className="h-4 w-4 shrink-0" />
+                      <span className="font-latin text-base font-bold">{r.views}</span>
+                    </span>
+                    <span className="mt-0.5 block text-xs leading-snug text-subtle">{r.note}</span>
                   </figcaption>
                 </figure>
               ))}
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </Section>

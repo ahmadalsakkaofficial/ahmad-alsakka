@@ -12,18 +12,18 @@ export function FinalCta() {
         <p className="text-sm font-medium tracking-[0.2em] text-bronze">جاهز تبدأ؟</p>
         <h2
           id="start-title"
-          className="mt-6 font-display text-[1.9rem] leading-[1.4] text-cream sm:text-5xl sm:leading-[1.3]"
+          className="mt-6 text-[1.9rem] leading-[1.4] font-bold text-cream sm:text-5xl sm:leading-[1.3]"
         >
-          خبرتك ما بدها صوت أعلى…
+          خبرتك ما بدها صوت أعلى
           <br />
-          بدها نظام أوضح
+          <span className="text-bronze">بدها نظام أوضح</span>
         </h2>
         <p className="mx-auto mt-7 max-w-2xl text-base leading-[2] text-cream/75">
-          إذا عندك شغل قائم وخبرة حقيقية، وبدك حضور بيجيب الثقة والاستفسارات بدون ما تصير صانع
-          محتوى بدوام كامل، جاوب على كم سؤال قصير ومنشوف إذا في توافق
+          جاوب على كم سؤال قصير بياخدوا دقيقتين، وإذا شفت إنه مناسب بنحجز مكالمة 20 دقيقة ومنحكي
+          عن شغلك
         </p>
         <p className="mx-auto mt-4 max-w-2xl text-base leading-[1.95] text-cream/60">
-          بشتغل مع عدد محدود من العملاء، حتى يضل الشغل مباشر وقريب منك
+          بستقبل عدد محدود كل شهر حتى يضل الشغل مباشر وقريب منك
         </p>
 
         <p className="mt-8 inline-block rounded-[10px] border border-cream/25 px-5 py-2 text-base text-cream/80">

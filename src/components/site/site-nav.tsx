@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { navLinks, siteConfig } from "@/config/site";
-import portrait from "@/assets/ahmad-portrait.png.asset.json";
 import { cn } from "@/lib/utils";
 
 
@@ -51,7 +50,7 @@ export function SiteNav() {
       >
         <a href="#home" className="flex items-center gap-2.5 focus-ring rounded-md">
           <img
-            src={portrait.url}
+            src="/images/ahmad-avatar.webp"
             alt="أحمد السقا"
             width={36}
             height={36}

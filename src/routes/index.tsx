@@ -2,16 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteNav } from "@/components/site/site-nav";
 import { Hero } from "@/components/site/hero";
 import { ProblemSection, WhoSection } from "@/components/site/problem-who";
-import {
-  EngineSection,
-  TrustSection,
-  DifferenceSection,
-  PrinciplesSection,
-} from "@/components/site/engine-sections";
+import { EngineSection } from "@/components/site/engine-sections";
 import { AboutSection } from "@/components/site/about";
 import { FaqSection, faqs } from "@/components/site/faq";
 import { FinalCta, SiteFooter } from "@/components/site/cta-footer";
-import { Testimonials } from "@/components/site/testimonials";
 import { WorkSection } from "@/components/site/work";
 import { siteConfig } from "@/config/site";
 
@@ -96,13 +90,9 @@ function Index() {
         <Hero />
         <WorkSection />
         <ProblemSection />
-        <WhoSection />
         <EngineSection />
-        <TrustSection />
-        <DifferenceSection />
         <AboutSection />
-        <PrinciplesSection />
-        <Testimonials />
+        <WhoSection />
         <FaqSection />
         <FinalCta />
       </main>
