@@ -53,12 +53,12 @@ export function Hero() {
             <figure className="relative mx-auto max-w-[19rem] sm:max-w-sm lg:max-w-none">
               <div className="absolute -inset-3 -z-0 rounded-[28px] border border-bronze/30" aria-hidden="true" />
               <img
-                src="/images/ahmad-suit.webp"
+                src="/images/ahmad-hero.webp"
                 alt="أحمد السقا"
                 width={1100}
                 height={1467}
                 fetchPriority="high"
-                className="relative aspect-[4/5] w-full rounded-[22px] object-cover object-[50%_18%] shadow-raised"
+                className="relative aspect-[4/5] w-full rounded-[22px] object-cover object-[50%_25%] shadow-raised"
               />
               <figcaption className="absolute start-4 bottom-4 rounded-[14px] bg-navy/90 px-5 py-3 text-cream backdrop-blur">
                 <span className="block text-base font-bold">أحمد السقا</span>

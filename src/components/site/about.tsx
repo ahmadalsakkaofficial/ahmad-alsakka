@@ -15,7 +15,10 @@ const chapters = [
   },
   {
     tag: "دبي",
-    images: [{ src: "/images/ahmad-dubai.webp", alt: "أحمد السقا بدبي" }],
+    images: [
+      { src: "/images/ahmad-dubai-heritage.webp", alt: "أحمد السقا بدبي القديمة" },
+      { src: "/images/ahmad-dubai.webp", alt: "أحمد السقا بدبي" },
+    ],
     title: "سنين ورا الكاميرا",
     lines: [
       "حوّلت لعلاقات عامة وإعلان واشتغلت بالقسم الإلكتروني بجريدة البيان",
@@ -99,7 +102,7 @@ export function AboutSection() {
 
         <aside className="space-y-4 lg:sticky lg:top-24 lg:self-start">
           <img
-            src="/images/ahmad-cafe.webp"
+            src="/images/ahmad-seated.webp"
             alt="أحمد السقا"
             loading="lazy"
             width={900}
