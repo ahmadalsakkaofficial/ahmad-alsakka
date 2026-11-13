@@ -34,7 +34,7 @@ export function LogoWall() {
             ))}
           </ul>
         </div>
-        <ul className="mt-10 grid grid-cols-3 items-center gap-x-6 gap-y-8 sm:grid-cols-4 lg:grid-cols-7">
+        <ul className="mt-10 grid grid-cols-3 items-center gap-x-6 gap-y-8 sm:grid-cols-5">
           {logos.map((l) => (
             <li key={l.src} className="flex h-14 items-center justify-center">
               <img
