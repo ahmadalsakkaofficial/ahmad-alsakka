@@ -3,6 +3,8 @@ import { SiteNav } from "@/components/site/site-nav";
 import { Hero } from "@/components/site/hero";
 import { ProblemSection, WhoSection } from "@/components/site/problem-who";
 import { EngineSection } from "@/components/site/engine-sections";
+import { LogoWall } from "@/components/site/logos";
+import { FieldsSection } from "@/components/site/fields";
 import { AboutSection } from "@/components/site/about";
 import { FaqSection, faqs } from "@/components/site/faq";
 import { FinalCta, SiteFooter } from "@/components/site/cta-footer";
@@ -88,8 +90,10 @@ function Index() {
       <SiteNav />
       <main>
         <Hero />
+        <LogoWall />
         <WorkSection />
         <ProblemSection />
+        <FieldsSection />
         <EngineSection />
         <AboutSection />
         <WhoSection />

@@ -59,7 +59,7 @@ export function AboutSection() {
     <Section id="about" labelledBy="about-title">
       <SectionHead
         id="about-title"
-        number="04"
+        number="05"
         label="قصتي"
         title={
           <>

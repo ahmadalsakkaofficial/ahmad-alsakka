@@ -75,7 +75,7 @@ export function WhoSection() {
     <Section id="who" tone="surface" labelledBy="who-title">
       <SectionHead
         id="who-title"
-        number="05"
+        number="06"
         label="لمين هاد البرنامج؟"
         title="للخبير اللي بدو ينعرف بشغله مش يصير صانع محتوى"
       />

@@ -6,7 +6,6 @@ const stats = [
   { value: "مئات الآلاف", label: "مشاهدات لحسابات عملائنا من أول شهر" },
 ];
 
-const credits = ["جريدة البيان", "MotionArabia", "وثائقي للجزيرة", "AJI Canada", "WestStep"];
 
 export function Hero() {
   return (
@@ -77,16 +76,6 @@ export function Hero() {
           ))}
         </ul>
 
-        <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-between">
-          <span className="text-sm text-subtle">اشتغلت مع ومن خلال</span>
-          <ul className="flex flex-wrap items-center justify-center gap-x-7 gap-y-2">
-            {credits.map((c) => (
-              <li key={c} className="text-base font-semibold text-navy/55">
-                {c}
-              </li>
-            ))}
-          </ul>
-        </div>
       </div>
     </section>
   );

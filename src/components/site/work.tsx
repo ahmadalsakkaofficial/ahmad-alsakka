@@ -55,10 +55,10 @@ export function WorkSection() {
         id="work-title"
         number="01"
         label="شغل حقيقي"
-        title="أرقام من حسابات اشتغلنا عليها بكندا"
+        title="أرقام من حسابات اشتغلنا عليها"
       />
       <p className="-mt-6 mb-10 max-w-2xl text-base leading-[1.95] text-subtle">
-        شركتين هجرة اشتغلنا على محتواهم، ومن أول شهر وصلنا لمئات آلاف المشاهدات
+        مكتبين استشارات بكندا اشتغلنا على محتواهم، ومن أول شهر وصلنا لمئات آلاف المشاهدات
       </p>
 
       <div className="grid gap-6 lg:grid-cols-2">
