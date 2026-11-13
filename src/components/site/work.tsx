@@ -28,9 +28,9 @@ name: "AJI Canada",
     profileAlt: "حساب AJI Canada على انستقرام",
     stats: [{ value: "10.1K", label: "متابع" }],
     reels: [
-      { src: ajiReel1.url, views: "207K", note: "فيديو تعريفي داخل المكتب" },
-      { src: ajiReel4.url, views: "137.9K", note: "تصريح عمل في كندا" },
-      { src: ajiReel5.url, views: "86.5K", note: "يوم مفتوح في كازابلانكا" },
+      { src: ajiReel1.url, views: "+200K", note: "فيديو تعريفي داخل المكتب" },
+      { src: ajiReel4.url, views: "+100K", note: "تصريح عمل في كندا" },
+      { src: ajiReel5.url, views: "+80K", note: "يوم مفتوح في كازابلانكا" },
     ],
   },
   {
@@ -41,9 +41,9 @@ name: "WestStep Canada Immigration",
     profileAlt: "حساب WestStep Canada Immigration على تيك توك",
     stats: [{ value: "66.3K", label: "متابع" }],
     reels: [
-      { src: wsReel1.url, views: "158.2K", note: "أسرع طريقة للهجرة لكندا" },
-      { src: wsReel2.url, views: "150K", note: "كيف تحصل على 600 نقطة" },
-      { src: wsReel3.url, views: "144.6K", note: "السوبر فيزا للوالدين" },
+      { src: wsReel1.url, views: "+100K", note: "أسرع طريقة للهجرة لكندا" },
+      { src: wsReel2.url, views: "+100K", note: "كيف تحصل على 600 نقطة" },
+      { src: wsReel3.url, views: "+100K", note: "السوبر فيزا للوالدين" },
     ],
   },
 ];
@@ -58,7 +58,7 @@ export function WorkSection() {
         title="أرقام من حسابات اشتغلنا عليها بكندا"
       />
       <p className="-mt-6 mb-10 max-w-2xl text-base leading-[1.95] text-subtle">
-        شركتين هجرة اشتغلنا على محتواهم، وبأول شهر عدّت حساباتهم 100 ألف مشاهدة
+        شركتين هجرة اشتغلنا على محتواهم، ومن أول شهر وصلنا لمئات آلاف المشاهدات
       </p>
 
       <div className="grid gap-6 lg:grid-cols-2">

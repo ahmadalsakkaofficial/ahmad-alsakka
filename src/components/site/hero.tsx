@@ -2,8 +2,8 @@ import { Reveal } from "./primitives";
 
 const stats = [
   { value: "+12", label: "سنة بصناعة الفيديو والمحتوى بين دبي وكندا" },
-  { value: "207K", label: "مشاهدة لفيديو واحد من شغلنا مع AJI Canada" },
-  { value: "100K+", label: "مشاهدة بأول شهر لحسابات عملائنا بكندا" },
+  { value: "+100K", label: "مشاهدة لكل واحد من 5 فيديوهات عملناها لعملائنا" },
+  { value: "مئات الآلاف", label: "مشاهدات لحسابات عملائنا من أول شهر" },
 ];
 
 const credits = ["جريدة البيان", "MotionArabia", "وثائقي للجزيرة", "AJI Canada", "WestStep"];
@@ -71,7 +71,7 @@ export function Hero() {
         <ul className="mt-14 grid grid-cols-3 gap-px overflow-hidden rounded-[18px] border border-border bg-border">
           {stats.map((s) => (
             <li key={s.value} className="bg-surface px-2 py-5 text-center sm:p-6 sm:text-start">
-              <span className="font-latin block text-2xl font-bold text-navy sm:text-4xl">{s.value}</span>
+              <span className="block text-2xl font-bold text-navy sm:text-4xl">{s.value}</span>
               <span className="mt-2 block text-xs leading-relaxed text-subtle sm:text-base">{s.label}</span>
             </li>
           ))}

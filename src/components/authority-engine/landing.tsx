@@ -138,8 +138,8 @@ export function AuthorityEngineLanding() {
 
 function Proof() {
   const clients = [
-    { name: "AJI Canada", platform: "Instagram", profile: ajiProfile.url, reels: [[ajiReel1.url,"207K"],[ajiReel2.url,"137.9K"],[ajiReel3.url,"86.5K"]] },
-    { name: "WestStep Canada", platform: "TikTok", profile: wsProfile.url, reels: [[wsReel1.url,"158.2K"],[wsReel2.url,"150K"],[wsReel3.url,"144.6K"]] },
+    { name: "AJI Canada", platform: "Instagram", profile: ajiProfile.url, reels: [[ajiReel1.url,"+200K"],[ajiReel2.url,"+100K"],[ajiReel3.url,"+80K"]] },
+    { name: "WestStep Canada", platform: "TikTok", profile: wsProfile.url, reels: [[wsReel1.url,"+100K"],[wsReel2.url,"+100K"],[wsReel3.url,"+100K"]] },
   ];
   return <section className="bg-surface px-5 py-20 sm:px-8 lg:py-28"><div className="mx-auto max-w-6xl"><SectionTitle eyebrow="شغل حقيقي">من فكرة، لمحتوى، لوصول حقيقي</SectionTitle><div className="space-y-8">{clients.map((client) => <article key={client.name} className="grid gap-6 border-y border-bronze/30 py-7 lg:grid-cols-[260px_1fr] lg:items-center"><div className="flex items-center gap-4"><img src={client.profile} alt={`حساب ${client.name}`} loading="lazy" className="size-16 rounded-full border border-bronze/30 object-cover" /><div><h3 className="font-latin text-xl text-navy">{client.name}</h3><p className="font-latin text-sm text-bronze">{client.platform}</p></div></div><div className="flex gap-4 overflow-x-auto pb-2">{client.reels.map(([src,views]) => <figure key={src} className="w-28 shrink-0 sm:w-36"><img src={src} alt={`محتوى ${client.name}`} loading="lazy" className="aspect-[9/16] w-full border border-bronze/25 object-cover" /><figcaption className="mt-2 text-center font-latin text-base text-bronze">{views} views</figcaption></figure>)}</div></article>)}</div><p className="mx-auto mt-8 max-w-2xl text-center text-base leading-7 text-subtle">الأرقام هون أمثلة على التنفيذ والوصول، مو ضمان إن كل مشروع رح يحقق نفس النتائج</p></div></section>;
 }
