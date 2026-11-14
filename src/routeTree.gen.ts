@@ -9,14 +9,21 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WorkshopRouteImport } from './routes/workshop'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as AuthorityEngineRouteImport } from './routes/authority-engine'
 import { Route as AuditRouteImport } from './routes/audit'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as WorkshopThankYouRouteImport } from './routes/workshop_.thank-you'
 import { Route as AuthorityEngineThankYouRouteImport } from './routes/authority-engine_.thank-you'
 
+const WorkshopRoute = WorkshopRouteImport.update({
+  id: '/workshop',
+  path: '/workshop',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
@@ -47,6 +54,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WorkshopThankYouRoute = WorkshopThankYouRouteImport.update({
+  id: '/workshop_/thank-you',
+  path: '/workshop/thank-you',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthorityEngineThankYouRoute = AuthorityEngineThankYouRouteImport.update({
   id: '/authority-engine_/thank-you',
   path: '/authority-engine/thank-you',
@@ -60,7 +72,9 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/workshop': typeof WorkshopRoute
   '/authority-engine/thank-you': typeof AuthorityEngineThankYouRoute
+  '/workshop/thank-you': typeof WorkshopThankYouRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -69,7 +83,9 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/workshop': typeof WorkshopRoute
   '/authority-engine/thank-you': typeof AuthorityEngineThankYouRoute
+  '/workshop/thank-you': typeof WorkshopThankYouRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -79,7 +95,9 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/workshop': typeof WorkshopRoute
   '/authority-engine_/thank-you': typeof AuthorityEngineThankYouRoute
+  '/workshop_/thank-you': typeof WorkshopThankYouRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -90,7 +108,9 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/sitemap.xml'
     | '/terms'
+    | '/workshop'
     | '/authority-engine/thank-you'
+    | '/workshop/thank-you'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -99,7 +119,9 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/sitemap.xml'
     | '/terms'
+    | '/workshop'
     | '/authority-engine/thank-you'
+    | '/workshop/thank-you'
   id:
     | '__root__'
     | '/'
@@ -108,7 +130,9 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/sitemap.xml'
     | '/terms'
+    | '/workshop'
     | '/authority-engine_/thank-you'
+    | '/workshop_/thank-you'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -118,11 +142,20 @@ export interface RootRouteChildren {
   PrivacyRoute: typeof PrivacyRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
+  WorkshopRoute: typeof WorkshopRoute
   AuthorityEngineThankYouRoute: typeof AuthorityEngineThankYouRoute
+  WorkshopThankYouRoute: typeof WorkshopThankYouRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/workshop': {
+      id: '/workshop'
+      path: '/workshop'
+      fullPath: '/workshop'
+      preLoaderRoute: typeof WorkshopRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/terms': {
       id: '/terms'
       path: '/terms'
@@ -165,6 +198,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/workshop_/thank-you': {
+      id: '/workshop_/thank-you'
+      path: '/workshop/thank-you'
+      fullPath: '/workshop/thank-you'
+      preLoaderRoute: typeof WorkshopThankYouRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/authority-engine_/thank-you': {
       id: '/authority-engine_/thank-you'
       path: '/authority-engine/thank-you'
@@ -182,7 +222,9 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyRoute: PrivacyRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
+  WorkshopRoute: WorkshopRoute,
   AuthorityEngineThankYouRoute: AuthorityEngineThankYouRoute,
+  WorkshopThankYouRoute: WorkshopThankYouRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

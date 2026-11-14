@@ -19,6 +19,19 @@ export const siteConfig = {
     /** Add the Meta Pixel ID before launching paid ads. */
     metaPixelId: "",
   },
+  workshop: {
+    /** Internal key saved with each registration. Change it for every new workshop. */
+    key: "workshop-1",
+    title: "كيف تخلي خبرتك تجيبلك عملاء من المحتوى",
+    subtitle: "بدون ما تصير صانع محتوى",
+    /** Fill both when the date is decided, e.g. "السبت 12 كانون الأول" and "8 المسا بتوقيت السعودية". Empty = "الموعد بينعلن قريب". */
+    dateLabel: "",
+    timeLabel: "",
+    /** ISO start time for the calendar button on the thank-you page, e.g. "2026-12-12T17:00:00Z". */
+    startIso: "",
+    /** Ahmad's WhatsApp number in international format without +, for the "save my number" button. */
+    whatsappNumber: "",
+  },
   location: "كندا",
   primaryAudience: "أصحاب المهن والخدمات العرب",
   /** Future-ready. Component renders nothing while empty. */
