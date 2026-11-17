@@ -58,7 +58,7 @@ export function WorkSection() {
         title="أرقام من حسابات اشتغلنا عليها"
       />
       <p className="-mt-6 mb-10 max-w-2xl text-base leading-[1.95] text-subtle">
-        مكتبين استشارات بكندا اشتغلنا على محتواهم، ومن أول شهر وصلنا لمئات آلاف المشاهدات
+        مكاتب استشارات اشتغلنا على محتواها، ومن أول شهر وصل لمئات آلاف المشاهدات
       </p>
 
       <div className="grid gap-6 lg:grid-cols-2">
