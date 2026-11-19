@@ -255,9 +255,9 @@
 
 /* Workshop theme tokens (swap the palette here) */
 .ws-theme {
-  --ws-bg: #0a0f1a;
-  --ws-panel: #0f1626;
-  --acc: 196, 160, 110;
-  --acc-hi: 214, 178, 122;
+  --ws-bg: #070707;
+  --ws-panel: #141414;
+  --acc: 245, 185, 66;
+  --acc-hi: 255, 208, 110;
   --bronze: rgb(var(--acc));
 }
