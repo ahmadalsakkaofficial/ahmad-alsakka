@@ -32,7 +32,7 @@ export function Hero() {
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <a
                 href="/authority-engine"
-                className="focus-ring rounded-[12px] bg-navy px-8 py-4 text-base font-bold text-cream shadow-raised transition-transform hover:-translate-y-0.5"
+                className="focus-ring rounded-[12px] bg-bronze px-8 py-4 text-base font-bold text-[#070707] shadow-raised transition-transform hover:-translate-y-0.5"
               >
                 شوف إذا مناسب إلك
               </a>
@@ -59,7 +59,7 @@ export function Hero() {
                 fetchPriority="high"
                 className="relative aspect-[4/5] w-full rounded-[22px] object-cover object-[50%_25%] shadow-raised"
               />
-              <figcaption className="absolute start-4 bottom-4 rounded-[14px] bg-navy/90 px-5 py-3 text-cream backdrop-blur">
+              <figcaption className="absolute start-4 bottom-4 rounded-[14px] bg-panel/90 px-5 py-3 text-cream backdrop-blur">
                 <span className="block text-base font-bold">أحمد السقا</span>
                 <span className="block text-sm text-cream/75">من دبي لكندا، 12 سنة ورا الكاميرا</span>
               </figcaption>

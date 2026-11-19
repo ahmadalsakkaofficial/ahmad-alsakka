@@ -45,7 +45,7 @@ const faqs = [
 ];
 
 function Cta({ children = "اعرف إذا النظام مناسب إلك", light = false }: { children?: string; light?: boolean }) {
-  return <Button asChild className={`h-14 px-7 text-lg ${light ? "bg-bronze text-cream hover:bg-bronze/90" : "bg-navy text-cream hover:bg-navy/90"}`}><a href="#apply">{children}<ArrowLeft /></a></Button>;
+  return <Button asChild className={`h-14 px-7 text-lg ${light ? "bg-bronze text-[#070707] hover:bg-bronze/90" : "bg-bronze text-[#070707] hover:bg-bronze/90"}`}><a href="#apply">{children}<ArrowLeft /></a></Button>;
 }
 
 function SectionTitle({ eyebrow, children, light = false }: { eyebrow: string; children: React.ReactNode; light?: boolean }) {
@@ -73,7 +73,7 @@ export function AuthorityEngineLanding() {
   }, []);
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-cream">
+    <div className="min-h-screen overflow-x-hidden bg-surface">
       <header className="absolute inset-x-0 top-0 z-20 border-b border-cream/15 text-cream">
         <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-5 sm:px-8">
           <a href="#top" className="flex items-center gap-3"><img src={portrait.url} alt="أحمد السقا" className="size-10 rounded-full border border-bronze object-cover" /><span><strong className="block text-lg font-normal">أحمد السقا</strong><small className="font-latin text-[11px] text-cream/60">THE AUTHORITY ENGINE</small></span></a>
@@ -82,7 +82,7 @@ export function AuthorityEngineLanding() {
       </header>
 
       <main>
-        <section id="top" className="relative flex min-h-[92svh] items-end overflow-hidden bg-navy px-5 pb-16 pt-32 text-cream sm:px-8 lg:pb-24">
+        <section id="top" className="relative flex min-h-[92svh] items-end overflow-hidden bg-panel px-5 pb-16 pt-32 text-cream sm:px-8 lg:pb-24">
           <div className="pointer-events-none absolute inset-y-0 left-[12%] hidden w-px bg-cream/10 lg:block" /><div className="pointer-events-none absolute inset-y-0 right-[12%] hidden w-px bg-cream/10 lg:block" />
           <div className="relative mx-auto grid w-full max-w-6xl items-end gap-12 lg:grid-cols-[1fr_280px]">
             <div className="max-w-4xl">
@@ -93,7 +93,7 @@ export function AuthorityEngineLanding() {
                 <p>The Authority Engine يساعدك تحول خبرتك، أفكارك وطريقة تفكيرك لحضور يخلي الشخص المناسب يعرف مين أنت قبل ما يحكي معك</p>
               </div>
               <blockquote className="mt-8 max-w-2xl border-r-2 border-bronze pr-5 text-2xl leading-10 text-cream">بدل ما تكون خبير الناس تكتشفه فقط عن طريق توصية، ابني اسم يخلي السوق يعرفك قبل ما يحتاجك</blockquote>
-              <Button asChild className="mt-9 h-14 bg-bronze px-7 text-lg text-cream hover:bg-bronze/90"><a href="#video">شوف كيف ممكن نبني هاد معك<ArrowLeft /></a></Button>
+              <Button asChild className="mt-9 h-14 bg-bronze px-7 text-lg text-[#070707] hover:bg-bronze/90"><a href="#video">شوف كيف ممكن نبني هاد معك<ArrowLeft /></a></Button>
             </div>
             <div className="hidden border-r border-bronze/50 pr-5 lg:block"><p className="text-6xl text-bronze">3</p><p className="mt-1 text-lg text-cream/65">شهور لبناء أصل حول اسمك</p></div>
           </div>
@@ -114,9 +114,9 @@ export function AuthorityEngineLanding() {
 
         <Proof />
 
-        <section className="bg-navy px-5 py-20 text-cream sm:px-8 lg:py-28"><div className="mx-auto max-w-5xl text-center"><SectionTitle eyebrow="وجهة نظر مختلفة" light>ما بدي أحوّلك لـ Content Creator</SectionTitle><div className="mx-auto max-w-3xl space-y-3 text-2xl leading-10 text-cream/80"><p>إذا أنت طبيب، بدي تضل طبيب</p><p>إذا أنت محامي، بدي تضل محامي</p><p>وإذا عندك شركة، شغلك الأساسي لازم يضل شركتك</p></div><p className="mx-auto mt-10 max-w-2xl border-y border-bronze/40 py-7 text-3xl leading-10 text-cream">المحتوى المفروض يخدم شغلك، مو يصير هو شغلك</p><p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-cream/70">لهيك The Authority Engine مبني حتى يحوّل خبرتك الموجودة أساساً إلى نظام محتوى تقدر تستخدمه وتطوره</p></div></section>
+        <section className="bg-panel px-5 py-20 text-cream sm:px-8 lg:py-28"><div className="mx-auto max-w-5xl text-center"><SectionTitle eyebrow="وجهة نظر مختلفة" light>ما بدي أحوّلك لـ Content Creator</SectionTitle><div className="mx-auto max-w-3xl space-y-3 text-2xl leading-10 text-cream/80"><p>إذا أنت طبيب، بدي تضل طبيب</p><p>إذا أنت محامي، بدي تضل محامي</p><p>وإذا عندك شركة، شغلك الأساسي لازم يضل شركتك</p></div><p className="mx-auto mt-10 max-w-2xl border-y border-bronze/40 py-7 text-3xl leading-10 text-cream">المحتوى المفروض يخدم شغلك، مو يصير هو شغلك</p><p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-cream/70">لهيك The Authority Engine مبني حتى يحوّل خبرتك الموجودة أساساً إلى نظام محتوى تقدر تستخدمه وتطوره</p></div></section>
 
-        <section className="px-5 py-20 sm:px-8 lg:py-28"><div className="mx-auto max-w-6xl"><SectionTitle eyebrow="من الخبرة للسلطة">هون بيجي The Authority Engine</SectionTitle><p className="mx-auto -mt-6 mb-12 max-w-2xl text-center text-lg leading-8 text-subtle">نحنا مو عم نبيعك Reels، عم نبني النظام اللي يحوّل خبرتك لسلطة واضحة بالسوق</p><div className="grid gap-px overflow-hidden border border-bronze/30 bg-bronze/25 lg:grid-cols-4">{phases.map((phase) => <article key={phase.n} className="bg-cream p-6 sm:p-8"><div className="flex items-center justify-between"><span className="font-latin text-sm text-bronze">{phase.n}</span><span className="font-latin text-[11px] text-subtle">{phase.en}</span></div><h3 className="mt-12 text-3xl text-navy">{phase.ar}</h3><p className="mt-4 min-h-28 text-xl leading-8 text-navy">{phase.dream}</p><p className="mt-7 border-t border-bronze/25 pt-5 text-base leading-7 text-subtle">{phase.details}</p></article>)}</div></div></section>
+        <section className="px-5 py-20 sm:px-8 lg:py-28"><div className="mx-auto max-w-6xl"><SectionTitle eyebrow="من الخبرة للسلطة">هون بيجي The Authority Engine</SectionTitle><p className="mx-auto -mt-6 mb-12 max-w-2xl text-center text-lg leading-8 text-subtle">نحنا مو عم نبيعك Reels، عم نبني النظام اللي يحوّل خبرتك لسلطة واضحة بالسوق</p><div className="grid gap-px overflow-hidden border border-bronze/30 bg-bronze/25 lg:grid-cols-4">{phases.map((phase) => <article key={phase.n} className="bg-surface p-6 sm:p-8"><div className="flex items-center justify-between"><span className="font-latin text-sm text-bronze">{phase.n}</span><span className="font-latin text-[11px] text-subtle">{phase.en}</span></div><h3 className="mt-12 text-3xl text-navy">{phase.ar}</h3><p className="mt-4 min-h-28 text-xl leading-8 text-navy">{phase.dream}</p><p className="mt-7 border-t border-bronze/25 pt-5 text-base leading-7 text-subtle">{phase.details}</p></article>)}</div></div></section>
 
         <Transformation />
 
@@ -130,8 +130,8 @@ export function AuthorityEngineLanding() {
 
         <ApplicationForm />
       </main>
-      <footer className="border-t border-bronze/20 bg-navy px-5 py-8 text-cream"><div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-5 text-sm text-cream/65 sm:flex-row"><p>أحمد السقا، The Authority Engine</p><nav className="flex gap-6"><Link to="/privacy">الخصوصية</Link><Link to="/terms">الشروط</Link><Link to="/">الموقع الرئيسي</Link></nav></div></footer>
-      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-bronze/30 bg-cream/95 p-3 backdrop-blur-sm lg:hidden"><Button asChild className="h-12 w-full bg-bronze text-base text-cream hover:bg-bronze/90"><a href="#apply">قدّم طلبك<ArrowLeft /></a></Button></div>
+      <footer className="border-t border-bronze/20 bg-panel px-5 py-8 text-cream"><div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-5 text-sm text-cream/65 sm:flex-row"><p>أحمد السقا، The Authority Engine</p><nav className="flex gap-6"><Link to="/privacy">الخصوصية</Link><Link to="/terms">الشروط</Link><Link to="/">الموقع الرئيسي</Link></nav></div></footer>
+      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-bronze/30 bg-background/95 p-3 backdrop-blur-sm lg:hidden"><Button asChild className="h-12 w-full bg-bronze text-base text-[#070707] hover:bg-bronze/90"><a href="#apply">قدّم طلبك<ArrowLeft /></a></Button></div>
     </div>
   );
 }
@@ -153,5 +153,5 @@ function FitList({ title, items, muted = false }: { title: string; items: string
 }
 
 function Pricing() {
-  return <section className="bg-navy px-5 py-20 text-cream sm:px-8 lg:py-28"><div className="mx-auto max-w-4xl text-center"><p className="text-base text-bronze">الاستثمار</p><h2 className="mt-5 font-latin text-5xl text-cream sm:text-7xl">3,000 USD <span className="font-sans text-2xl text-cream/70">/ شهرياً</span></h2><p className="mt-4 text-xl text-cream/75">البرنامج مدته 3 شهور، والدفع كل شهر بشهره</p><div className="mx-auto mt-9 max-w-2xl border-y border-bronze/50 py-6 text-3xl text-cream">إجمالي البرنامج <span className="font-latin text-bronze">9,000 USD</span></div><div className="mx-auto mt-8 max-w-2xl space-y-4 text-lg leading-8 text-cream/70"><p>الشهر الأول منبني فيه الاستراتيجية والنظام ومنصوّر أول دفعة، الشهر التاني والتالت منشر ومنقيس ومنحسّن، ومنصوّر دفعة تانية على أساس الأرقام، المحتوى الأساسي Instagram وTikTok، ومنه كاروسيلات وبوستات LinkedIn</p><p>إذا ما سلّمنا المخرجات المتفق عليها بأول شهر، بتوقف وما بتدفع الشهرين الباقيين</p><p>إذا كان المشروع يحتاج YouTube طويل، Podcast، إنتاج إضافي أو نطاق منصات أكبر، منحدد التفاصيل والتكلفة بشكل منفصل قبل البدء</p><p>ما في ضمان لعدد مشاهدات أو عملاء، الضمان على المخرجات: الاستراتيجية، والنظام، والمحتوى، والنشر، والتحسين</p></div><div className="mt-9"><Cta light>اعرف إذا مناسب إلك</Cta></div></div></section>;
+  return <section className="bg-panel px-5 py-20 text-cream sm:px-8 lg:py-28"><div className="mx-auto max-w-4xl text-center"><p className="text-base text-bronze">الاستثمار</p><h2 className="mt-5 font-latin text-5xl text-cream sm:text-7xl">3,000 USD <span className="font-sans text-2xl text-cream/70">/ شهرياً</span></h2><p className="mt-4 text-xl text-cream/75">البرنامج مدته 3 شهور، والدفع كل شهر بشهره</p><div className="mx-auto mt-9 max-w-2xl border-y border-bronze/50 py-6 text-3xl text-cream">إجمالي البرنامج <span className="font-latin text-bronze">9,000 USD</span></div><div className="mx-auto mt-8 max-w-2xl space-y-4 text-lg leading-8 text-cream/70"><p>الشهر الأول منبني فيه الاستراتيجية والنظام ومنصوّر أول دفعة، الشهر التاني والتالت منشر ومنقيس ومنحسّن، ومنصوّر دفعة تانية على أساس الأرقام، المحتوى الأساسي Instagram وTikTok، ومنه كاروسيلات وبوستات LinkedIn</p><p>إذا ما سلّمنا المخرجات المتفق عليها بأول شهر، بتوقف وما بتدفع الشهرين الباقيين</p><p>إذا كان المشروع يحتاج YouTube طويل، Podcast، إنتاج إضافي أو نطاق منصات أكبر، منحدد التفاصيل والتكلفة بشكل منفصل قبل البدء</p><p>ما في ضمان لعدد مشاهدات أو عملاء، الضمان على المخرجات: الاستراتيجية، والنظام، والمحتوى، والنشر، والتحسين</p></div><div className="mt-9"><Cta light>اعرف إذا مناسب إلك</Cta></div></div></section>;
 }

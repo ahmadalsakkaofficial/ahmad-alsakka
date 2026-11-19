@@ -15,7 +15,7 @@ export function Vsl() {
   }
 
   return (
-    <section id="video" className="scroll-mt-20 bg-navy px-5 py-20 text-cream sm:px-8 lg:py-28" aria-labelledby="vsl-title">
+    <section id="video" className="scroll-mt-20 bg-panel px-5 py-20 text-cream sm:px-8 lg:py-28" aria-labelledby="vsl-title">
       <div className="mx-auto max-w-5xl text-center">
         <p className="text-base text-bronze">شوف الفكرة كاملة</p>
         <h2 id="vsl-title" className="mt-3 text-3xl leading-[1.35] text-cream sm:text-5xl">قبل ما أحكيلك شو بنعمل، خليني أفرجيك شو عم نحاول نبني</h2>
@@ -31,7 +31,7 @@ export function Vsl() {
           )}
         </div>
         <p className="mt-8 text-lg text-cream/75">إذا حسيت إن هاد بالضبط اللي ناقصك، فيك تقدّم طلبك من هون</p>
-        <Button asChild className="mt-5 h-14 bg-bronze px-8 text-lg text-cream hover:bg-bronze/90"><a href="#apply">اعرف إذا النظام مناسب إلك</a></Button>
+        <Button asChild className="mt-5 h-14 bg-bronze px-8 text-lg text-[#070707] hover:bg-bronze/90"><a href="#apply">اعرف إذا النظام مناسب إلك</a></Button>
       </div>
     </section>
   );

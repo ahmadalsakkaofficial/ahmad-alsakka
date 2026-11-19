@@ -23,8 +23,8 @@ function WorkshopThankYou() {
   const cal = calendarUrl();
   const steps = [
     {
-      t: "شوف الواتساب والإيميل",
-      d: "حتوصلك رسالة تأكيد، وقبل الندوة بيوم وبساعة حيوصلك الرابط",
+      t: "شوف إيميلك",
+      d: "وصلك إيميل تأكيد هلّق، وقبل الندوة بيوم وبساعة بيوصلك الرابط. إذا ما لقيته شيّك عالـ Spam أو Promotions",
     },
     {
       t: w.dateLabel ? `حط الموعد بتقويمك: ${w.dateLabel} · ${w.timeLabel}` : "الموعد حيوصلك أول ما يتحدد",
@@ -38,7 +38,7 @@ function WorkshopThankYou() {
     },
   ];
   return (
-    <main className="flex min-h-screen items-center bg-navy px-5 py-16 text-cream">
+    <main className="flex min-h-screen items-center bg-panel px-5 py-16 text-cream">
       <div className="mx-auto w-full max-w-2xl">
         <p className="text-base font-semibold text-bronze">تم التسجيل</p>
         <h1 className="mt-4 text-4xl leading-[1.4] font-bold sm:text-6xl">مكانك محجوز</h1>
@@ -51,7 +51,7 @@ function WorkshopThankYou() {
               <h2 className="mt-2 text-xl font-bold">{s.t}</h2>
               <p className="mt-2 text-base leading-[1.8] text-cream/70">{s.d}</p>
               {s.href && (
-                <a href={s.href} target="_blank" rel="noopener noreferrer" className="focus-ring mt-4 inline-flex rounded-[10px] bg-bronze px-5 py-2.5 text-sm font-bold text-cream">
+                <a href={s.href} target="_blank" rel="noopener noreferrer" className="focus-ring mt-4 inline-flex rounded-[10px] bg-bronze px-5 py-2.5 text-sm font-bold text-[#070707]">
                   {s.cta}
                 </a>
               )}
@@ -61,7 +61,7 @@ function WorkshopThankYou() {
 
         <div className="mt-8 flex flex-wrap gap-3">
           {w.whatsappNumber && (
-            <a href={`https://wa.me/${w.whatsappNumber}?text=${encodeURIComponent("سجّلت بالندوة")}`} target="_blank" rel="noopener noreferrer" className="focus-ring rounded-[12px] bg-cream px-6 py-3.5 text-base font-bold text-navy">
+            <a href={`https://wa.me/${w.whatsappNumber}?text=${encodeURIComponent("سجّلت بالندوة")}`} target="_blank" rel="noopener noreferrer" className="focus-ring rounded-[12px] bg-surface px-6 py-3.5 text-base font-bold text-navy">
               ابعتلي «سجّلت» عالواتساب
             </a>
           )}

@@ -67,7 +67,7 @@ export function EngineSection() {
         <ul className="mt-5 grid gap-4 sm:grid-cols-2">
           {outcomes.map((o, i) => (
             <Reveal key={o} delay={i * 60}>
-              <li className="h-full rounded-[18px] bg-cream p-6 text-lg leading-[1.8] font-bold text-navy">{o}</li>
+              <li className="h-full rounded-[18px] bg-surface p-6 text-lg leading-[1.8] font-bold text-navy">{o}</li>
             </Reveal>
           ))}
         </ul>
@@ -104,7 +104,7 @@ export function EngineSection() {
           </ul>
         </div>
 
-        <div className="rounded-[18px] bg-cream p-7 text-navy">
+        <div className="rounded-[18px] bg-surface p-7 text-navy">
           <p className="text-sm font-semibold text-bronze">الاستثمار</p>
           <p className="mt-2">
             <span className="font-latin text-4xl font-bold">3,000 USD</span>
@@ -119,7 +119,7 @@ export function EngineSection() {
           </div>
           <a
             href="/authority-engine"
-            className="focus-ring mt-6 flex items-center justify-center rounded-[12px] bg-navy px-6 py-4 text-base font-bold text-cream transition-opacity hover:opacity-90"
+            className="focus-ring mt-6 flex items-center justify-center rounded-[12px] bg-bronze px-6 py-4 text-base font-bold text-[#070707] transition-opacity hover:opacity-90"
           >
             قدّم وشوف إذا مناسب
           </a>

@@ -6,7 +6,7 @@ export function FinalCta() {
     <section
       id="start"
       aria-labelledby="start-title"
-      className="scroll-mt-20 bg-navy px-5 py-24 text-cream sm:px-8 sm:py-32"
+      className="scroll-mt-20 bg-panel px-5 py-24 text-cream sm:px-8 sm:py-32"
     >
       <div className="mx-auto w-full max-w-3xl text-center">
         <p className="text-sm font-medium tracking-[0.2em] text-bronze">جاهز تبدأ؟</p>
@@ -34,7 +34,7 @@ export function FinalCta() {
         <div className="mt-10">
           <a
             href="/authority-engine"
-            className="focus-ring inline-flex items-center justify-center gap-2 rounded-[12px] bg-bronze px-8 py-4 text-base font-bold text-cream transition-opacity hover:opacity-90"
+            className="focus-ring inline-flex items-center justify-center gap-2 rounded-[12px] bg-bronze px-8 py-4 text-base font-bold text-[#070707] transition-opacity hover:opacity-90"
           >
             شوف إذا مناسب إلك
           </a>

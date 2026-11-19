@@ -22,7 +22,7 @@ export function Section({
         "scroll-mt-20 px-5 py-20 sm:px-8 sm:py-28",
         tone === "cream" && "bg-background",
         tone === "surface" && "bg-surface",
-        tone === "navy" && "bg-navy text-cream",
+        tone === "navy" && "bg-panel text-cream",
         className,
       )}
     >

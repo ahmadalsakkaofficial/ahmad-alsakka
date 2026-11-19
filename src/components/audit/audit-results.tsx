@@ -66,7 +66,7 @@ export function AuditResults({
 
   return (
     <div>
-      <section className="bg-navy px-5 py-16 text-cream sm:px-8 sm:py-24">
+      <section className="bg-panel px-5 py-16 text-cream sm:px-8 sm:py-24">
         <div className="mx-auto w-full max-w-3xl">
           <p className="text-sm tracking-[0.2em] text-bronze">
             نتيجة البراند الشخصي، {contact.name}
@@ -181,7 +181,7 @@ export function AuditResults({
               <a
                 href="/#start"
                 onClick={() => onCta("work")}
-                className="focus-ring mt-6 inline-flex items-center justify-center gap-2 rounded-[12px] bg-bronze px-6 py-3.5 text-base font-bold text-cream transition-opacity hover:opacity-90"
+                className="focus-ring mt-6 inline-flex items-center justify-center gap-2 rounded-[12px] bg-bronze px-6 py-3.5 text-base font-bold text-[#070707] transition-opacity hover:opacity-90"
               >
                 قدّم للشغل معي
               </a>

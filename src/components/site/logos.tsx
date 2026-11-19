@@ -42,7 +42,7 @@ export function LogoWall() {
                 alt={l.name}
                 title={l.name}
                 loading="lazy"
-                className="max-h-12 w-auto max-w-[120px] object-contain opacity-70 transition-opacity hover:opacity-100"
+                className="max-h-12 w-auto max-w-[120px] object-contain opacity-60 brightness-0 invert transition-opacity hover:opacity-100"
               />
             </li>
           ))}

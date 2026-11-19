@@ -147,7 +147,7 @@ export function ApplicationForm() {
   }
 
   return (
-    <section id="apply" className="scroll-mt-20 bg-navy px-5 py-20 text-cream sm:px-8 lg:py-28" aria-labelledby="apply-title">
+    <section id="apply" className="scroll-mt-20 bg-panel px-5 py-20 text-cream sm:px-8 lg:py-28" aria-labelledby="apply-title">
       <div className="mx-auto max-w-3xl">
         <div className="mb-10 text-center">
           <p className="text-base text-bronze">طلب التوافق</p>
@@ -171,7 +171,7 @@ export function ApplicationForm() {
               <div className="grid gap-3 sm:grid-cols-2">
                 {current.options.map((option) => (
                   <Button key={option} type="button" variant="outline" onClick={() => choose(option)}
-                    className={`h-auto min-h-14 justify-between whitespace-normal border-cream/20 px-5 py-3 text-right text-base ${selected === option ? "border-bronze bg-bronze text-cream hover:bg-bronze/90" : "bg-transparent text-cream hover:bg-cream/10 hover:text-cream"}`}>
+                    className={`h-auto min-h-14 justify-between whitespace-normal border-cream/20 px-5 py-3 text-right text-base ${selected === option ? "border-bronze bg-bronze text-[#070707] hover:bg-bronze/90" : "bg-transparent text-[#070707] hover:bg-cream/10 hover:text-cream"}`}>
                     <span>{option}</span>{selected === option ? <Check /> : null}
                   </Button>
                 ))}
@@ -185,7 +185,7 @@ export function ApplicationForm() {
               <div>
                 <label className="mb-2 block text-base" htmlFor="ae-phone">WhatsApp / mobile <span className="text-bronze">مطلوب</span></label>
                 <div className="grid grid-cols-[110px_1fr] gap-2" dir="ltr">
-                  <select aria-label="رمز الدولة" value={answers.countryCode} onChange={(e) => setAnswers({ ...answers, countryCode: e.target.value })} className="h-13 border border-cream/25 bg-navy px-3 text-cream">
+                  <select aria-label="رمز الدولة" value={answers.countryCode} onChange={(e) => setAnswers({ ...answers, countryCode: e.target.value })} className="h-13 border border-cream/25 bg-panel px-3 text-cream">
                     {countryCodes.map((code) => <option key={code}>{code}</option>)}
                   </select>
                   <input id="ae-phone" required type="tel" inputMode="tel" autoComplete="tel-national" value={answers.phone} onChange={(e) => setAnswers({ ...answers, phone: e.target.value })} className="h-13 min-w-0 border border-cream/25 bg-transparent px-4 text-cream outline-none focus:border-bronze" />
@@ -200,7 +200,7 @@ export function ApplicationForm() {
               <label className="block text-base">في شي مهم بتحب أعرفه عن شغلك قبل ما أراجع الطلب؟
                 <textarea value={answers.note} onChange={(e) => setAnswers({ ...answers, note: e.target.value })} rows={4} className="mt-2 w-full resize-y border border-cream/25 bg-transparent p-4 text-cream outline-none focus:border-bronze" />
               </label>
-              <Button type="submit" disabled={submitting} className="h-14 w-full bg-bronze text-lg text-cream hover:bg-bronze/90">{submitting ? "عم نرسل طلبك" : "أرسل طلبي"}</Button>
+              <Button type="submit" disabled={submitting} className="h-14 w-full bg-bronze text-lg text-[#070707] hover:bg-bronze/90">{submitting ? "عم نرسل طلبك" : "أرسل طلبي"}</Button>
               <p className="text-center text-sm text-cream/65">معلوماتك بتضل خاصة وما بنشاركها مع أي جهة</p>
             </form>
           )}
@@ -208,7 +208,7 @@ export function ApplicationForm() {
           {error ? <p role="alert" className="mt-5 border-r-2 border-bronze pr-3 text-base text-cream">{error}</p> : null}
           <div className="mt-8 flex items-center justify-between gap-3">
             <Button type="button" variant="ghost" disabled={step === 0 || submitting} onClick={() => { setStep((value) => Math.max(0, value - 1)); setError(""); }} className="h-12 text-cream hover:bg-cream/10 hover:text-cream"><ArrowRight /> رجوع</Button>
-            {!isContact ? <Button type="button" disabled={!selected} onClick={next} className="h-12 bg-bronze px-7 text-cream hover:bg-bronze/90">التالي <ArrowLeft /></Button> : null}
+            {!isContact ? <Button type="button" disabled={!selected} onClick={next} className="h-12 bg-bronze px-7 text-[#070707] hover:bg-bronze/90">التالي <ArrowLeft /></Button> : null}
           </div>
         </div>
       </div>

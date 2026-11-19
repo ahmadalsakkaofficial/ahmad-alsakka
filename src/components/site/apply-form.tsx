@@ -103,7 +103,7 @@ export function ApplyForm() {
         type="button"
         onClick={() => void send()}
         disabled={!valid || state === "sending"}
-        className="focus-ring mt-6 w-full rounded-[12px] bg-bronze px-7 py-4 text-base font-bold text-cream transition-opacity hover:opacity-90 disabled:opacity-40 sm:w-auto"
+        className="focus-ring mt-6 w-full rounded-[12px] bg-bronze px-7 py-4 text-base font-bold text-[#070707] transition-opacity hover:opacity-90 disabled:opacity-40 sm:w-auto"
       >
         {state === "sending" ? "عم نبعت،" : "ابعت معلوماتك"}
       </button>

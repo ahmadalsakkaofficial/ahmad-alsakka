@@ -85,7 +85,7 @@ export function AuditExperience() {
         <button
           type="button"
           onClick={() => void finish()}
-          className="focus-ring mt-8 rounded-[12px] bg-navy px-7 py-4 text-base font-bold text-cream"
+          className="focus-ring mt-8 rounded-[12px] bg-bronze px-7 py-4 text-base font-bold text-[#070707]"
         >
           جرّب مرة تانية
         </button>
@@ -222,7 +222,7 @@ export function AuditExperience() {
               type="button"
               onClick={next}
               disabled={!answered()}
-              className="focus-ring rounded-[12px] bg-navy px-7 py-4 text-base font-bold text-cream transition-opacity hover:opacity-90 disabled:opacity-35"
+              className="focus-ring rounded-[12px] bg-bronze px-7 py-4 text-base font-bold text-[#070707] transition-opacity hover:opacity-90 disabled:opacity-35"
             >
               كمّل
             </button>
@@ -276,7 +276,7 @@ export function AuditExperience() {
               type="button"
               onClick={() => void finish()}
               disabled={!contact.name.trim() || !/^\S+@\S+\.\S+$/.test(contact.email)}
-              className="focus-ring rounded-[12px] bg-navy px-7 py-4 text-base font-bold text-cream transition-opacity hover:opacity-90 disabled:opacity-35"
+              className="focus-ring rounded-[12px] bg-bronze px-7 py-4 text-base font-bold text-[#070707] transition-opacity hover:opacity-90 disabled:opacity-35"
             >
               شوف نتيجتك
             </button>
