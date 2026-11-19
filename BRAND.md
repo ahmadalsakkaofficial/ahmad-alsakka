@@ -16,4 +16,4 @@ Rules
 - Text on gold is always black `#070707`, never white.
 - One gold highlight per headline (marker bar behind 1–3 words).
 - Glow = radial gradient of gold at 20–55% opacity behind the subject.
-- Fonts: IBM Plex Sans Arabic (Arabic), Inter (Latin/numbers).
+- Fonts: Thmanyah Serif Display (all Arabic: Light 300, Regular 400, Medium 500, Bold 700, Black 900), Inter for Latin/numbers. Files in public/fonts.
