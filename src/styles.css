@@ -300,3 +300,9 @@
   --acc-hi: 255, 208, 110;
   --bronze: rgb(var(--acc));
 }
+
+/* Workshop top ticker */
+@keyframes ticker-move { from { transform: translateX(0); } to { transform: translateX(50%); } }
+.ticker-track { animation: ticker-move 38s linear infinite; }
+.ticker:hover .ticker-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; } }

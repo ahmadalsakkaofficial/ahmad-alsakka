@@ -27,7 +27,7 @@ export const siteConfig = {
     subtitle: "والأنظمة السبعة اللي بتخلي الناس تعرف شو بتعمل وليش انت",
     /** Fill both when the date is decided, e.g. "السبت 12 كانون الأول" and "8 المسا بتوقيت السعودية". Empty = "الموعد بينعلن قريب". */
     dateLabel: "الاتنين 30 نوفمبر",
-    timeLabel: "8 المسا بتوقيت السعودية · 9 الإمارات",
+    timeLabel: "8 م بتوقيت السعودية · 9 م بتوقيت الإمارات",
     /** ISO start time for the calendar button on the thank-you page, e.g. "2026-12-12T17:00:00Z". */
     startIso: "2026-11-30T17:00:00Z",
     /** Ahmad's WhatsApp number in international format without +, for the "save my number" button. */

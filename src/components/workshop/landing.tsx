@@ -59,6 +59,96 @@ function glowMove(e: React.MouseEvent<HTMLElement>) {
 }
 
 
+
+const zones = [
+  { c: "السعودية · الكويت · قطر · الأردن", t: "8 م" },
+  { c: "الإمارات · عُمان", t: "9 م" },
+  { c: "مصر · لبنان", t: "7 م" },
+  { c: "لندن (GMT)", t: "5 م" },
+  { c: "تورنتو · نيويورك", t: "12 الظهر" },
+];
+
+function useCountdown() {
+  const [now, setNow] = useState<number | null>(null);
+  useEffect(() => {
+    setNow(Date.now());
+    const t = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(t);
+  }, []);
+  if (!w.startIso || now === null) return null;
+  const diff = new Date(w.startIso).getTime() - now;
+  if (diff <= 0) return null;
+  return { d: Math.floor(diff / 86400000), h: Math.floor(diff / 3600000) % 24, m: Math.floor(diff / 60000) % 60, s: Math.floor(diff / 1000) % 60 };
+}
+
+function LocalTime() {
+  const [label, setLabel] = useState("");
+  useEffect(() => {
+    if (!w.startIso) return;
+    try {
+      const d = new Date(w.startIso);
+      const time = new Intl.DateTimeFormat("ar", { hour: "numeric", minute: "2-digit", numberingSystem: "latn" }).format(d);
+      const day = new Intl.DateTimeFormat("ar", { weekday: "long", day: "numeric", month: "long", numberingSystem: "latn" }).format(d);
+      setLabel(`${day}، الساعة ${time}`);
+    } catch {
+      /* ignore */
+    }
+  }, []);
+  if (!label) return null;
+  return (
+    <p className="mt-3 text-sm text-cream/75">
+      يعني عندك: <span className="font-bold text-bronze">{label}</span>
+    </p>
+  );
+}
+
+function TimeZones() {
+  return (
+    <div className="mt-6">
+      <p className="text-sm font-medium text-cream/60">الموعد حسب بلدك</p>
+      <ul className="mt-3 flex flex-wrap gap-2">
+        {zones.map((z) => (
+          <li key={z.c} className="rounded-full border border-white/12 bg-white/[0.04] px-3.5 py-1.5 text-sm text-cream/80">
+            {z.c} <span className="font-bold text-bronze">{z.t}</span>
+          </li>
+        ))}
+      </ul>
+      <LocalTime />
+    </div>
+  );
+}
+
+function Ticker() {
+  const cd = useCountdown();
+  const pad = (n: number) => String(n).padStart(2, "0");
+  const items = [
+    "🔴 ندوة لايف مجانية",
+    `${w.dateLabel} · ${w.timeLabel}`,
+    cd ? `⏳ باقي ${cd.d} يوم و${pad(cd.h)}:${pad(cd.m)}:${pad(cd.s)}` : "⏳ قرّب الموعد",
+    "ليش الأقل خبرة منك معروف أكتر؟",
+    "احجز مكانك مجاناً هلّق ←",
+  ];
+  const row = (
+    <div className="flex shrink-0 items-center gap-10 pe-10">
+      {items.map((t, i) => (
+        <span key={i} className="whitespace-nowrap">
+          {t}
+        </span>
+      ))}
+    </div>
+  );
+  return (
+    <a href="#register" className="ticker block overflow-hidden bg-bronze py-3 text-sm font-bold text-[var(--ws-bg)] sm:text-base" aria-label="احجز مكانك بالندوة المجانية">
+      <div className="ticker-track flex w-max">
+        {row}
+        {row}
+        {row}
+        {row}
+      </div>
+    </a>
+  );
+}
+
 function Countdown() {
   const [now, setNow] = useState<number | null>(null);
   useEffect(() => {
@@ -105,7 +195,7 @@ const steps = [
 const faqs = [
   { q: "هل الندوة مجانية فعلاً؟", a: "إي، مجانية بالكامل. ما في دفع ولا بطاقة بنك، بس اسمك وإيميلك." },
   { q: "لمين هالندوة؟", a: "لكل حدا عنده خبرة بمجاله ومو ظاهر أونلاين: دكاترة، محامين، مستشارين، أصحاب شركات… وموظفين بدهم يكبّروا اسمهم بمجالهم." },
-  { q: "إمتى بالزبط؟", a: `${w.dateLabel}، الساعة 8 المسا بتوقيت السعودية، 9 الإمارات، و12 الظهر بتوقيت تورنتو.` },
+  { q: "إمتى بالزبط؟", a: `${w.dateLabel}: 8 م بتوقيت السعودية والكويت وقطر والأردن، 9 م الإمارات وعُمان، 7 م مصر ولبنان، 5 م لندن (GMT)، و12 الظهر تورنتو ونيويورك.` },
   { q: "قديش مدتها؟", a: "حوالي ساعة، كلها محتوى عملي وأمثلة حقيقية." },
   { q: "لازم أكون عم بنزّل محتوى؟", a: "لأ. الندوة معمولة للي ما بلّش أبداً، أو بلّش ووقف، أو عم ينزّل وما عم يجيه عملاء." },
   { q: "رح تبيع شي بالندوة؟", a: "بآخرها رح احكي عن برنامج مدفوع للي بدو يكمّل معي خطوة بخطوة. بس الساعة كلها محتوى بتقدر تطبّقه لحالك حتى لو ما اشتركت." },
@@ -156,7 +246,6 @@ export function WorkshopLanding() {
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
 
-  const hasDate = Boolean(w.dateLabel);
 
   useEffect(() => {
     const pixelId = siteConfig.authorityEngine.metaPixelId;
@@ -220,17 +309,7 @@ export function WorkshopLanding() {
 
   return (
     <main data-ws-theme className="ws-theme min-h-screen overflow-hidden bg-[var(--ws-bg)] text-cream">
-      <div className="bg-bronze px-5 py-3 text-center text-sm font-bold text-[var(--ws-bg)] sm:text-base">
-        ندوة مجانية لايف
-        <span className="mx-2 opacity-50">·</span>
-        {hasDate ? (
-          <span>
-            {w.dateLabel} · {w.timeLabel}
-          </span>
-        ) : (
-          <span>الموعد بينعلن قريب</span>
-        )}
-      </div>
+      <Ticker />
 
       {/* Hero */}
       <section className="relative px-5 pt-10 pb-6 sm:px-8 sm:pt-14">
@@ -257,6 +336,7 @@ export function WorkshopLanding() {
               احجز مكانك مجاناً ↓
             </a>
             <Countdown />
+            <TimeZones />
           </div>
 
           {w.videoUrl ? (
