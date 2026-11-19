@@ -9,39 +9,19 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as WorkshopRouteImport } from './routes/workshop'
-import { Route as TermsRouteImport } from './routes/terms'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as AuthorityEngineRouteImport } from './routes/authority-engine'
-import { Route as AuditRouteImport } from './routes/audit'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as WorkshopThankYouRouteImport } from './routes/workshop_.thank-you'
+import { Route as AuditRouteImport } from './routes/audit'
+import { Route as AuthorityEngineRouteImport } from './routes/authority-engine'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as WorkshopRouteImport } from './routes/workshop'
 import { Route as AuthorityEngineThankYouRouteImport } from './routes/authority-engine_.thank-you'
+import { Route as WorkshopThankYouRouteImport } from './routes/workshop_.thank-you'
 
-const WorkshopRoute = WorkshopRouteImport.update({
-  id: '/workshop',
-  path: '/workshop',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const TermsRoute = TermsRouteImport.update({
-  id: '/terms',
-  path: '/terms',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrivacyRoute = PrivacyRouteImport.update({
-  id: '/privacy',
-  path: '/privacy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AuthorityEngineRoute = AuthorityEngineRouteImport.update({
-  id: '/authority-engine',
-  path: '/authority-engine',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuditRoute = AuditRouteImport.update({
@@ -49,19 +29,39 @@ const AuditRoute = AuditRouteImport.update({
   path: '/audit',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const AuthorityEngineRoute = AuthorityEngineRouteImport.update({
+  id: '/authority-engine',
+  path: '/authority-engine',
   getParentRoute: () => rootRouteImport,
 } as any)
-const WorkshopThankYouRoute = WorkshopThankYouRouteImport.update({
-  id: '/workshop_/thank-you',
-  path: '/workshop/thank-you',
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkshopRoute = WorkshopRouteImport.update({
+  id: '/workshop',
+  path: '/workshop',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthorityEngineThankYouRoute = AuthorityEngineThankYouRouteImport.update({
   id: '/authority-engine_/thank-you',
   path: '/authority-engine/thank-you',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkshopThankYouRoute = WorkshopThankYouRouteImport.update({
+  id: '/workshop_/thank-you',
+  path: '/workshop/thank-you',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -149,39 +149,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/workshop': {
-      id: '/workshop'
-      path: '/workshop'
-      fullPath: '/workshop'
-      preLoaderRoute: typeof WorkshopRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/terms': {
-      id: '/terms'
-      path: '/terms'
-      fullPath: '/terms'
-      preLoaderRoute: typeof TermsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/privacy': {
-      id: '/privacy'
-      path: '/privacy'
-      fullPath: '/privacy'
-      preLoaderRoute: typeof PrivacyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/authority-engine': {
-      id: '/authority-engine'
-      path: '/authority-engine'
-      fullPath: '/authority-engine'
-      preLoaderRoute: typeof AuthorityEngineRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/audit': {
@@ -191,18 +163,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuditRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/authority-engine': {
+      id: '/authority-engine'
+      path: '/authority-engine'
+      fullPath: '/authority-engine'
+      preLoaderRoute: typeof AuthorityEngineRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/workshop_/thank-you': {
-      id: '/workshop_/thank-you'
-      path: '/workshop/thank-you'
-      fullPath: '/workshop/thank-you'
-      preLoaderRoute: typeof WorkshopThankYouRouteImport
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/workshop': {
+      id: '/workshop'
+      path: '/workshop'
+      fullPath: '/workshop'
+      preLoaderRoute: typeof WorkshopRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/authority-engine_/thank-you': {
@@ -210,6 +203,13 @@ declare module '@tanstack/react-router' {
       path: '/authority-engine/thank-you'
       fullPath: '/authority-engine/thank-you'
       preLoaderRoute: typeof AuthorityEngineThankYouRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/workshop_/thank-you': {
+      id: '/workshop_/thank-you'
+      path: '/workshop/thank-you'
+      fullPath: '/workshop/thank-you'
+      preLoaderRoute: typeof WorkshopThankYouRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
