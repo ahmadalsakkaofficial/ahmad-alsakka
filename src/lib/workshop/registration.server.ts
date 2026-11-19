@@ -39,5 +39,20 @@ export async function saveWorkshopRegistration(input: WorkshopRegistrationInput)
     console.error("workshop registration insert failed", error);
     throw new Error("insert_failed");
   }
+  await syncToBrevo(input);
   return { ok: true, eventId: input.eventId };
+}
+
+async function syncToBrevo(input: WorkshopRegistrationInput) {
+  const { addWorkshopContact, sendWorkshopConfirmation } = await import("./brevo.server");
+  const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+  const problems: string[] = [];
+  await addWorkshopContact(input).catch((e) => problems.push(`contact: ${e.message}`));
+  await sendWorkshopConfirmation(input).catch((e) => problems.push(`email: ${e.message}`));
+  const status = problems.length ? problems.join(" | ").slice(0, 500) : "confirmation_sent";
+  if (problems.length) console.error("brevo sync failed", status);
+  await supabaseAdmin
+    .from("workshop_registrations" as never)
+    .update({ email_status: status } as never)
+    .eq("event_id" as never, input.eventId as never);
 }

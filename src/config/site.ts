@@ -33,6 +33,11 @@ export const siteConfig = {
     whatsappNumber: "",
     /** Short invite video (YouTube/Vimeo embed URL or .mp4). Empty = show the photo instead. */
     videoUrl: "",
+    /** Brevo contact list name for this workshop (created automatically if missing). */
+    brevoListName: "ندوة 30 نوفمبر 2026",
+    /** Sender shown on emails. Must be a verified sender/domain in Brevo. */
+    senderName: "أحمد السقا",
+    senderEmail: "ahmad@ahmad-alsakka.com",
   },
   location: "كندا",
   primaryAudience: "أصحاب المهن والخدمات العرب",
