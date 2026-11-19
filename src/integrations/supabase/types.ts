@@ -10,7 +10,7 @@ export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "14.5"
+    PostgrestVersion: "14.15"
   }
   public: {
     Tables: {
@@ -179,6 +179,66 @@ export type Database = {
           name?: string
           phone?: string
           profession?: string | null
+        }
+        Relationships: []
+      }
+      workshop_registrations: {
+        Row: {
+          content_stage: string
+          country: string
+          created_at: string
+          email: string
+          event_id: string
+          fbclid: string | null
+          id: string
+          landing_page_url: string | null
+          name: string
+          profession: string
+          referrer: string | null
+          utm_campaign: string | null
+          utm_content: string | null
+          utm_medium: string | null
+          utm_source: string | null
+          whatsapp: string
+          workshop_key: string
+        }
+        Insert: {
+          content_stage: string
+          country: string
+          created_at?: string
+          email: string
+          event_id: string
+          fbclid?: string | null
+          id?: string
+          landing_page_url?: string | null
+          name: string
+          profession: string
+          referrer?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          whatsapp: string
+          workshop_key?: string
+        }
+        Update: {
+          content_stage?: string
+          country?: string
+          created_at?: string
+          email?: string
+          event_id?: string
+          fbclid?: string | null
+          id?: string
+          landing_page_url?: string | null
+          name?: string
+          profession?: string
+          referrer?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          whatsapp?: string
+          workshop_key?: string
         }
         Relationships: []
       }
