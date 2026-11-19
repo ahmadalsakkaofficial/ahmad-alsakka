@@ -188,6 +188,7 @@ export type Database = {
           country: string
           created_at: string
           email: string
+          email_status: string | null
           event_id: string
           fbclid: string | null
           id: string
@@ -207,6 +208,7 @@ export type Database = {
           country: string
           created_at?: string
           email: string
+          email_status?: string | null
           event_id: string
           fbclid?: string | null
           id?: string
@@ -226,6 +228,7 @@ export type Database = {
           country?: string
           created_at?: string
           email?: string
+          email_status?: string | null
           event_id?: string
           fbclid?: string | null
           id?: string
