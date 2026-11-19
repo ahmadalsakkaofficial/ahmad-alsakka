@@ -168,7 +168,7 @@ export function WorkshopLanding() {
               href="#register"
               className="btn-shine focus-ring mt-8 inline-flex w-full items-center justify-center rounded-[14px] bg-bronze px-8 py-4 text-lg font-bold text-[#0a0f1a] shadow-[0_10px_40px_-10px_rgba(196,160,110,0.8)] transition-transform hover:-translate-y-0.5 sm:w-auto"
             >
-              احجز مكانك ببلاش ↓
+              احجز مكانك مجاناً ↓
             </a>
           </div>
 
@@ -242,7 +242,7 @@ export function WorkshopLanding() {
             noValidate
             className="glow-card glow-card--always scroll-mt-6 rounded-[24px] border border-bronze/40 bg-[#0f1626]/90 p-6 shadow-[0_0_0_1px_rgba(196,160,110,0.15),0_30px_80px_-30px_rgba(196,160,110,0.55)] backdrop-blur sm:p-8"
           >
-            <h2 className="text-2xl font-bold text-cream">احجز مكانك ببلاش</h2>
+            <h2 className="text-2xl font-bold text-cream">احجز مكانك مجاناً</h2>
             <p className="mt-2 text-sm text-cream/60">رابط الندوة والتذكير بيوصلوك عالإيميل</p>
 
             <div className="mt-6 space-y-4">
