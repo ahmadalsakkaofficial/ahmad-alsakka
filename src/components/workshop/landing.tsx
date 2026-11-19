@@ -43,7 +43,7 @@ function Chips({ options, value, onChange, name }: { options: string[]; value: s
           role="radio"
           aria-checked={value === o}
           onClick={() => onChange(o)}
-          className={`focus-ring rounded-full border px-4 py-2 text-sm transition-colors ${value === o ? "border-bronze bg-bronze text-cream" : "border-navy/20 text-navy hover:border-bronze"}`}
+          className={`focus-ring rounded-full border px-4 py-2 text-sm transition-colors ${value === o ? "border-bronze bg-bronze text-[#0a0f1a]" : "border-white/20 text-cream/80 hover:border-bronze"}`}
         >
           {o}
         </button>
@@ -123,125 +123,163 @@ export function WorkshopLanding() {
     }
   }
 
-  const input = "focus-ring w-full rounded-[12px] border border-navy/20 bg-background px-4 py-3.5 text-base text-navy placeholder:text-subtle/70";
+  const input =
+    "focus-ring w-full rounded-[12px] border border-white/15 bg-white/[0.06] px-4 py-3.5 text-base text-cream placeholder:text-cream/40";
 
   return (
-    <main className="min-h-screen bg-background">
-      <div className="bg-navy px-5 py-3 text-center text-sm text-cream sm:text-base">
-        <span className="font-semibold text-bronze">ندوة مجانية لايف</span>
-        <span className="mx-2 text-cream/40">·</span>
+    <main className="min-h-screen overflow-hidden bg-[#0a0f1a] text-cream">
+      <div className="bg-bronze px-5 py-3 text-center text-sm font-bold text-[#0a0f1a] sm:text-base">
+        ندوة مجانية لايف
+        <span className="mx-2 opacity-50">·</span>
         {hasDate ? (
           <span>
             {w.dateLabel} · {w.timeLabel}
           </span>
         ) : (
-          <span>الموعد بينعلن قريب، سجّل حتى يوصلك أول واحد</span>
+          <span>الموعد بينعلن قريب</span>
         )}
       </div>
 
-      <section className="px-5 pt-10 pb-16 sm:px-8 sm:pt-16">
-        <div className="mx-auto grid w-full max-w-6xl gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-14">
-          <div>
-            <p className="inline-flex items-center gap-2 rounded-full border border-bronze/40 px-4 py-1.5 text-sm font-medium text-bronze">
+      {/* Hero */}
+      <section className="relative px-5 pt-10 pb-6 sm:px-8 sm:pt-14">
+        <div aria-hidden className="pointer-events-none absolute -top-40 left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(196,160,110,0.28),transparent)] blur-2xl" />
+        <div className="relative mx-auto grid w-full max-w-6xl items-end gap-8 lg:grid-cols-[1.15fr_1fr]">
+          <div className="pb-6 lg:pb-16">
+            <p className="inline-flex items-center gap-2 rounded-full border border-bronze/40 bg-bronze/10 px-4 py-1.5 text-sm font-medium text-bronze">
               لأصحاب الخبرة: دكاترة، محامين، مستشارين، أصحاب شركات… وموظفين كمان
             </p>
-            <h1 className="mt-6 text-[2rem] leading-[1.4] font-bold text-navy sm:text-[3.1rem] sm:leading-[1.3]">
-              {w.title}
-              <span className="mt-3 block text-xl leading-[1.6] text-bronze sm:text-3xl sm:leading-[1.5]">{w.subtitle}</span>
+            <h1 className="mt-6 text-cream text-[2.2rem] leading-[1.35] font-bold sm:text-[3.6rem] sm:leading-[1.25]">
+              ليش{" "}
+              <mark className="rounded-[10px] bg-bronze px-2 text-[#0a0f1a]">الأقل خبرة</mark>{" "}
+              منك معروف أكتر؟
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-[1.95] text-ink/80">
-              إذا إنت شاطر بشغلك وما حدا بيعرف، فهاد مو لانك أقل من غيرك… ولكن لانه غيرك أوضح منك أونلاين
+            <p className="mt-5 text-xl leading-[1.7] text-cream/85 sm:text-2xl">{w.subtitle}</p>
+            <p className="mt-6 max-w-xl text-base leading-[1.95] text-cream/70 sm:text-lg">
+              إذا إنت شاطر بشغلك وما حدا بيعرف، فهاد مو لانك أقل من غيرك… ولكن لانه غيرك أوضح منك أونلاين. ساعة
+              لايف بشرح فيها الأنظمة السبعة بأمثلة حقيقية، وبتطلع منها عارف شو أول خطوة لازم تعملها
             </p>
-            <p className="mt-3 max-w-xl text-base leading-[1.95] text-subtle">
-              ساعة لايف بشرح فيها الأنظمة السبعة بأمثلة حقيقية، وبتطلع منها عارف شو أول خطوة لازم تعملها
-            </p>
-
-            <a href="#register" className="focus-ring mt-6 inline-flex w-full items-center justify-center rounded-[12px] bg-navy px-6 py-4 text-base font-bold text-cream lg:hidden">
-              سجّل ببلاش ↓
+            <a
+              href="#register"
+              className="focus-ring mt-8 inline-flex w-full items-center justify-center rounded-[14px] bg-bronze px-8 py-4 text-lg font-bold text-[#0a0f1a] shadow-[0_10px_40px_-10px_rgba(196,160,110,0.8)] transition-transform hover:-translate-y-0.5 sm:w-auto"
+            >
+              احجز مكانك ببلاش ↓
             </a>
+          </div>
 
-            <ul className="mt-10 grid gap-3 sm:grid-cols-2">
-              {learn.map((l, i) => (
-                <li key={l.t} className="rounded-[16px] border border-border bg-surface p-5">
-                  <span className="font-latin text-sm font-semibold tracking-[0.2em] text-bronze">0{i + 1}</span>
-                  <h2 className="mt-2 text-lg font-bold text-navy">{l.t}</h2>
-                  <p className="mt-2 text-base leading-[1.8] text-subtle">{l.d}</p>
-                </li>
-              ))}
-            </ul>
+          <div className="relative mx-auto w-full max-w-sm lg:max-w-md">
+            <div aria-hidden className="absolute inset-x-6 bottom-0 top-16 rounded-full bg-[radial-gradient(closest-side,rgba(196,160,110,0.55),rgba(196,160,110,0.08)_70%,transparent)] blur-xl" />
+            <img src="/images/ahmad-cutout.webp" alt="أحمد السقا" className="relative mx-auto w-full [mask-image:linear-gradient(to_bottom,black_80%,transparent)]" />
+            <div className="absolute inset-x-0 bottom-6 mx-auto w-max rounded-[14px] border border-white/15 bg-[#0a0f1a]/80 px-5 py-3 text-center backdrop-blur">
+              <p className="text-base font-bold">أحمد السقا</p>
+              <p className="text-sm text-cream/70">12 سنة ورا الكاميرا · دبي وكندا</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <div className="mt-10 flex items-center gap-4 rounded-[18px] border border-border bg-surface p-5">
-              <img src="/images/ahmad-hero.webp" alt="أحمد السقا" loading="lazy" className="size-20 shrink-0 rounded-full object-cover object-[50%_20%]" />
+      {/* Seven systems */}
+      <section className="relative px-5 py-16 sm:px-8">
+        <div className="mx-auto w-full max-w-6xl">
+          <h2 className="text-center text-2xl font-bold text-cream sm:text-4xl">
+            الأنظمة <span className="text-bronze">السبعة</span> اللي رح نحكي عنها
+          </h2>
+          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {learn.map((l, i) => (
+              <li
+                key={l.t}
+                className="group relative rounded-[20px] border border-white/10 bg-gradient-to-b from-white/[0.07] to-white/[0.02] p-6 shadow-[0_20px_60px_-35px_rgba(196,160,110,0.6)] transition-colors hover:border-bronze/50"
+              >
+                <span className="flex size-10 items-center justify-center rounded-full bg-bronze/15 font-latin text-sm font-bold text-bronze ring-1 ring-bronze/40">
+                  {i + 1}
+                </span>
+                <h3 className="mt-4 text-xl font-bold text-cream">{l.t}</h3>
+                <p className="mt-2 text-base leading-[1.8] text-cream/70">{l.d}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Register */}
+      <section className="relative px-5 pb-20 sm:px-8">
+        <div aria-hidden className="pointer-events-none absolute bottom-0 left-1/2 h-[420px] w-[800px] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(196,160,110,0.18),transparent)] blur-2xl" />
+        <div className="relative mx-auto grid w-full max-w-6xl gap-8 lg:grid-cols-[1fr_1.05fr]">
+          <div className="space-y-5 lg:pt-6">
+            <h2 className="text-2xl font-bold text-cream sm:text-4xl">
+              مين <span className="text-bronze">أحمد السقا</span>؟
+            </h2>
+            <p className="text-base leading-[1.95] text-cream/75 sm:text-lg">
+              12 سنة ورا الكاميرا بين دبي وكندا، من جريدة البيان وMotionArabia لوثائقي للجزيرة. اشتغلت مع عيادات
+              وشركات ومؤسسات، وحسابات عملاء وصلت لمئات آلاف المشاهدات من أول شهر
+            </p>
+            <div className="rounded-[18px] border border-bronze/30 bg-bronze/10 p-5">
+              <p className="text-base leading-[1.9] text-cream/85">
+                مو لصنّاع المحتوى ولا للي بدو يصير مؤثر، ولكن لكل حدا عنده خبرة بمجاله، صاحب شغل أو موظف
+              </p>
+            </div>
+          </div>
+
+          <form
+            id="register"
+            onSubmit={onSubmit}
+            noValidate
+            className="scroll-mt-6 rounded-[24px] border border-bronze/40 bg-[#0f1626]/90 p-6 shadow-[0_0_0_1px_rgba(196,160,110,0.15),0_30px_80px_-30px_rgba(196,160,110,0.55)] backdrop-blur sm:p-8"
+          >
+            <h2 className="text-2xl font-bold text-cream">احجز مكانك ببلاش</h2>
+            <p className="mt-2 text-sm text-cream/60">رابط الندوة والتذكير بيوصلوك عالإيميل</p>
+
+            <div className="mt-6 space-y-4">
+              <label className="block">
+                <span className="mb-1.5 block text-sm font-medium text-cream/85">الاسم</span>
+                <input className={input} value={name} onChange={(e) => setName(e.target.value)} autoComplete="name" />
+              </label>
+              <label className="block">
+                <span className="mb-1.5 block text-sm font-medium text-cream/85">الإيميل</span>
+                <input className={input} type="email" dir="ltr" value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="email" />
+              </label>
               <div>
-                <p className="text-base font-bold text-navy">مع أحمد السقا</p>
-                <p className="mt-1 text-sm leading-[1.8] text-subtle">
-                  12 سنة ورا الكاميرا بين دبي وكندا، من جريدة البيان وMotionArabia لوثائقي للجزيرة، وحسابات عملاء
-                  وصلت لمئات آلاف المشاهدات من أول شهر
-                </p>
+                <span className="mb-1.5 block text-sm font-medium text-cream/85">رقم الواتساب</span>
+                <div className="flex gap-2" dir="ltr">
+                  <select
+                    aria-label="البلد"
+                    className="focus-ring rounded-[12px] border border-white/15 bg-[#0f1626] px-2 py-3.5 text-sm text-cream"
+                    value={country.label}
+                    onChange={(e) => setCountry(countries.find((c) => c.label === e.target.value) ?? countries[0])}
+                  >
+                    {countries.map((c) => (
+                      <option key={c.label} value={c.label}>
+                        {c.label} {c.code}
+                      </option>
+                    ))}
+                  </select>
+                  <input className={input} type="tel" inputMode="tel" value={phone} onChange={(e) => setPhone(e.target.value)} autoComplete="tel-national" />
+                </div>
+              </div>
+              <div>
+                <span className="mb-2 block text-sm font-medium text-cream/85">شو شغلك؟</span>
+                <Chips options={professions} value={profession} onChange={setProfession} name="شو شغلك" />
+              </div>
+              <div>
+                <span className="mb-2 block text-sm font-medium text-cream/85">وين إنت اليوم بالمحتوى؟</span>
+                <Chips options={stages} value={stage} onChange={setStage} name="وين إنت اليوم بالمحتوى" />
               </div>
             </div>
 
-            <p className="mt-6 text-sm text-subtle">مو لصنّاع المحتوى ولا للي بدو يصير مؤثر، ولكن لكل حدا عنده خبرة بمجاله، صاحب شغل أو موظف</p>
-          </div>
+            {error && (
+              <p role="alert" className="mt-4 text-sm font-medium text-red-300">
+                {error}
+              </p>
+            )}
 
-          <div className="lg:sticky lg:top-6 lg:self-start">
-            <form id="register" onSubmit={onSubmit} noValidate className="rounded-[22px] border border-bronze/40 bg-surface p-6 shadow-raised sm:p-8">
-              <h2 className="text-2xl font-bold text-navy">احجز مكانك ببلاش</h2>
-              <p className="mt-2 text-sm text-subtle">رابط الندوة والتذكير بيوصلوك عالواتساب والإيميل</p>
-
-              <div className="mt-6 space-y-4">
-                <label className="block">
-                  <span className="mb-1.5 block text-sm font-medium text-navy">الاسم</span>
-                  <input className={input} value={name} onChange={(e) => setName(e.target.value)} autoComplete="name" />
-                </label>
-                <label className="block">
-                  <span className="mb-1.5 block text-sm font-medium text-navy">الإيميل</span>
-                  <input className={input} type="email" dir="ltr" value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="email" />
-                </label>
-                <div>
-                  <span className="mb-1.5 block text-sm font-medium text-navy">رقم الواتساب</span>
-                  <div className="flex gap-2" dir="ltr">
-                    <select
-                      aria-label="البلد"
-                      className="focus-ring rounded-[12px] border border-navy/20 bg-background px-2 py-3.5 text-sm text-navy"
-                      value={country.label}
-                      onChange={(e) => setCountry(countries.find((c) => c.label === e.target.value) ?? countries[0])}
-                    >
-                      {countries.map((c) => (
-                        <option key={c.label} value={c.label}>
-                          {c.label} {c.code}
-                        </option>
-                      ))}
-                    </select>
-                    <input className={input} type="tel" inputMode="tel" value={phone} onChange={(e) => setPhone(e.target.value)} autoComplete="tel-national" />
-                  </div>
-                </div>
-                <div>
-                  <span className="mb-2 block text-sm font-medium text-navy">شو شغلك؟</span>
-                  <Chips options={professions} value={profession} onChange={setProfession} name="شو شغلك" />
-                </div>
-                <div>
-                  <span className="mb-2 block text-sm font-medium text-navy">وين إنت اليوم بالمحتوى؟</span>
-                  <Chips options={stages} value={stage} onChange={setStage} name="وين إنت اليوم بالمحتوى" />
-                </div>
-              </div>
-
-              {error && (
-                <p role="alert" className="mt-4 text-sm font-medium text-destructive">
-                  {error}
-                </p>
-              )}
-
-              <button
-                type="submit"
-                disabled={busy}
-                className="focus-ring mt-6 w-full rounded-[12px] bg-navy px-6 py-4 text-base font-bold text-cream transition-opacity hover:opacity-90 disabled:opacity-60"
-              >
-                {busy ? "عم نسجّلك" : "سجّلني بالندوة"}
-              </button>
-              <p className="mt-3 text-center text-xs text-subtle">الندوة لايف ومجانية</p>
-            </form>
-          </div>
+            <button
+              type="submit"
+              disabled={busy}
+              className="focus-ring mt-6 w-full rounded-[14px] bg-bronze px-6 py-4 text-lg font-bold text-[#0a0f1a] shadow-[0_10px_40px_-10px_rgba(196,160,110,0.8)] transition-opacity hover:opacity-95 disabled:opacity-60"
+            >
+              {busy ? "عم نسجّلك" : "سجّلني بالندوة"}
+            </button>
+            <p className="mt-3 text-center text-xs text-cream/50">الندوة لايف ومجانية</p>
+          </form>
         </div>
       </section>
     </main>
