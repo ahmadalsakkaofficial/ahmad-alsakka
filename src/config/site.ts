@@ -31,6 +31,8 @@ export const siteConfig = {
     startIso: "2026-11-30T17:00:00Z",
     /** Ahmad's WhatsApp number in international format without +, for the "save my number" button. */
     whatsappNumber: "",
+    /** Short invite video (YouTube/Vimeo embed URL or .mp4). Empty = show the photo instead. */
+    videoUrl: "",
   },
   location: "كندا",
   primaryAudience: "أصحاب المهن والخدمات العرب",

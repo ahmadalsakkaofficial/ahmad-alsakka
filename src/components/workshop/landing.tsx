@@ -52,6 +52,12 @@ function Chips({ options, value, onChange, name }: { options: string[]; value: s
   );
 }
 
+function glowMove(e: React.MouseEvent<HTMLElement>) {
+  const r = e.currentTarget.getBoundingClientRect();
+  e.currentTarget.style.setProperty("--mx", `${e.clientX - r.left}px`);
+  e.currentTarget.style.setProperty("--my", `${e.clientY - r.top}px`);
+}
+
 export function WorkshopLanding() {
   const navigate = useNavigate();
   const submit = useServerFn(submitWorkshopRegistration);
@@ -160,12 +166,21 @@ export function WorkshopLanding() {
             </p>
             <a
               href="#register"
-              className="focus-ring mt-8 inline-flex w-full items-center justify-center rounded-[14px] bg-bronze px-8 py-4 text-lg font-bold text-[#0a0f1a] shadow-[0_10px_40px_-10px_rgba(196,160,110,0.8)] transition-transform hover:-translate-y-0.5 sm:w-auto"
+              className="btn-shine focus-ring mt-8 inline-flex w-full items-center justify-center rounded-[14px] bg-bronze px-8 py-4 text-lg font-bold text-[#0a0f1a] shadow-[0_10px_40px_-10px_rgba(196,160,110,0.8)] transition-transform hover:-translate-y-0.5 sm:w-auto"
             >
               احجز مكانك ببلاش ↓
             </a>
           </div>
 
+          {w.videoUrl ? (
+            <div className="glow-card glow-card--always relative overflow-hidden rounded-[22px] border border-bronze/40 bg-black shadow-[0_30px_80px_-30px_rgba(196,160,110,0.6)]">
+              {(w.videoUrl as string).endsWith(".mp4") ? (
+                <video src={w.videoUrl} controls playsInline poster="/images/ahmad-cutout.webp" className="aspect-video w-full" />
+              ) : (
+                <iframe src={w.videoUrl} title="دعوة الندوة" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen className="aspect-video w-full" />
+              )}
+            </div>
+          ) : (
           <div className="relative mx-auto w-full max-w-sm lg:max-w-md">
             <div aria-hidden className="absolute inset-x-6 bottom-0 top-16 rounded-full bg-[radial-gradient(closest-side,rgba(196,160,110,0.55),rgba(196,160,110,0.08)_70%,transparent)] blur-xl" />
             <img src="/images/ahmad-cutout.webp" alt="أحمد السقا" className="relative mx-auto w-full [mask-image:linear-gradient(to_bottom,black_80%,transparent)]" />
@@ -174,6 +189,7 @@ export function WorkshopLanding() {
               <p className="text-sm text-cream/70">12 سنة ورا الكاميرا · دبي وكندا</p>
             </div>
           </div>
+          )}
         </div>
       </section>
 
@@ -187,7 +203,8 @@ export function WorkshopLanding() {
             {learn.map((l, i) => (
               <li
                 key={l.t}
-                className="group relative rounded-[20px] border border-white/10 bg-gradient-to-b from-white/[0.07] to-white/[0.02] p-6 shadow-[0_20px_60px_-35px_rgba(196,160,110,0.6)] transition-colors hover:border-bronze/50"
+                onMouseMove={glowMove}
+                className="glow-card group rounded-[20px] border border-white/10 bg-gradient-to-b from-white/[0.07] to-white/[0.02] p-6 shadow-[0_20px_60px_-35px_rgba(196,160,110,0.6)]"
               >
                 <span className="flex size-10 items-center justify-center rounded-full bg-bronze/15 font-latin text-sm font-bold text-bronze ring-1 ring-bronze/40">
                   {i + 1}
@@ -212,7 +229,7 @@ export function WorkshopLanding() {
               12 سنة ورا الكاميرا بين دبي وكندا، من جريدة البيان وMotionArabia لوثائقي للجزيرة. اشتغلت مع عيادات
               وشركات ومؤسسات، وحسابات عملاء وصلت لمئات آلاف المشاهدات من أول شهر
             </p>
-            <div className="rounded-[18px] border border-bronze/30 bg-bronze/10 p-5">
+            <div onMouseMove={glowMove} className="glow-card rounded-[18px] border border-bronze/30 bg-bronze/10 p-5">
               <p className="text-base leading-[1.9] text-cream/85">
                 مو لصنّاع المحتوى ولا للي بدو يصير مؤثر، ولكن لكل حدا عنده خبرة بمجاله، صاحب شغل أو موظف
               </p>
@@ -223,7 +240,7 @@ export function WorkshopLanding() {
             id="register"
             onSubmit={onSubmit}
             noValidate
-            className="scroll-mt-6 rounded-[24px] border border-bronze/40 bg-[#0f1626]/90 p-6 shadow-[0_0_0_1px_rgba(196,160,110,0.15),0_30px_80px_-30px_rgba(196,160,110,0.55)] backdrop-blur sm:p-8"
+            className="glow-card glow-card--always scroll-mt-6 rounded-[24px] border border-bronze/40 bg-[#0f1626]/90 p-6 shadow-[0_0_0_1px_rgba(196,160,110,0.15),0_30px_80px_-30px_rgba(196,160,110,0.55)] backdrop-blur sm:p-8"
           >
             <h2 className="text-2xl font-bold text-cream">احجز مكانك ببلاش</h2>
             <p className="mt-2 text-sm text-cream/60">رابط الندوة والتذكير بيوصلوك عالإيميل</p>
@@ -274,7 +291,7 @@ export function WorkshopLanding() {
             <button
               type="submit"
               disabled={busy}
-              className="focus-ring mt-6 w-full rounded-[14px] bg-bronze px-6 py-4 text-lg font-bold text-[#0a0f1a] shadow-[0_10px_40px_-10px_rgba(196,160,110,0.8)] transition-opacity hover:opacity-95 disabled:opacity-60"
+              className="btn-shine focus-ring mt-6 w-full rounded-[14px] bg-bronze px-6 py-4 text-lg font-bold text-[#0a0f1a] shadow-[0_10px_40px_-10px_rgba(196,160,110,0.8)] transition-opacity hover:opacity-95 disabled:opacity-60"
             >
               {busy ? "عم نسجّلك" : "سجّلني بالندوة"}
             </button>
