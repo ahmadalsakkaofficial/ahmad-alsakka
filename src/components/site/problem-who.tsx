@@ -37,7 +37,7 @@ export function ProblemSection() {
       <div className="mt-12 grid gap-5 md:grid-cols-3">
         {cards.map((c, i) => (
           <Reveal key={c.title} delay={i * 90}>
-            <article className="h-full rounded-[18px] border border-border bg-surface p-7">
+            <article className="glow-card h-full rounded-[18px] border border-border bg-surface p-7">
               <span className="font-latin text-sm font-semibold tracking-[0.2em] text-bronze">0{i + 1}</span>
               <h3 className="mt-3 text-xl font-bold text-navy">{c.title}</h3>
               <p className="mt-3 text-base leading-[1.95] text-subtle">{c.text}</p>
@@ -81,7 +81,7 @@ export function WhoSection() {
       />
 
       <div className="grid gap-5 md:grid-cols-2">
-        <div className="rounded-[18px] border border-bronze/40 bg-background p-7">
+        <div className="glow-card rounded-[18px] border border-bronze/40 bg-background p-7">
           <h3 className="text-lg font-bold text-navy">مناسب إلك إذا</h3>
           <ul className="mt-5 space-y-3">
             {forYou.map((t) => (
@@ -92,7 +92,7 @@ export function WhoSection() {
             ))}
           </ul>
         </div>
-        <div className="rounded-[18px] border border-border bg-background p-7">
+        <div className="glow-card rounded-[18px] border border-border bg-background p-7">
           <h3 className="text-lg font-bold text-navy">مش مناسب إذا</h3>
           <ul className="mt-5 space-y-3">
             {notForYou.map((t) => (

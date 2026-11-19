@@ -89,7 +89,7 @@ export function SiteNav() {
         <div className="flex items-center gap-2">
           <Link
             to="/audit"
-            className="focus-ring hidden rounded-[10px] bg-bronze px-4 py-2 text-base font-bold text-[#070707] transition-opacity hover:opacity-90 sm:inline-flex"
+            className="btn-shine focus-ring hidden rounded-[10px] bg-bronze px-4 py-2 text-base font-bold text-[#070707] transition-opacity hover:opacity-90 sm:inline-flex"
           >
             قيّم براندك
           </Link>
@@ -131,7 +131,7 @@ export function SiteNav() {
               <Link
                 to="/audit"
                 onClick={() => setOpen(false)}
-                className="focus-ring block rounded-[10px] bg-bronze px-4 py-3 text-center text-base font-bold text-[#070707]"
+                className="btn-shine focus-ring block rounded-[10px] bg-bronze px-4 py-3 text-center text-base font-bold text-[#070707]"
               >
                 قيّم براندك
               </Link>
@@ -141,7 +141,7 @@ export function SiteNav() {
               <a
                 href="#start"
                 onClick={() => setOpen(false)}
-                className="focus-ring block rounded-[10px] bg-bronze px-4 py-3 text-center text-base font-bold text-[#070707]"
+                className="btn-shine focus-ring block rounded-[10px] bg-bronze px-4 py-3 text-center text-base font-bold text-[#070707]"
               >
                 ابدأ من هون
               </a>

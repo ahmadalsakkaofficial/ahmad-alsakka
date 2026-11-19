@@ -145,7 +145,7 @@ export function AuditResults({
           </p>
 
           <div className="mt-10 grid gap-5 md:grid-cols-2">
-            <div className="flex flex-col rounded-[14px] border border-border bg-background p-7">
+            <div className="glow-card flex flex-col rounded-[14px] border border-border bg-background p-7">
               <span className="text-sm tracking-wide text-bronze">الخيار الأول</span>
               <h3 className="mt-3 font-display text-xl text-navy">جلسة استراتيجية</h3>
               <p className="mt-3 flex-1 text-base leading-[1.95] text-subtle">
@@ -167,7 +167,7 @@ export function AuditResults({
               </a>
             </div>
 
-            <div className="flex flex-col rounded-[14px] border border-bronze/40 bg-background p-7">
+            <div className="glow-card flex flex-col rounded-[14px] border border-bronze/40 bg-background p-7">
               <span className="text-sm tracking-wide text-bronze">الخيار التاني</span>
               <h3 className="mt-3 font-display text-xl text-navy">اشتغل معي</h3>
               <p className="mt-3 flex-1 text-base leading-[1.95] text-subtle">
@@ -181,7 +181,7 @@ export function AuditResults({
               <a
                 href="/#start"
                 onClick={() => onCta("work")}
-                className="focus-ring mt-6 inline-flex items-center justify-center gap-2 rounded-[12px] bg-bronze px-6 py-3.5 text-base font-bold text-[#070707] transition-opacity hover:opacity-90"
+                className="btn-shine focus-ring mt-6 inline-flex items-center justify-center gap-2 rounded-[12px] bg-bronze px-6 py-3.5 text-base font-bold text-[#070707] transition-opacity hover:opacity-90"
               >
                 قدّم للشغل معي
               </a>

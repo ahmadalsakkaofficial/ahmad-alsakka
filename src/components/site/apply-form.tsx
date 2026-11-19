@@ -54,7 +54,7 @@ export function ApplyForm() {
 
   if (state === "done") {
     return (
-      <div className="rounded-[14px] border border-bronze/40 bg-background p-8 text-start">
+      <div className="glow-card rounded-[14px] border border-bronze/40 bg-background p-8 text-start">
         <h3 className="font-display text-xl text-navy">وصلتني معلوماتك،</h3>
         <p className="mt-3 text-base leading-[2] text-subtle">
           رح أتواصل معك خلال يومين عمل على الإيميل أو الموبايل، وإذا بتحب تحكي أسرع، احجز مكالمة من
@@ -65,7 +65,7 @@ export function ApplyForm() {
   }
 
   return (
-    <div className="rounded-[14px] border border-border bg-background p-6 text-start sm:p-8">
+    <div className="glow-card rounded-[14px] border border-border bg-background p-6 text-start sm:p-8">
       <div className="grid gap-4 sm:grid-cols-2">
         {fields.map((f) => (
           <label key={f.key} className={cn("block", f.key === "profession" && "sm:col-span-2")}>
@@ -103,7 +103,7 @@ export function ApplyForm() {
         type="button"
         onClick={() => void send()}
         disabled={!valid || state === "sending"}
-        className="focus-ring mt-6 w-full rounded-[12px] bg-bronze px-7 py-4 text-base font-bold text-[#070707] transition-opacity hover:opacity-90 disabled:opacity-40 sm:w-auto"
+        className="btn-shine focus-ring mt-6 w-full rounded-[12px] bg-bronze px-7 py-4 text-base font-bold text-[#070707] transition-opacity hover:opacity-90 disabled:opacity-40 sm:w-auto"
       >
         {state === "sending" ? "عم نبعت،" : "ابعت معلوماتك"}
       </button>

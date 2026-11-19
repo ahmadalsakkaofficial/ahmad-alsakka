@@ -79,7 +79,7 @@ export function EngineSection() {
       <ol className="grid gap-4 sm:grid-cols-2">
         {phases.map((p, i) => (
           <Reveal key={p.n} delay={i * 80}>
-            <li className="h-full rounded-[18px] border border-cream/15 bg-cream/[0.04] p-7">
+            <li className="glow-card h-full rounded-[18px] border border-cream/15 bg-cream/[0.04] p-7">
               <div className="flex items-baseline justify-between gap-3">
                 <span className="font-latin text-sm font-semibold tracking-[0.22em] text-bronze">{p.n}</span>
                 <span className="text-sm text-cream/55">{p.when}</span>
@@ -92,7 +92,7 @@ export function EngineSection() {
       </ol>
 
       <div className="mt-8 grid gap-4 lg:grid-cols-[1.3fr_1fr]">
-        <div className="rounded-[18px] border border-cream/15 p-7">
+        <div className="glow-card rounded-[18px] border border-cream/15 p-7">
           <h3 className="text-xl font-bold text-cream">شو بيصير عندك بآخر الـ3 شهور</h3>
           <ul className="mt-5 grid gap-3 sm:grid-cols-2">
             {deliverables.map((d) => (
@@ -111,7 +111,7 @@ export function EngineSection() {
             <span className="text-base text-subtle"> بالشهر</span>
           </p>
           <p className="mt-1 text-base text-subtle">3 شهور والدفع شهر بشهر</p>
-          <div className="mt-5 rounded-[12px] border border-bronze/40 p-4">
+          <div className="glow-card mt-5 rounded-[12px] border border-bronze/40 p-4">
             <p className="text-base font-bold">ضمان الشهر الأول</p>
             <p className="mt-1 text-sm leading-[1.8] text-subtle">
               إذا ما سلّمنا المتفق عليه بأول شهر بتوقف وما بتدفع الباقي
@@ -119,7 +119,7 @@ export function EngineSection() {
           </div>
           <a
             href="/authority-engine"
-            className="focus-ring mt-6 flex items-center justify-center rounded-[12px] bg-bronze px-6 py-4 text-base font-bold text-[#070707] transition-opacity hover:opacity-90"
+            className="btn-shine focus-ring mt-6 flex items-center justify-center rounded-[12px] bg-bronze px-6 py-4 text-base font-bold text-[#070707] transition-opacity hover:opacity-90"
           >
             قدّم وشوف إذا مناسب
           </a>

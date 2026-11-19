@@ -109,7 +109,7 @@ export function AboutSection() {
             height={1200}
             className="aspect-[4/5] w-full rounded-[20px] object-cover"
           />
-          <div className="rounded-[16px] border border-bronze/40 bg-surface p-6">
+          <div className="glow-card rounded-[16px] border border-bronze/40 bg-surface p-6">
             <p className="text-lg leading-[1.7] font-bold text-navy">مش مدرب بيحكيلك نظريات من برّا</p>
             <p className="mt-2 text-base text-subtle">بشتغل معك من جوّا وبنبني النظام سوا</p>
           </div>

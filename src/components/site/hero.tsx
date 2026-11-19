@@ -32,7 +32,7 @@ export function Hero() {
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <a
                 href="/authority-engine"
-                className="focus-ring rounded-[12px] bg-bronze px-8 py-4 text-base font-bold text-[#070707] shadow-raised transition-transform hover:-translate-y-0.5"
+                className="btn-shine focus-ring rounded-[12px] bg-bronze px-8 py-4 text-base font-bold text-[#070707] shadow-raised transition-transform hover:-translate-y-0.5"
               >
                 شوف إذا مناسب إلك
               </a>

@@ -113,8 +113,23 @@ function RootShell({ children }: { children: ReactNode }) {
 }
 
 
+function useGlowTracker() {
+  useEffect(() => {
+    const move = (e: PointerEvent) => {
+      const el = (e.target as Element | null)?.closest?.(".glow-card") as HTMLElement | null;
+      if (!el) return;
+      const r = el.getBoundingClientRect();
+      el.style.setProperty("--mx", `${e.clientX - r.left}px`);
+      el.style.setProperty("--my", `${e.clientY - r.top}px`);
+    };
+    document.addEventListener("pointermove", move, { passive: true });
+    return () => document.removeEventListener("pointermove", move);
+  }, []);
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  useGlowTracker();
 
   return (
     <QueryClientProvider client={queryClient}>

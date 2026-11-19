@@ -39,7 +39,7 @@ export function FieldsSection() {
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {fields.map((f, i) => (
           <Reveal key={f.who} delay={i * 70}>
-            <article className="h-full rounded-[18px] border border-border bg-surface p-6">
+            <article className="glow-card h-full rounded-[18px] border border-border bg-surface p-6">
               <h3 className="text-lg font-bold text-navy">{f.who}</h3>
               <ul className="mt-4 space-y-3">
                 {f.ideas.map((idea) => (

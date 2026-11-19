@@ -44,7 +44,7 @@ export function AuditIntro({ onStart }: { onStart: () => void }) {
         <button
           type="button"
           onClick={onStart}
-          className="focus-ring rounded-[12px] bg-bronze px-8 py-4 text-base font-bold text-[#070707] transition-opacity hover:opacity-90 sm:text-base"
+          className="btn-shine focus-ring rounded-[12px] bg-bronze px-8 py-4 text-base font-bold text-[#070707] transition-opacity hover:opacity-90 sm:text-base"
         >
           ابدأ التقييم المجاني
         </button>

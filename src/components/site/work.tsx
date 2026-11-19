@@ -63,7 +63,7 @@ export function WorkSection() {
 
       <div className="grid gap-6 lg:grid-cols-2">
         {clients.map((c) => (
-          <article key={c.name} className="rounded-[20px] border border-border bg-background p-5 sm:p-6">
+          <article key={c.name} className="glow-card rounded-[20px] border border-border bg-background p-5 sm:p-6">
             <a
               href={c.link}
               target="_blank"

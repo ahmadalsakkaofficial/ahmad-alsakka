@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { siteConfig } from "@/config/site";
+import { InstagramIcon, LinkedInIcon, TikTokIcon } from "@/components/site/icons";
 
 const w = siteConfig.workshop;
 
@@ -18,6 +19,16 @@ function calendarUrl() {
   const p = new URLSearchParams({ action: "TEMPLATE", text: `ندوة أحمد السقا: ${w.title}`, dates: `${fmt(start)}/${fmt(end)}`, details: "رابط الندوة بيوصلك عالواتساب والإيميل" });
   return `https://calendar.google.com/calendar/render?${p.toString()}`;
 }
+
+function outlookUrl() {
+  if (!w.startIso) return "";
+  const start = new Date(w.startIso);
+  const end = new Date(start.getTime() + 60 * 60 * 1000);
+  const p = new URLSearchParams({ path: "/calendar/action/compose", rru: "addevent", subject: `ندوة أحمد السقا: ${w.title}`, startdt: start.toISOString(), enddt: end.toISOString(), body: "رابط الندوة بيوصلك عالإيميل" });
+  return `https://outlook.live.com/calendar/0/deeplink/compose?${p.toString()}`;
+}
+
+const calBtn = "focus-ring inline-flex items-center justify-center rounded-[10px] px-4 py-2.5 text-sm font-bold";
 
 function WorkshopThankYou() {
   const cal = calendarUrl();
@@ -46,14 +57,25 @@ function WorkshopThankYou() {
 
         <ol className="mt-10 space-y-4">
           {steps.map((s, i) => (
-            <li key={s.t} className="rounded-[18px] border border-cream/15 bg-cream/[0.04] p-6">
+            <li key={s.t} className="glow-card rounded-[18px] border border-cream/15 bg-cream/[0.04] p-6">
               <span className="font-latin text-sm font-semibold tracking-[0.2em] text-bronze">0{i + 1}</span>
               <h2 className="mt-2 text-xl font-bold">{s.t}</h2>
               <p className="mt-2 text-base leading-[1.8] text-cream/70">{s.d}</p>
               {s.href && (
-                <a href={s.href} target="_blank" rel="noopener noreferrer" className="focus-ring mt-4 inline-flex rounded-[10px] bg-bronze px-5 py-2.5 text-sm font-bold text-[#070707]">
-                  {s.cta}
-                </a>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  <a href={s.href} target="_blank" rel="noopener noreferrer" className={`btn-shine ${calBtn} bg-bronze text-[#070707]`}>
+                    Google Calendar
+                  </a>
+                  <a href="/workshop.ics" className={`${calBtn} border border-bronze/50 text-cream hover:bg-bronze/10`}>
+                    آيفون / Apple
+                  </a>
+                  <a href={outlookUrl()} target="_blank" rel="noopener noreferrer" className={`${calBtn} border border-bronze/50 text-cream hover:bg-bronze/10`}>
+                    Outlook
+                  </a>
+                  <a href="/workshop.ics" className={`${calBtn} text-cream/60 underline-offset-4 hover:underline`}>
+                    تقويم تاني؟ نزّل الملف
+                  </a>
+                </div>
               )}
             </li>
           ))}
@@ -65,8 +87,15 @@ function WorkshopThankYou() {
               ابعتلي «سجّلت» عالواتساب
             </a>
           )}
-          <a href={siteConfig.instagramUrl} target="_blank" rel="noopener noreferrer" className="focus-ring rounded-[12px] border border-cream/25 px-6 py-3.5 text-base font-bold text-cream hover:bg-cream/10">
+          <a href={siteConfig.instagramUrl} target="_blank" rel="noopener noreferrer" className="btn-shine focus-ring inline-flex items-center gap-2.5 rounded-[12px] bg-gradient-to-r from-[#833ab4] via-[#e1306c] to-[#f77737] px-6 py-3.5 text-base font-bold text-white">
+            <InstagramIcon className="size-5" />
             تابعني على انستقرام
+          </a>
+          <a href={siteConfig.tiktokUrl} target="_blank" rel="noopener noreferrer" aria-label="تيك توك" className="focus-ring inline-flex size-[52px] items-center justify-center rounded-[12px] border border-cream/25 text-cream hover:border-bronze hover:text-bronze">
+            <TikTokIcon className="size-5" />
+          </a>
+          <a href={siteConfig.linkedinUrl} target="_blank" rel="noopener noreferrer" aria-label="لينكدإن" className="focus-ring inline-flex size-[52px] items-center justify-center rounded-[12px] border border-cream/25 text-cream hover:border-bronze hover:text-bronze">
+            <LinkedInIcon className="size-5" />
           </a>
           <Link to="/" className="focus-ring rounded-[12px] border border-cream/25 px-6 py-3.5 text-base font-bold text-cream hover:bg-cream/10">
             الموقع الرئيسي

@@ -34,7 +34,7 @@ export function FinalCta() {
         <div className="mt-10">
           <a
             href="/authority-engine"
-            className="focus-ring inline-flex items-center justify-center gap-2 rounded-[12px] bg-bronze px-8 py-4 text-base font-bold text-[#070707] transition-opacity hover:opacity-90"
+            className="btn-shine focus-ring inline-flex items-center justify-center gap-2 rounded-[12px] bg-bronze px-8 py-4 text-base font-bold text-[#070707] transition-opacity hover:opacity-90"
           >
             شوف إذا مناسب إلك
           </a>
