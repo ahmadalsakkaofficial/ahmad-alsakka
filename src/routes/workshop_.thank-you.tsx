@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { siteConfig } from "@/config/site";
-import { InstagramIcon, LinkedInIcon, TikTokIcon } from "@/components/site/icons";
+import { InstagramIcon, LinkedInIcon, TikTokIcon, YouTubeIcon } from "@/components/site/icons";
 
 const w = siteConfig.workshop;
 
@@ -93,6 +93,9 @@ function WorkshopThankYou() {
           </a>
           <a href={siteConfig.tiktokUrl} target="_blank" rel="noopener noreferrer" aria-label="تيك توك" className="focus-ring inline-flex size-[52px] items-center justify-center rounded-[12px] border border-cream/25 text-cream hover:border-bronze hover:text-bronze">
             <TikTokIcon className="size-5" />
+          </a>
+          <a href={siteConfig.youtubeUrl} target="_blank" rel="noopener noreferrer" aria-label="يوتيوب" className="focus-ring inline-flex size-[52px] items-center justify-center rounded-[12px] border border-cream/25 text-cream hover:border-bronze hover:text-bronze">
+            <YouTubeIcon className="size-5" />
           </a>
           <a href={siteConfig.linkedinUrl} target="_blank" rel="noopener noreferrer" aria-label="لينكدإن" className="focus-ring inline-flex size-[52px] items-center justify-center rounded-[12px] border border-cream/25 text-cream hover:border-bronze hover:text-bronze">
             <LinkedInIcon className="size-5" />

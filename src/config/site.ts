@@ -4,6 +4,7 @@ export const siteConfig = {
   brandName: "The Authority Engine",
   instagramUrl: "https://instagram.com/ahmad.alsakka.official",
   tiktokUrl: "https://tiktok.com/@ahmadalsakka",
+  youtubeUrl: "https://www.youtube.com/@AhmadAlsakkaOfficial",
   linkedinUrl: "https://www.linkedin.com/in/alsakkaahm/",
   instagramKeyword: "ENGINE",
   engagementLength: "3 شهور",

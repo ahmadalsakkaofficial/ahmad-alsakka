@@ -1,6 +1,6 @@
 import { siteConfig } from "@/config/site";
 import { Section, SectionHead } from "./primitives";
-import { InstagramIcon, TikTokIcon, LinkedInIcon } from "./icons";
+import { InstagramIcon, TikTokIcon, LinkedInIcon, YouTubeIcon } from "./icons";
 
 const chapters = [
   {
@@ -118,6 +118,7 @@ export function AboutSection() {
               { href: siteConfig.instagramUrl, label: "Instagram", Icon: InstagramIcon },
               { href: siteConfig.linkedinUrl, label: "LinkedIn", Icon: LinkedInIcon },
               { href: siteConfig.tiktokUrl, label: "TikTok", Icon: TikTokIcon },
+              { href: siteConfig.youtubeUrl, label: "YouTube", Icon: YouTubeIcon },
             ].map(({ href, label, Icon }) => (
               <a
                 key={label}

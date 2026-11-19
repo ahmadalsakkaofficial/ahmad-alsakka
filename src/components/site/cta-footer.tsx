@@ -1,5 +1,5 @@
 import { siteConfig, navLinks } from "@/config/site";
-import { InstagramIcon, TikTokIcon, LinkedInIcon } from "./icons";
+import { InstagramIcon, TikTokIcon, LinkedInIcon, YouTubeIcon } from "./icons";
 
 export function FinalCta() {
   return (
@@ -52,6 +52,7 @@ export function FinalCta() {
             { href: siteConfig.instagramUrl, label: "Instagram", Icon: InstagramIcon },
             { href: siteConfig.linkedinUrl, label: "LinkedIn", Icon: LinkedInIcon },
             { href: siteConfig.tiktokUrl, label: "TikTok", Icon: TikTokIcon },
+            { href: siteConfig.youtubeUrl, label: "YouTube", Icon: YouTubeIcon },
           ].map(({ href, label, Icon }) => (
             <a
               key={label}
@@ -110,6 +111,7 @@ export function SiteFooter() {
             { href: siteConfig.instagramUrl, label: "Instagram", Icon: InstagramIcon },
             { href: siteConfig.linkedinUrl, label: "LinkedIn", Icon: LinkedInIcon },
             { href: siteConfig.tiktokUrl, label: "TikTok", Icon: TikTokIcon },
+            { href: siteConfig.youtubeUrl, label: "YouTube", Icon: YouTubeIcon },
           ].map(({ href, label, Icon }) => (
             <a
               key={label}

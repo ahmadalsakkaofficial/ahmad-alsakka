@@ -50,6 +50,7 @@ export const Route = createFileRoute("/")({
               sameAs: [
                 siteConfig.instagramUrl,
                 siteConfig.tiktokUrl,
+                siteConfig.youtubeUrl,
                 siteConfig.linkedinUrl,
               ],
               address: { "@type": "PostalAddress", addressCountry: "CA" },
@@ -63,6 +64,7 @@ export const Route = createFileRoute("/")({
               sameAs: [
                 siteConfig.instagramUrl,
                 siteConfig.tiktokUrl,
+                siteConfig.youtubeUrl,
                 siteConfig.linkedinUrl,
               ],
               provider: { "@type": "Person", name: "أحمد السقا" },
