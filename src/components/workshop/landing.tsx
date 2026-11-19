@@ -297,7 +297,7 @@ export function WorkshopLanding() {
       });
       trackAuthorityEvent("workshop_register", { event_id: eventId, profession });
       trackMetaEvent("Lead", { content_name: "workshop" }, eventId);
-      await navigate({ to: "/workshop/thank-you" });
+      await navigate({ to: "/workshop/thank-you", search: { n: name.trim().split(/\s+/).slice(0, 2).join(" ") } });
     } catch {
       setError("ما انحفظ التسجيل، جرّب مرة تانية");
       setBusy(false);

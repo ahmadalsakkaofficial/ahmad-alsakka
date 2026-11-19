@@ -1,10 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { siteConfig } from "@/config/site";
+import { WorkshopTicket } from "@/components/workshop/ticket";
 import { InstagramIcon, LinkedInIcon, TikTokIcon, YouTubeIcon } from "@/components/site/icons";
 
 const w = siteConfig.workshop;
 
 export const Route = createFileRoute("/workshop_/thank-you")({
+  validateSearch: (search: Record<string, unknown>): { n?: string } => ({
+    n: typeof search.n === "string" ? search.n.slice(0, 40) : undefined,
+  }),
   head: () => ({
     meta: [{ title: "تم تسجيلك بالندوة | أحمد السقا" }, { name: "robots", content: "noindex" }],
   }),
@@ -31,6 +35,7 @@ function outlookUrl() {
 const calBtn = "focus-ring inline-flex items-center justify-center rounded-[10px] px-4 py-2.5 text-sm font-bold";
 
 function WorkshopThankYou() {
+  const { n } = Route.useSearch();
   const cal = calendarUrl();
   const steps = [
     {
@@ -80,6 +85,8 @@ function WorkshopThankYou() {
             </li>
           ))}
         </ol>
+
+        <WorkshopTicket initialName={n ?? ""} />
 
         <div className="mt-8 flex flex-wrap gap-3">
           {w.whatsappNumber && (

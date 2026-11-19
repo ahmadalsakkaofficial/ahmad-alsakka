@@ -69,6 +69,9 @@ export async function sendWorkshopConfirmation(p: { name: string; email: string 
 </div>
 <p style="margin:0 0 14px">رابط الدخول رح يوصلك عالإيميل قبل الندوة بيوم، ومرة تانية قبلها بساعة. فخلّي عينك عالإيميل، وإذا ما لقيته شيّك عالـ Spam أو Promotions.</p>
 ${cal ? `<p style="text-align:center;margin:22px 0"><a href="${cal}" style="background:#F5B942;color:#070707;text-decoration:none;font-weight:bold;padding:13px 26px;border-radius:12px;display:inline-block">حطّها بالكالندر</a></p>` : ""}
+<p style="margin:0 0 14px">انت من أول الناس اللي سجّلوا بأول ندوة بعملها، وهالشي بيعنيلي كتير.</p>
+<p style="margin:0 0 14px">🎟️ <strong>تذكرتك جاهزة باسمك:</strong> نزّلها وحطّها عالستوري واعملي تاغ <span dir="ltr">@ahmad.alsakka.official</span></p>
+<p style="text-align:center;margin:0 0 22px"><a href="https://ahmad-alsakka.com/workshop/thank-you?n=${encodeURIComponent(p.name.split(/\s+/).slice(0, 2).join(" "))}" style="border:1px solid #F5B942;color:#070707;background:#fff8e8;text-decoration:none;font-weight:bold;padding:11px 22px;border-radius:12px;display:inline-block">افتح تذكرتك</a></p>
 <p style="margin:0 0 14px">وقبل الندوة، فكّر بسؤال واحد: <strong>إذا حدا شاف حسابك اليوم، بيعرف بثانيتين شو بتعمل وليش إنت؟</strong> جاوب عليه لحالك، ومنحكي فيه باللايف.</p>
 <p style="margin:0">بشوفك هناك،<br>أحمد</p>`);
   await brevo("/smtp/email", {
