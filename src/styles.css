@@ -228,14 +228,14 @@
 .glow-card { position: relative; isolation: isolate; transition: transform .35s ease, box-shadow .35s ease; }
 .glow-card::before {
   content: ""; position: absolute; inset: -1px; z-index: -1; border-radius: inherit; padding: 1px;
-  background: conic-gradient(from var(--glow-angle), transparent 0deg, rgba(214,178,122,.95) 60deg, transparent 120deg, transparent 360deg);
+  background: conic-gradient(from var(--glow-angle), transparent 0deg, rgba(var(--acc-hi),.95) 60deg, transparent 120deg, transparent 360deg);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor; mask-composite: exclude;
   opacity: 0; transition: opacity .4s ease; animation: glow-spin 3.5s linear infinite;
 }
 .glow-card::after {
   content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; pointer-events: none;
-  background: radial-gradient(400px circle at var(--mx, 50%) var(--my, 0%), rgba(214,178,122,.14), transparent 45%);
+  background: radial-gradient(400px circle at var(--mx, 50%) var(--my, 0%), rgba(var(--acc-hi),.14), transparent 45%);
   opacity: 0; transition: opacity .4s ease;
 }
 .glow-card:hover { transform: translateY(-4px); box-shadow: 0 30px 70px -35px rgba(196,160,110,.85); }
@@ -247,8 +247,17 @@
   background: linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent);
   animation: shine-sweep 3.2s ease-in-out infinite;
 }
-.btn-shine:hover { box-shadow: 0 0 0 1px rgba(214,178,122,.6), 0 14px 50px -8px rgba(214,178,122,.95); }
+.btn-shine:hover { box-shadow: 0 0 0 1px rgba(var(--acc-hi),.6), 0 14px 50px -8px rgba(var(--acc-hi),.95); }
 @media (prefers-reduced-motion: reduce) {
   .glow-card::before, .btn-shine::after { animation: none; }
   .glow-card:hover { transform: none; }
+}
+
+/* Workshop theme tokens (swap the palette here) */
+.ws-theme {
+  --ws-bg: #0a0f1a;
+  --ws-panel: #0f1626;
+  --acc: 196, 160, 110;
+  --acc-hi: 214, 178, 122;
+  --bronze: rgb(var(--acc));
 }
