@@ -19,6 +19,7 @@ import { Route as AuditRouteImport } from './routes/audit'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as WorkshopThankYouRouteImport } from './routes/workshop_.thank-you'
 import { Route as AuthorityEngineThankYouRouteImport } from './routes/authority-engine_.thank-you'
+import { Route as ApiWorkshopTickRouteImport } from './routes/api.workshop-tick'
 
 const WorkshopDoticsRoute = WorkshopDoticsRouteImport.update({
   id: '/workshop.ics',
@@ -70,6 +71,11 @@ const AuthorityEngineThankYouRoute = AuthorityEngineThankYouRouteImport.update({
   path: '/authority-engine/thank-you',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiWorkshopTickRoute = ApiWorkshopTickRouteImport.update({
+  id: '/api/workshop-tick',
+  path: '/api/workshop-tick',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -80,6 +86,7 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/workshop': typeof WorkshopRoute
   '/workshop.ics': typeof WorkshopDoticsRoute
+  '/api/workshop-tick': typeof ApiWorkshopTickRoute
   '/authority-engine/thank-you': typeof AuthorityEngineThankYouRoute
   '/workshop/thank-you': typeof WorkshopThankYouRoute
 }
@@ -92,6 +99,7 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/workshop': typeof WorkshopRoute
   '/workshop.ics': typeof WorkshopDoticsRoute
+  '/api/workshop-tick': typeof ApiWorkshopTickRoute
   '/authority-engine/thank-you': typeof AuthorityEngineThankYouRoute
   '/workshop/thank-you': typeof WorkshopThankYouRoute
 }
@@ -105,6 +113,7 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/workshop': typeof WorkshopRoute
   '/workshop.ics': typeof WorkshopDoticsRoute
+  '/api/workshop-tick': typeof ApiWorkshopTickRoute
   '/authority-engine_/thank-you': typeof AuthorityEngineThankYouRoute
   '/workshop_/thank-you': typeof WorkshopThankYouRoute
 }
@@ -119,6 +128,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/workshop'
     | '/workshop.ics'
+    | '/api/workshop-tick'
     | '/authority-engine/thank-you'
     | '/workshop/thank-you'
   fileRoutesByTo: FileRoutesByTo
@@ -131,6 +141,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/workshop'
     | '/workshop.ics'
+    | '/api/workshop-tick'
     | '/authority-engine/thank-you'
     | '/workshop/thank-you'
   id:
@@ -143,6 +154,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/workshop'
     | '/workshop.ics'
+    | '/api/workshop-tick'
     | '/authority-engine_/thank-you'
     | '/workshop_/thank-you'
   fileRoutesById: FileRoutesById
@@ -156,6 +168,7 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   WorkshopRoute: typeof WorkshopRoute
   WorkshopDoticsRoute: typeof WorkshopDoticsRoute
+  ApiWorkshopTickRoute: typeof ApiWorkshopTickRoute
   AuthorityEngineThankYouRoute: typeof AuthorityEngineThankYouRoute
   WorkshopThankYouRoute: typeof WorkshopThankYouRoute
 }
@@ -232,6 +245,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthorityEngineThankYouRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/workshop-tick': {
+      id: '/api/workshop-tick'
+      path: '/api/workshop-tick'
+      fullPath: '/api/workshop-tick'
+      preLoaderRoute: typeof ApiWorkshopTickRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -244,6 +264,7 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   WorkshopRoute: WorkshopRoute,
   WorkshopDoticsRoute: WorkshopDoticsRoute,
+  ApiWorkshopTickRoute: ApiWorkshopTickRoute,
   AuthorityEngineThankYouRoute: AuthorityEngineThankYouRoute,
   WorkshopThankYouRoute: WorkshopThankYouRoute,
 }

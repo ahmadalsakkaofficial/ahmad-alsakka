@@ -3,7 +3,7 @@ import { siteConfig } from "@/config/site";
 const API = "https://api.brevo.com/v3";
 const w = siteConfig.workshop;
 
-async function brevo(path: string, init: RequestInit = {}) {
+export async function brevo(path: string, init: RequestInit = {}) {
   const key = process.env["BREVO_API_KEY"];
   if (!key) throw new Error("missing BREVO_API_KEY");
   const res = await fetch(`${API}${path}`, {
