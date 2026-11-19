@@ -38,6 +38,8 @@ export const siteConfig = {
     /** Sender shown on emails. Must be a verified sender/domain in Brevo. */
     senderName: "أحمد السقا",
     senderEmail: "ahmad@ahmad-alsakka.com",
+    /** Replies to workshop emails land here. */
+    replyToEmail: "ahmad.skaa@gmail.com",
   },
   location: "كندا",
   primaryAudience: "أصحاب المهن والخدمات العرب",

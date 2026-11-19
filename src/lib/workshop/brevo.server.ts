@@ -76,6 +76,7 @@ ${cal ? `<p style="text-align:center;margin:22px 0"><a href="${cal}" style="back
     body: JSON.stringify({
       sender: { name: w.senderName, email: w.senderEmail },
       to: [{ email: p.email, name: p.name }],
+      replyTo: { email: w.replyToEmail, name: w.senderName },
       subject: `تم تسجيلك ✅ ${w.title}`,
       htmlContent: html,
       tags: [w.key, "confirmation"],
