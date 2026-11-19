@@ -58,6 +58,92 @@ function glowMove(e: React.MouseEvent<HTMLElement>) {
   e.currentTarget.style.setProperty("--my", `${e.clientY - r.top}px`);
 }
 
+
+function Countdown() {
+  const [now, setNow] = useState<number | null>(null);
+  useEffect(() => {
+    setNow(Date.now());
+    const t = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(t);
+  }, []);
+  if (!w.startIso || now === null) return null;
+  const diff = new Date(w.startIso).getTime() - now;
+  if (diff <= 0) return null;
+  const parts = [
+    { v: Math.floor(diff / 86400000), l: "يوم" },
+    { v: Math.floor(diff / 3600000) % 24, l: "ساعة" },
+    { v: Math.floor(diff / 60000) % 60, l: "دقيقة" },
+    { v: Math.floor(diff / 1000) % 60, l: "ثانية" },
+  ];
+  return (
+    <div className="mt-8" aria-label="الوقت الباقي للندوة">
+      <p className="text-sm font-medium text-cream/60">باقي على الندوة</p>
+      <div className="mt-3 flex gap-3" dir="ltr">
+        {[...parts].reverse().map((p) => (
+          <div key={p.l} className="w-[4.6rem] rounded-[14px] border border-bronze/35 bg-white/[0.04] py-3 text-center shadow-[0_10px_30px_-18px_rgba(196,160,110,0.9)]">
+            <div className="font-latin text-2xl font-bold tabular-nums text-cream">{String(p.v).padStart(2, "0")}</div>
+            <div className="text-xs text-cream/60">{p.l}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+const proof = [
+  { n: "12+", t: "سنة ورا الكاميرا بين دبي وكندا" },
+  { n: "+100K", t: "مشاهدة لواحد من كل 5 فيديوهات عملناها لعملائنا" },
+  { n: "مئات الآلاف", t: "مشاهدات لحسابات عملائنا من أول شهر" },
+];
+
+const steps = [
+  { t: "سجّل هلّق", d: "دقيقة وحدة، وبيوصلك إيميل التأكيد فوراً" },
+  { t: "احضر اللايف", d: `${w.dateLabel}، ساعة وحدة، والرابط بيوصلك عالإيميل` },
+  { t: "طبّق أول خطوة", d: "بتطلع عارف شو أول شي لازم تعمله بحسابك، وليش" },
+];
+
+const faqs = [
+  { q: "هل الندوة مجانية فعلاً؟", a: "إي، مجانية بالكامل. ما في دفع ولا بطاقة بنك، بس اسمك وإيميلك." },
+  { q: "لمين هالندوة؟", a: "لكل حدا عنده خبرة بمجاله ومو ظاهر أونلاين: دكاترة، محامين، مستشارين، أصحاب شركات… وموظفين بدهم يكبّروا اسمهم بمجالهم." },
+  { q: "إمتى بالزبط؟", a: `${w.dateLabel}، الساعة 8 المسا بتوقيت السعودية، 9 الإمارات، و12 الظهر بتوقيت تورنتو.` },
+  { q: "قديش مدتها؟", a: "حوالي ساعة، كلها محتوى عملي وأمثلة حقيقية." },
+  { q: "لازم أكون عم بنزّل محتوى؟", a: "لأ. الندوة معمولة للي ما بلّش أبداً، أو بلّش ووقف، أو عم ينزّل وما عم يجيه عملاء." },
+  { q: "رح تبيع شي بالندوة؟", a: "بآخرها رح احكي عن برنامج مدفوع للي بدو يكمّل معي خطوة بخطوة. بس الساعة كلها محتوى بتقدر تطبّقه لحالك حتى لو ما اشتركت." },
+];
+
+function Faq() {
+  const [open, setOpen] = useState<number | null>(0);
+  return (
+    <ul className="mt-10 space-y-3">
+      {faqs.map((f, i) => (
+        <li key={f.q} className="glow-card rounded-[18px] border border-white/10 bg-white/[0.04]" onMouseMove={glowMove}>
+          <button
+            type="button"
+            aria-expanded={open === i}
+            onClick={() => setOpen(open === i ? null : i)}
+            className="focus-ring flex w-full items-center justify-between gap-4 rounded-[18px] px-6 py-5 text-start text-lg font-bold text-cream"
+          >
+            {f.q}
+            <span className={`text-bronze transition-transform ${open === i ? "rotate-45" : ""}`}>+</span>
+          </button>
+          {open === i && <p className="px-6 pb-5 text-base leading-[1.9] text-cream/75">{f.a}</p>}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function CtaButton({ children = "احجز مكانك مجاناً ↓" }: { children?: React.ReactNode }) {
+  return (
+    <a
+      href="#register"
+      className="btn-shine focus-ring inline-flex w-full items-center justify-center rounded-[14px] bg-bronze px-8 py-4 text-lg font-bold text-[#0a0f1a] shadow-[0_10px_40px_-10px_rgba(196,160,110,0.8)] transition-transform hover:-translate-y-0.5 sm:w-auto"
+    >
+      {children}
+    </a>
+  );
+}
+
 export function WorkshopLanding() {
   const navigate = useNavigate();
   const submit = useServerFn(submitWorkshopRegistration);
@@ -170,6 +256,7 @@ export function WorkshopLanding() {
             >
               احجز مكانك مجاناً ↓
             </a>
+            <Countdown />
           </div>
 
           {w.videoUrl ? (
@@ -214,6 +301,47 @@ export function WorkshopLanding() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      {/* Proof */}
+      <section className="px-5 py-14 sm:px-8">
+        <div className="mx-auto w-full max-w-6xl">
+          <h2 className="text-center text-2xl font-bold text-cream sm:text-4xl">
+            ليش <span className="text-bronze">تسمعني</span> أنا؟
+          </h2>
+          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            {proof.map((p) => (
+              <div key={p.t} onMouseMove={glowMove} className="glow-card rounded-[20px] border border-white/10 bg-gradient-to-b from-white/[0.07] to-white/[0.02] p-7 text-center">
+                <div className="font-latin text-4xl font-bold text-bronze sm:text-5xl" dir="ltr">{p.n}</div>
+                <p className="mt-3 text-base leading-[1.8] text-cream/75">{p.t}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mx-auto mt-6 max-w-2xl text-center text-base leading-[1.9] text-cream/65">
+            من جريدة البيان وMotionArabia لوثائقي للجزيرة، ومع عيادات وشركات ومكاتب استشارات
+          </p>
+        </div>
+      </section>
+
+      {/* Steps */}
+      <section className="px-5 py-14 sm:px-8">
+        <div className="mx-auto w-full max-w-6xl">
+          <h2 className="text-center text-2xl font-bold text-cream sm:text-4xl">
+            تلات خطوات <span className="text-bronze">وبس</span>
+          </h2>
+          <ol className="mt-10 grid gap-4 sm:grid-cols-3">
+            {steps.map((st, i) => (
+              <li key={st.t} onMouseMove={glowMove} className="glow-card rounded-[20px] border border-white/10 bg-white/[0.04] p-6">
+                <span className="font-latin text-sm font-bold text-bronze">0{i + 1}</span>
+                <h3 className="mt-2 text-xl font-bold text-cream">{st.t}</h3>
+                <p className="mt-2 text-base leading-[1.8] text-cream/70">{st.d}</p>
+              </li>
+            ))}
+          </ol>
+          <div className="mt-10 text-center">
+            <CtaButton />
+          </div>
         </div>
       </section>
 
@@ -297,6 +425,32 @@ export function WorkshopLanding() {
             </button>
             <p className="mt-3 text-center text-xs text-cream/50">الندوة لايف ومجانية</p>
           </form>
+        </div>
+      </section>
+      {/* FAQ */}
+      <section className="px-5 py-16 sm:px-8">
+        <div className="mx-auto w-full max-w-3xl">
+          <h2 className="text-center text-2xl font-bold text-cream sm:text-4xl">
+            عندك <span className="text-bronze">سؤال</span>؟
+          </h2>
+          <Faq />
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="relative px-5 pt-6 pb-24 sm:px-8">
+        <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 mx-auto h-[360px] max-w-[760px] rounded-full bg-[radial-gradient(closest-side,rgba(196,160,110,0.22),transparent)] blur-2xl" />
+        <div className="glow-card glow-card--always relative mx-auto w-full max-w-3xl rounded-[28px] border border-bronze/40 bg-[#0f1626]/90 p-8 text-center sm:p-12">
+          <h2 className="text-2xl font-bold leading-[1.5] text-cream sm:text-4xl">
+            خبرتك موجودة.<br />
+            اللي ناقص إنه <span className="text-bronze">الناس تشوفها</span>
+          </h2>
+          <p className="mx-auto mt-5 max-w-xl text-base leading-[1.95] text-cream/70 sm:text-lg">
+            ساعة وحدة مجاناً، {w.dateLabel}. بتطلع منها عارف ليش غيرك معروف أكتر منك، وشو أول خطوة لتصير إنت الاسم اللي ببال الناس بمجالك. والقرار بعدها إلك.
+          </p>
+          <div className="mt-8">
+            <CtaButton>احجز مكانك مجاناً</CtaButton>
+          </div>
         </div>
       </section>
     </main>
