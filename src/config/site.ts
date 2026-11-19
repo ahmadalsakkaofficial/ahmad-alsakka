@@ -17,18 +17,18 @@ export const siteConfig = {
     /** Add a YouTube, Vimeo, or Wistia embed URL when the final VSL is ready. */
     videoUrl: "",
     /** Add the Meta Pixel ID before launching paid ads. */
-    metaPixelId: "",
+    metaPixelId: "1172223479093393",
   },
   workshop: {
     /** Internal key saved with each registration. Change it for every new workshop. */
     key: "workshop-1",
-    title: "كيف تخلي خبرتك تجيبلك عملاء من المحتوى",
-    subtitle: "بدون ما تصير صانع محتوى",
+    title: "ليش الأقل خبرة منك معروف أكتر؟",
+    subtitle: "والأنظمة السبعة اللي بتخلي الناس تعرف شو بتعمل وليش انت",
     /** Fill both when the date is decided, e.g. "السبت 12 كانون الأول" and "8 المسا بتوقيت السعودية". Empty = "الموعد بينعلن قريب". */
-    dateLabel: "",
-    timeLabel: "",
+    dateLabel: "الاتنين 30 نوفمبر",
+    timeLabel: "8 المسا بتوقيت السعودية · 9 الإمارات",
     /** ISO start time for the calendar button on the thank-you page, e.g. "2026-12-12T17:00:00Z". */
-    startIso: "",
+    startIso: "2026-11-30T17:00:00Z",
     /** Ahmad's WhatsApp number in international format without +, for the "save my number" button. */
     whatsappNumber: "",
   },

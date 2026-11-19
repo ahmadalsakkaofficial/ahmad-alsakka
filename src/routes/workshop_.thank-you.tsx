@@ -5,7 +5,7 @@ const w = siteConfig.workshop;
 
 export const Route = createFileRoute("/workshop_/thank-you")({
   head: () => ({
-    meta: [{ title: "تم تسجيلك بالورشة | أحمد السقا" }, { name: "robots", content: "noindex" }],
+    meta: [{ title: "تم تسجيلك بالندوة | أحمد السقا" }, { name: "robots", content: "noindex" }],
   }),
   component: WorkshopThankYou,
 });
@@ -13,9 +13,9 @@ export const Route = createFileRoute("/workshop_/thank-you")({
 function calendarUrl() {
   if (!w.startIso) return "";
   const start = new Date(w.startIso);
-  const end = new Date(start.getTime() + 90 * 60 * 1000);
+  const end = new Date(start.getTime() + 60 * 60 * 1000);
   const fmt = (d: Date) => d.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
-  const p = new URLSearchParams({ action: "TEMPLATE", text: `ورشة أحمد السقا: ${w.title}`, dates: `${fmt(start)}/${fmt(end)}`, details: "رابط الورشة بيوصلك عالواتساب والإيميل" });
+  const p = new URLSearchParams({ action: "TEMPLATE", text: `ندوة أحمد السقا: ${w.title}`, dates: `${fmt(start)}/${fmt(end)}`, details: "رابط الندوة بيوصلك عالواتساب والإيميل" });
   return `https://calendar.google.com/calendar/render?${p.toString()}`;
 }
 
@@ -24,17 +24,17 @@ function WorkshopThankYou() {
   const steps = [
     {
       t: "شوف الواتساب والإيميل",
-      d: "حتوصلك رسالة تأكيد، وقبل الورشة بيوم وبساعة حيوصلك الرابط",
+      d: "حتوصلك رسالة تأكيد، وقبل الندوة بيوم وبساعة حيوصلك الرابط",
     },
     {
       t: w.dateLabel ? `حط الموعد بتقويمك: ${w.dateLabel} · ${w.timeLabel}` : "الموعد حيوصلك أول ما يتحدد",
-      d: "الورشة لايف، واللي بيحضر من أولها هو اللي ممكن أختاره للتجربة الحية",
+      d: "الندوة لايف، واللي بيحضر من أولها بياخد أكتر شي",
       href: cal,
       cta: "ضيفها للتقويم",
     },
     {
       t: "جهّز سؤال واحد",
-      d: "أكتر سؤال بيسألوك ياه عملاءك أو مرضاك، رح نشتغل عليه بالورشة",
+      d: "أكتر سؤال بيسألوك ياه عملاءك أو مرضاك، رح نشتغل عليه بالندوة",
     },
   ];
   return (
@@ -42,7 +42,7 @@ function WorkshopThankYou() {
       <div className="mx-auto w-full max-w-2xl">
         <p className="text-base font-semibold text-bronze">تم التسجيل</p>
         <h1 className="mt-4 text-4xl leading-[1.4] font-bold sm:text-6xl">مكانك محجوز</h1>
-        <p className="mt-5 text-lg leading-[1.9] text-cream/75">باقي 3 شغلات صغيرة مشان ما تفوتك الورشة</p>
+        <p className="mt-5 text-lg leading-[1.9] text-cream/75">باقي 3 شغلات صغيرة مشان ما تفوتك الندوة</p>
 
         <ol className="mt-10 space-y-4">
           {steps.map((s, i) => (
@@ -61,7 +61,7 @@ function WorkshopThankYou() {
 
         <div className="mt-8 flex flex-wrap gap-3">
           {w.whatsappNumber && (
-            <a href={`https://wa.me/${w.whatsappNumber}?text=${encodeURIComponent("سجّلت بالورشة")}`} target="_blank" rel="noopener noreferrer" className="focus-ring rounded-[12px] bg-cream px-6 py-3.5 text-base font-bold text-navy">
+            <a href={`https://wa.me/${w.whatsappNumber}?text=${encodeURIComponent("سجّلت بالندوة")}`} target="_blank" rel="noopener noreferrer" className="focus-ring rounded-[12px] bg-cream px-6 py-3.5 text-base font-bold text-navy">
               ابعتلي «سجّلت» عالواتساب
             </a>
           )}

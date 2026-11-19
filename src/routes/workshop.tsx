@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { WorkshopLanding } from "@/components/workshop/landing";
 
-const TITLE = "ورشة مجانية: كيف تخلي خبرتك تجيبلك عملاء من المحتوى | أحمد السقا";
-const DESCRIPTION = "ورشة لايف مجانية لأصحاب الخبرة: التموضع، شو تحكي، التصوير بأقل وقت، وكيف المشاهدة بتصير عميل";
+const TITLE = "ندوة مجانية: ليش الأقل خبرة منك معروف أكتر؟ | أحمد السقا";
+const DESCRIPTION = "ندوة لايف مجانية الاتنين 30 نوفمبر: الأنظمة السبعة اللي بتخلي الناس تعرف شو بتعمل وليش انت، لأصحاب الشغل والموظفين";
 
 export const Route = createFileRoute("/workshop")({
   head: () => ({

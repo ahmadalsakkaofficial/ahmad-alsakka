@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { siteConfig } from "@/config/site";
@@ -20,14 +20,17 @@ const countries = [
   { label: "بلد تاني", code: "+" },
 ];
 
-const professions = ["دكتور أو عيادة", "محامي أو مستشار", "محاسب أو مالي", "عقارات واستثمار", "صاحب شركة", "مجال تاني"];
+const professions = ["دكتور أو عيادة", "محامي أو مستشار", "محاسب أو مالي", "عقارات واستثمار", "صاحب شركة", "موظف بمجالي", "مجال تاني"];
 const stages = ["ما بنزّل محتوى أبدًا", "بنزّل كل فترة وبوقف", "بنزّل بس ما عم يجيب عملاء"];
 
 const learn = [
-  { t: "كيف تنعرف بجملة وحدة", d: "حتى اللي يفتح حسابك أول مرة يفهم لمين إنت وبشو بتساعد" },
-  { t: "شو تحكي حتى الناس توثق فيك", d: "ومن وين تجيب أفكار شهر كامل بدون ما تفتح ChatGPT" },
-  { t: "كيف تصوّر بأقل وقت", d: "يوم واحد بالشهر، بالموبايل، وبدون ما يتأثر شغلك" },
-  { t: "كيف المشاهدة بتصير عميل", d: "الطريق من الفيديو للرسالة للمكالمة" },
+  { t: "الرسالة", d: "شو الشي اللي بدك تنعرف فيه، بجملة بيفهمها أي حدا بيفتح حسابك" },
+  { t: "منجم الأفكار", d: "أفكار شهر كامل من أسئلة عملائك، بدون ما تفتح ChatGPT" },
+  { t: "السكربت", d: "أول تلت ثواني، وكيف تحكي متل ما بتحكي مو متل الـAI" },
+  { t: "يوم التصوير", d: "بالموبايل، وبيوم واحد بالشهر" },
+  { t: "واجهة الثقة", d: "شو بيلاقي العميل لما يدوّر عليك قبل ما يتصل" },
+  { t: "من المشاهد للعميل", d: "الطريق من الفيديو للرسالة للمكالمة" },
+  { t: "ماكينة الاستمرار", d: "كيف ما يوقف المحتوى أول ما ينضغط شغلك" },
 ];
 
 function Chips({ options, value, onChange, name }: { options: string[]; value: string; onChange: (v: string) => void; name: string }) {
@@ -63,13 +66,29 @@ export function WorkshopLanding() {
 
   const hasDate = Boolean(w.dateLabel);
 
+  useEffect(() => {
+    const pixelId = siteConfig.authorityEngine.metaPixelId;
+    if (!pixelId || window.fbq) return;
+    const f = function (...args: unknown[]) {
+      (f as unknown as { queue: unknown[][] }).queue.push(args);
+    } as unknown as ((...args: unknown[]) => void) & { queue: unknown[][] };
+    f.queue = [];
+    window.fbq = f;
+    const sc = document.createElement("script");
+    sc.async = true;
+    sc.src = "https://connect.facebook.net/en_US/fbevents.js";
+    document.head.appendChild(sc);
+    window.fbq("init", pixelId);
+    window.fbq("track", "PageView");
+  }, []);
+
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError("");
     const digits = phone.replace(/[^\d]/g, "");
     if (name.trim().length < 2) return setError("اكتب اسمك");
     if (!/^\S+@\S+\.\S+$/.test(email.trim())) return setError("الإيميل مو صحيح");
-    if (digits.length < 7) return setError("اكتب رقم الواتساب، عليه حيوصلك رابط الورشة");
+    if (digits.length < 7) return setError("اكتب رقم الواتساب، عليه حيوصلك رابط الندوة");
     if (!profession) return setError("اختار شغلك");
     if (!stage) return setError("اختار وين إنت اليوم بالمحتوى");
     setBusy(true);
@@ -109,7 +128,7 @@ export function WorkshopLanding() {
   return (
     <main className="min-h-screen bg-background">
       <div className="bg-navy px-5 py-3 text-center text-sm text-cream sm:text-base">
-        <span className="font-semibold text-bronze">ورشة مجانية لايف</span>
+        <span className="font-semibold text-bronze">ندوة مجانية لايف</span>
         <span className="mx-2 text-cream/40">·</span>
         {hasDate ? (
           <span>
@@ -124,21 +143,24 @@ export function WorkshopLanding() {
         <div className="mx-auto grid w-full max-w-6xl gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-14">
           <div>
             <p className="inline-flex items-center gap-2 rounded-full border border-bronze/40 px-4 py-1.5 text-sm font-medium text-bronze">
-              للدكاترة والمحامين والمستشارين وأصحاب الشركات
+              لأصحاب الخبرة: دكاترة، محامين، مستشارين، أصحاب شركات… وموظفين كمان
             </p>
             <h1 className="mt-6 text-[2rem] leading-[1.4] font-bold text-navy sm:text-[3.1rem] sm:leading-[1.3]">
               {w.title}
-              <span className="mt-2 block text-bronze">{w.subtitle}</span>
+              <span className="mt-3 block text-xl leading-[1.6] text-bronze sm:text-3xl sm:leading-[1.5]">{w.subtitle}</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-[1.95] text-ink/80">
-              إذا إنت شاطر بشغلك وأغلب عملاءك جايين من التوصيات، فهالساعة لالك
+              إذا إنت شاطر بشغلك وما حدا بيعرف، فهاد مو لانك أقل من غيرك… ولكن لانه غيرك أوضح منك أونلاين
             </p>
             <p className="mt-3 max-w-xl text-base leading-[1.95] text-subtle">
-              60 دقيقة لايف، وبآخرها بختار واحد من الحاضرين وبطلّعله قدام الكل جملة التموضع تبعه و5 أفكار
-              فيديوهات وسكربت كامل جاهز للتصوير
+              ساعة لايف بشرح فيها الأنظمة السبعة بأمثلة حقيقية، وبتطلع منها عارف شو أول خطوة لازم تعملها
             </p>
 
-            <ul className="mt-10 grid gap-4 sm:grid-cols-2">
+            <a href="#register" className="focus-ring mt-6 inline-flex w-full items-center justify-center rounded-[12px] bg-navy px-6 py-4 text-base font-bold text-cream lg:hidden">
+              سجّل ببلاش ↓
+            </a>
+
+            <ul className="mt-10 grid gap-3 sm:grid-cols-2">
               {learn.map((l, i) => (
                 <li key={l.t} className="rounded-[16px] border border-border bg-surface p-5">
                   <span className="font-latin text-sm font-semibold tracking-[0.2em] text-bronze">0{i + 1}</span>
@@ -159,13 +181,13 @@ export function WorkshopLanding() {
               </div>
             </div>
 
-            <p className="mt-6 text-sm text-subtle">مو لصنّاع المحتوى ولا للي بدو يصير مؤثر، ولكن لأصحاب الخبرة والشغل القائم</p>
+            <p className="mt-6 text-sm text-subtle">مو لصنّاع المحتوى ولا للي بدو يصير مؤثر، ولكن لكل حدا عنده خبرة بمجاله، صاحب شغل أو موظف</p>
           </div>
 
           <div className="lg:sticky lg:top-6 lg:self-start">
-            <form onSubmit={onSubmit} noValidate className="rounded-[22px] border border-bronze/40 bg-surface p-6 shadow-raised sm:p-8">
+            <form id="register" onSubmit={onSubmit} noValidate className="rounded-[22px] border border-bronze/40 bg-surface p-6 shadow-raised sm:p-8">
               <h2 className="text-2xl font-bold text-navy">احجز مكانك ببلاش</h2>
-              <p className="mt-2 text-sm text-subtle">رابط الورشة والتذكير بيوصلوك عالواتساب والإيميل</p>
+              <p className="mt-2 text-sm text-subtle">رابط الندوة والتذكير بيوصلوك عالواتساب والإيميل</p>
 
               <div className="mt-6 space-y-4">
                 <label className="block">
@@ -215,9 +237,9 @@ export function WorkshopLanding() {
                 disabled={busy}
                 className="focus-ring mt-6 w-full rounded-[12px] bg-navy px-6 py-4 text-base font-bold text-cream transition-opacity hover:opacity-90 disabled:opacity-60"
               >
-                {busy ? "عم نسجّلك" : "سجّلني بالورشة"}
+                {busy ? "عم نسجّلك" : "سجّلني بالندوة"}
               </button>
-              <p className="mt-3 text-center text-xs text-subtle">الورشة لايف والمقاعد محدودة بسعة الغرفة</p>
+              <p className="mt-3 text-center text-xs text-subtle">الندوة لايف ومجانية</p>
             </form>
           </div>
         </div>
