@@ -22,14 +22,14 @@ export const siteConfig = {
   },
   workshop: {
     /** Internal key saved with each registration. Change it for every new workshop. */
-    key: "workshop-1",
+    key: "workshop-2026-12-10",
     title: "ليش الأقل خبرة منك معروف أكتر؟",
     subtitle: "والأنظمة السبعة اللي بتخلي الناس تعرف شو بتعمل وليش انت",
     /** Fill both when the date is decided, e.g. "السبت 12 كانون الأول" and "8 المسا بتوقيت السعودية". Empty = "الموعد بينعلن قريب". */
-    dateLabel: "الاتنين 30 نوفمبر",
+    dateLabel: "الخميس 10 ديسمبر",
     timeLabel: "8 م بتوقيت السعودية · 9 م بتوقيت الإمارات",
     /** ISO start time for the calendar button on the thank-you page, e.g. "2026-12-12T17:00:00Z". */
-    startIso: "2026-11-30T17:00:00Z",
+    startIso: "2026-12-10T17:00:00Z",
     /** Ahmad's WhatsApp number in international format without +, for the "save my number" button. */
     whatsappNumber: "",
     /** Zoom (or live) join link. Empty = reminder emails say the link is coming. */
@@ -37,7 +37,7 @@ export const siteConfig = {
     /** Short invite video (YouTube/Vimeo embed URL or .mp4). Empty = show the photo instead. */
     videoUrl: "",
     /** Brevo contact list name for this workshop (created automatically if missing). */
-    brevoListName: "ندوة 30 نوفمبر 2026",
+    brevoListName: "ندوة 10 ديسمبر 2026",
     /** Sender shown on emails. Must be a verified sender/domain in Brevo. */
     senderName: "أحمد السقا",
     senderEmail: "ahmad@ahmad-alsakka.com",
