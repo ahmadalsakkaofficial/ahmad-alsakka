@@ -18,12 +18,30 @@ const days = [
 
 const outcomes = ["جملة واضحة", "أفكار لشهر", "سكربتات جاهزة", "يوم تصوير خلّصته", "حساب بيحكي عنك"];
 
-const included = [
-  { t: "14 يوم خطوة بخطوة", d: "كل يومين نظام واحد، مع مهمة صغيرة بتعملها بنفس اليوم" },
-  { t: "4 لايفات معي", d: "بشوف فيها شغلك وبصلّحه: جملتك، سكربتاتك، وحسابك" },
-  { t: "مجموعة للمشتركين", d: "بتسأل فيها وبتشوف شغل الباقيين" },
-  { t: "شهادة إتمام مني", d: "للي بيطبّق المهام. مو شهادة معتمدة من جهة رسمية" },
+/** Value stack. Values are anchored on Ahmad's real prices ($120/hour session, $3,000/month service). */
+const stackCore = [
+  { t: "مين انت؟", v: 97 },
+  { t: "منجم الأفكار", v: 97 },
+  { t: "السكربت", v: 147 },
+  { t: "يوم التصوير", v: 97 },
+  { t: "واجهة الثقة", v: 97 },
+  { t: "من المشاهد للعميل", v: 147 },
+  { t: "ماكينة الاستمرار", v: 97 },
+  { t: "4 لايفات معي لمراجعة شغلك", v: 480 },
+  { t: "مجموعة المشتركين", v: 97 },
 ];
+
+const bonuses = [
+  { t: "فريق المحتوى على Claude", d: "Skills بتطلّعلك أفكار، وبتكتب السكربت بلهجتك، والهوكات والكابشن. بيشتغل على أي حساب Claude، حتى المجاني. بيوصلك يوم السكربت", v: 297 },
+  { t: "بنك أفكار لكل الاختصاصات", d: "أفكار جاهزة لكل مهنة: طب، محاماة، استشارات، عقارات، مالية، هندسة، وموظفين", v: 97 },
+  { t: "50 هوك عربي", d: "قوالب جاهزة، بتعبّي الفراغ وبتصوّر", v: 47 },
+  { t: "دليل التصوير بالموبايل", d: "إعدادات الآيفون، الضو، والكاميرا الخلفية", v: 47 },
+  { t: "قوالب واجهة الحساب", d: "بايو، منشورات مثبّتة، وهايلايتس لكل مهنة", v: 47 },
+  { t: "رسائل من المتابع للعميل", d: "ردود جاهزة للكومنت والرسائل لحد حجز المكالمة", v: 47 },
+];
+
+const stackTotal = [...stackCore, ...bonuses].reduce((a, x) => a + x.v, 0);
+const fmt = (n: number) => n.toLocaleString("en-US");
 
 const fits = [
   "عندك خبرة بمجالك وما حدا بيعرف عنها أونلاين",
@@ -173,20 +191,24 @@ export function ProgramLanding() {
         </div>
       </section>
 
-      {/* What's included */}
+      {/* Bonuses */}
       <section className="px-5 py-14 sm:px-8">
         <div className="mx-auto w-full max-w-6xl">
           <h2 className="text-center text-2xl font-bold text-cream sm:text-4xl">
-            شو <span className="text-bronze">بتاخد</span>
+            وكمان <span className="text-bronze">بتاخد</span>
           </h2>
-          <ul className="mt-10 grid gap-4 sm:grid-cols-2">
-            {included.map((x) => (
+          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {bonuses.map((x) => (
               <li key={x.t} onMouseMove={glowMove} className="glow-card rounded-[20px] border border-white/10 bg-white/[0.04] p-6">
-                <h3 className="text-xl font-bold text-cream">{x.t}</h3>
+                <div className="flex items-start justify-between gap-3">
+                  <h3 className="text-xl font-bold text-cream">{x.t}</h3>
+                  <span className="shrink-0 rounded-full bg-bronze/15 px-3 py-1 font-latin text-sm font-bold text-bronze" dir="ltr">${x.v}</span>
+                </div>
                 <p className="mt-2 text-base leading-[1.8] text-cream/70">{x.d}</p>
               </li>
             ))}
           </ul>
+          <p className="mt-6 text-center text-sm text-cream/60">وشهادة إتمام مني للي بيطبّق المهام (مو شهادة معتمدة من جهة رسمية)</p>
         </div>
       </section>
 
@@ -222,9 +244,21 @@ export function ProgramLanding() {
       <section className="relative px-5 py-16 sm:px-8">
         <div aria-hidden className="pointer-events-none absolute bottom-0 left-1/2 h-[420px] w-[800px] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(var(--acc),0.18),transparent)] blur-2xl" />
         <div className="glow-card glow-card--always relative mx-auto w-full max-w-2xl rounded-[24px] border border-bronze/40 bg-[color-mix(in_srgb,var(--ws-panel)_90%,transparent)] p-8 text-center shadow-[0_30px_80px_-30px_rgba(var(--acc),0.55)] sm:p-10">
-          <p className="text-sm font-medium text-cream/60">لما بشتغل مع عميل مباشرة: {p.servicePrice}$ (3 شهور)</p>
-          <h2 className="mt-4 text-2xl font-bold text-cream sm:text-3xl">سعر الدفعة الأولى</h2>
-          <div className="mt-4 font-latin text-6xl font-bold text-bronze" dir="ltr">
+          <h2 className="text-2xl font-bold text-cream sm:text-3xl">شو بتاخد بالزبط</h2>
+          <ul className="mt-6 space-y-2 text-start">
+            {[...stackCore, ...bonuses].map((x) => (
+              <li key={x.t} className="flex items-center justify-between gap-4 border-b border-white/10 pb-2 text-base text-cream/85">
+                <span>{x.t}</span>
+                <span className="font-latin text-cream/60" dir="ltr">${x.v}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-5 flex items-center justify-between text-lg font-bold text-cream">
+            <span>المجموع</span>
+            <span className="font-latin text-cream/60 line-through decoration-bronze/70" dir="ltr">${fmt(stackTotal)}</span>
+          </div>
+          <h3 className="mt-8 text-xl font-bold text-cream">سعر الدفعة الأولى</h3>
+          <div className="mt-2 font-latin text-6xl font-bold text-bronze" dir="ltr">
             ${p.price}
           </div>
           <p className="mt-2 text-base text-cream/70">دفعة وحدة · {p.datesLabel}</p>
