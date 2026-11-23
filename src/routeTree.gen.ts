@@ -13,6 +13,7 @@ import { Route as WorkshopDoticsRouteImport } from './routes/workshop[.]ics'
 import { Route as WorkshopRouteImport } from './routes/workshop'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ProgramRouteImport } from './routes/program'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as AuthorityEngineRouteImport } from './routes/authority-engine'
 import { Route as AuditRouteImport } from './routes/audit'
@@ -39,6 +40,11 @@ const TermsRoute = TermsRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgramRoute = ProgramRouteImport.update({
+  id: '/program',
+  path: '/program',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -82,6 +88,7 @@ export interface FileRoutesByFullPath {
   '/audit': typeof AuditRoute
   '/authority-engine': typeof AuthorityEngineRoute
   '/privacy': typeof PrivacyRoute
+  '/program': typeof ProgramRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/workshop': typeof WorkshopRoute
@@ -95,6 +102,7 @@ export interface FileRoutesByTo {
   '/audit': typeof AuditRoute
   '/authority-engine': typeof AuthorityEngineRoute
   '/privacy': typeof PrivacyRoute
+  '/program': typeof ProgramRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/workshop': typeof WorkshopRoute
@@ -109,6 +117,7 @@ export interface FileRoutesById {
   '/audit': typeof AuditRoute
   '/authority-engine': typeof AuthorityEngineRoute
   '/privacy': typeof PrivacyRoute
+  '/program': typeof ProgramRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/workshop': typeof WorkshopRoute
@@ -124,6 +133,7 @@ export interface FileRouteTypes {
     | '/audit'
     | '/authority-engine'
     | '/privacy'
+    | '/program'
     | '/sitemap.xml'
     | '/terms'
     | '/workshop'
@@ -137,6 +147,7 @@ export interface FileRouteTypes {
     | '/audit'
     | '/authority-engine'
     | '/privacy'
+    | '/program'
     | '/sitemap.xml'
     | '/terms'
     | '/workshop'
@@ -150,6 +161,7 @@ export interface FileRouteTypes {
     | '/audit'
     | '/authority-engine'
     | '/privacy'
+    | '/program'
     | '/sitemap.xml'
     | '/terms'
     | '/workshop'
@@ -164,6 +176,7 @@ export interface RootRouteChildren {
   AuditRoute: typeof AuditRoute
   AuthorityEngineRoute: typeof AuthorityEngineRoute
   PrivacyRoute: typeof PrivacyRoute
+  ProgramRoute: typeof ProgramRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
   WorkshopRoute: typeof WorkshopRoute
@@ -201,6 +214,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/program': {
+      id: '/program'
+      path: '/program'
+      fullPath: '/program'
+      preLoaderRoute: typeof ProgramRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -260,6 +280,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuditRoute: AuditRoute,
   AuthorityEngineRoute: AuthorityEngineRoute,
   PrivacyRoute: PrivacyRoute,
+  ProgramRoute: ProgramRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
   WorkshopRoute: WorkshopRoute,

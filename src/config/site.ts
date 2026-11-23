@@ -44,6 +44,18 @@ export const siteConfig = {
     /** Replies to workshop emails land here. */
     replyToEmail: "ahmad.skaa@gmail.com",
   },
+  program: {
+    name: "14 يوم لتنعرف",
+    nameEn: "14 Days to Get Known",
+    datesLabel: "من 13 لـ 26 ديسمبر",
+    price: "197",
+    /** The done-for-you service price shown for comparison. */
+    servicePrice: "9,000",
+    /** Founding price holds until registration closes. */
+    closesLabel: "الأحد 13 ديسمبر",
+    /** Payment link (Stripe or Skool). Empty = the buy buttons point to the free workshop instead. */
+    checkoutUrl: "",
+  },
   location: "كندا",
   primaryAudience: "أصحاب المهن والخدمات العرب",
   /** Future-ready. Component renders nothing while empty. */
