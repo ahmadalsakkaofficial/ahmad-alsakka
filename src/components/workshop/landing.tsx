@@ -440,7 +440,7 @@ export function WorkshopLanding() {
             </p>
             <div onMouseMove={glowMove} className="glow-card rounded-[18px] border border-bronze/30 bg-bronze/10 p-5">
               <p className="text-base leading-[1.9] text-cream/85">
-                مو لصنّاع المحتوى ولا للي بدو يصير مؤثر، ولكن لكل حدا عنده خبرة بمجاله، صاحب شغل أو موظف
+                مو لصنّاع المحتوى ولا للي بدو يصير انفلونسر، ولكن لكل حدا عنده خبرة بمجاله، صاحب شغل أو موظف
               </p>
             </div>
           </div>
