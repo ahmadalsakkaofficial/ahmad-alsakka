@@ -4,7 +4,7 @@ import { siteConfig } from "@/config/site";
 
 const p = siteConfig.program;
 const TITLE = `${p.name}: برنامج لايف ${p.datesLabel} | أحمد السقا`;
-const DESCRIPTION = "14 يوم منطبّق فيهم الأنظمة السبعة مع بعض: جملة واضحة، أفكار لشهر، سكربتات جاهزة، يوم تصوير، وحساب بيحكي عنك";
+const DESCRIPTION = "14 يوم منطبّق فيهم الأنظمة السبعة مع بعض: جملتك جاهزة، أفكار لشهر، سكربتات جاهزة، يوم تصوير، وحساب بيحكي عنك";
 
 export const Route = createFileRoute("/program")({
   head: () => ({
