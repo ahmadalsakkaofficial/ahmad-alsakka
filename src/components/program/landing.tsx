@@ -158,10 +158,20 @@ export function ProgramLanding() {
               سعر الدفعة الأولى لحد ما يسكّر التسجيل {p.closesLabel}
             </p>
           </div>
-          <div className="relative mx-auto w-full max-w-sm lg:max-w-md">
-            <div aria-hidden className="absolute inset-x-6 bottom-0 top-16 rounded-full bg-[radial-gradient(closest-side,rgba(var(--acc),0.55),rgba(var(--acc),0.08)_70%,transparent)] blur-xl" />
-            <img src="/images/ahmad-cutout.webp" alt="أحمد السقا" className="relative mx-auto w-full [mask-image:linear-gradient(to_bottom,black_80%,transparent)]" />
-          </div>
+          {p.videoUrl ? (
+            <div className="relative w-full self-center overflow-hidden rounded-2xl border border-white/12 bg-black shadow-raised lg:mb-16">
+              {(p.videoUrl as string).endsWith(".mp4") ? (
+                <video src={p.videoUrl} controls playsInline poster="/images/ahmad-cutout.webp" className="aspect-video w-full" />
+              ) : (
+                <iframe src={p.videoUrl} title="فيديو البرنامج" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen className="aspect-video w-full" />
+              )}
+            </div>
+          ) : (
+            <div className="relative mx-auto w-full max-w-sm lg:max-w-md">
+              <div aria-hidden className="absolute inset-x-6 bottom-0 top-16 rounded-full bg-[radial-gradient(closest-side,rgba(var(--acc),0.55),rgba(var(--acc),0.08)_70%,transparent)] blur-xl" />
+              <img src="/images/ahmad-cutout.webp" alt="أحمد السقا" className="relative mx-auto w-full [mask-image:linear-gradient(to_bottom,black_80%,transparent)]" />
+            </div>
+          )}
         </div>
       </section>
 

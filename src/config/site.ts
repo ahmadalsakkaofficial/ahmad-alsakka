@@ -55,6 +55,8 @@ export const siteConfig = {
     closesLabel: "الأحد 13 ديسمبر",
     /** Payment link (Stripe or Skool). Empty = the buy buttons point to the free workshop instead. */
     checkoutUrl: "",
+    /** Sales video (YouTube/Vimeo embed URL or .mp4). Empty = show the photo instead. */
+    videoUrl: "",
   },
   location: "كندا",
   primaryAudience: "أصحاب المهن والخدمات العرب",
