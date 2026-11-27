@@ -9,6 +9,8 @@ import {
   type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { useRouterState } from "@tanstack/react-router";
+import { siteConfig } from "../config/site";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -127,9 +129,34 @@ function useGlowTracker() {
   }, []);
 }
 
+/** Meta Pixel on every page, with a PageView on each route change. */
+function useMetaPixel() {
+  const path = useRouterState({ select: (s) => s.location.pathname });
+  useEffect(() => {
+    const pixelId = siteConfig.authorityEngine.metaPixelId;
+    if (!pixelId || typeof window === "undefined") return;
+    if (!window.fbq) {
+      const f = function (...args: unknown[]) {
+        const q = f as unknown as { callMethod?: (...a: unknown[]) => void; queue: unknown[][] };
+        if (q.callMethod) q.callMethod(...args); else q.queue.push(args);
+      } as unknown as ((...args: unknown[]) => void) & { queue: unknown[][]; loaded: boolean; version: string; push: unknown };
+      f.queue = []; f.loaded = true; f.version = "2.0"; f.push = f;
+      window.fbq = f;
+      (window as unknown as { _fbq: unknown })._fbq = f;
+      const sc = document.createElement("script");
+      sc.async = true;
+      sc.src = "https://connect.facebook.net/en_US/fbevents.js";
+      document.head.appendChild(sc);
+      window.fbq("init", pixelId);
+    }
+    window.fbq("track", "PageView");
+  }, [path]);
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   useGlowTracker();
+  useMetaPixel();
 
   return (
     <QueryClientProvider client={queryClient}>

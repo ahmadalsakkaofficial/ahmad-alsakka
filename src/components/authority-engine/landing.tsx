@@ -57,19 +57,7 @@ export function AuthorityEngineLanding() {
     trackMetaEvent("PageView");
     trackMetaEvent("ViewContent", { content_name: "Authority Engine" });
     trackAuthorityEvent("landing_view");
-    const pixelId = siteConfig.authorityEngine.metaPixelId;
-    if (!pixelId || window.fbq) return;
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = "https://connect.facebook.net/en_US/fbevents.js";
-    document.head.appendChild(script);
-    window.fbq = (...args: unknown[]) => {
-      const queue = (window.fbq as unknown as { queue?: unknown[][] }).queue ?? [];
-      queue.push(args);
-      (window.fbq as unknown as { queue: unknown[][] }).queue = queue;
-    };
-    window.fbq("init", pixelId);
-    window.fbq("track", "PageView");
+    // Meta Pixel loads site-wide in __root.tsx
   }, []);
 
   return (

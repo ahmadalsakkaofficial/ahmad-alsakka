@@ -14,9 +14,14 @@ export function trackAuthorityEvent(name: string, data: EventData = {}) {
 }
 
 export function trackMetaEvent(name: string, data: EventData = {}, eventId?: string) {
-  if (typeof window === "undefined" || typeof window.fbq !== "function") return;
+  if (typeof window === "undefined") return;
+  if (typeof window.fbq !== "function") {
+    // Pixel is set up by the root layout; page effects can run first, so retry once.
+    setTimeout(() => typeof window.fbq === "function" && trackMetaEvent(name, data, eventId), 50);
+    return;
+  }
   const options = eventId ? { eventID: eventId } : undefined;
-  if (name === "PageView" || name === "ViewContent" || name === "Lead") {
+  if (["PageView", "ViewContent", "Lead", "CompleteRegistration", "InitiateCheckout", "Purchase", "Contact", "Schedule"].includes(name)) {
     window.fbq("track", name, data, options);
   } else {
     window.fbq("trackCustom", name, data, options);

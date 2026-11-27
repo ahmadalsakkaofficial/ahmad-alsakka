@@ -112,20 +112,7 @@ function Faq() {
 
 export function ProgramLanding() {
   useEffect(() => {
-    const pixelId = siteConfig.authorityEngine.metaPixelId;
-    if (!pixelId || window.fbq) return;
-    const f = function (...args: unknown[]) {
-      (f as unknown as { queue: unknown[][] }).queue.push(args);
-    } as unknown as ((...args: unknown[]) => void) & { queue: unknown[][] };
-    f.queue = [];
-    window.fbq = f;
-    const sc = document.createElement("script");
-    sc.async = true;
-    sc.src = "https://connect.facebook.net/en_US/fbevents.js";
-    document.head.appendChild(sc);
-    window.fbq("init", pixelId);
-    window.fbq("track", "PageView");
-    window.fbq("track", "ViewContent", { content_name: "program-14-days" });
+    trackMetaEvent("ViewContent", { content_name: "program-14-days", value: Number(p.price), currency: "USD" });
   }, []);
 
   return (
